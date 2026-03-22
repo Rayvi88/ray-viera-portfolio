@@ -1,19 +1,22 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
-const links = [
-  { label: "By the Numbers", href: "/by-the-numbers" },
-  { label: "How I Think", href: "/how-i-think" },
-  { label: "Selected Works", href: "/selected-works" },
-  { label: "Contact Me", href: "/contact" },
-];
+import { Link } from "@/i18n/navigation";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { label: t("byTheNumbers"), href: "/by-the-numbers" },
+    { label: t("howIThink"), href: "/how-i-think" },
+    { label: t("selectedWorks"), href: "/selected-works" },
+    { label: t("contactMe"), href: "/contact" },
+  ];
 
   return (
     <nav className="w-full flex justify-between items-center px-4 sm:px-8 py-6 sm:py-8 relative z-50">
@@ -23,13 +26,13 @@ export default function Navbar() {
         className="text-lg font-bold tracking-widest hover:text-[#00C3D0] transition"
         onClick={() => setOpen(false)}
       >
-        NEXA
+        {t("logo")}
       </Link>
 
       {/* Links — desktop */}
-      <ul className="hidden sm:flex gap-6 lg:gap-10 text-sm">
+      <ul className="hidden sm:flex items-center gap-6 lg:gap-10 text-sm">
         {links.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href || pathname === `/es${item.href}`;
           return (
             <li key={item.href}>
               <Link
@@ -45,31 +48,33 @@ export default function Navbar() {
             </li>
           );
         })}
+        <li>
+          <LocaleSwitcher />
+        </li>
       </ul>
 
       {/* Hamburger — mobile */}
-      <button
-        className="sm:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50"
-        onClick={() => setOpen((v) => !v)}
-        aria-label="Toggle menu"
-      >
-        <span
-          className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center"
-          style={{
-            transform: open ? "translateY(8px) rotate(45deg)" : "none",
-          }}
-        />
-        <span
-          className="block h-0.5 bg-[#1a1a1a] transition-all duration-300"
-          style={{ opacity: open ? 0 : 1 }}
-        />
-        <span
-          className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center"
-          style={{
-            transform: open ? "translateY(-8px) rotate(-45deg)" : "none",
-          }}
-        />
-      </button>
+      <div className="flex sm:hidden items-center gap-3">
+        <LocaleSwitcher />
+        <button
+          className="flex flex-col justify-center gap-1.5 w-8 h-8 z-50"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <span
+            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center"
+            style={{ transform: open ? "translateY(8px) rotate(45deg)" : "none" }}
+          />
+          <span
+            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300"
+            style={{ opacity: open ? 0 : 1 }}
+          />
+          <span
+            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center"
+            style={{ transform: open ? "translateY(-8px) rotate(-45deg)" : "none" }}
+          />
+        </button>
+      </div>
 
       {/* Menú mobile — dropdown */}
       {open && (
@@ -78,7 +83,7 @@ export default function Navbar() {
           style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.06)" }}
         >
           {links.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href || pathname === `/es${item.href}`;
             return (
               <Link
                 key={item.href}

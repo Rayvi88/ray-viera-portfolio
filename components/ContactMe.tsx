@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 interface Particle {
   id: number;
@@ -110,13 +111,7 @@ function SubjectOption({
       >
         {checked && (
           <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-            <path
-              d="M1 4L3.5 6.5L9 1"
-              stroke="white"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         )}
       </div>
@@ -146,9 +141,7 @@ function UnderlineInput({
   const [focused, setFocused] = useState(false);
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-xs" style={{ color: "#9CA3AF" }}>
-        {label}
-      </label>
+      <label className="text-xs" style={{ color: "#9CA3AF" }}>{label}</label>
       <input
         type={type}
         placeholder={placeholder}
@@ -170,9 +163,13 @@ function UnderlineInput({
 const MAX_CHARS = 250;
 
 function MessageArea({
+  label,
+  placeholder,
   value,
   onChange,
 }: {
+  label: string;
+  placeholder: string;
   value: string;
   onChange: (v: string) => void;
 }) {
@@ -184,20 +181,16 @@ function MessageArea({
   return (
     <div className="flex flex-col gap-1">
       <div className="flex justify-between items-center">
-        <label className="text-xs" style={{ color: "#9CA3AF" }}>
-          Message
-        </label>
+        <label className="text-xs" style={{ color: "#9CA3AF" }}>{label}</label>
         <span
           className="text-xs transition-colors duration-200"
-          style={{
-            color: isAtLimit ? "#EF4444" : isNearLimit ? "#F59E0B" : "#C4BDB5",
-          }}
+          style={{ color: isAtLimit ? "#EF4444" : isNearLimit ? "#F59E0B" : "#C4BDB5" }}
         >
           {remaining}/{MAX_CHARS}
         </span>
       </div>
       <textarea
-        placeholder="Write your message.."
+        placeholder={placeholder}
         value={value}
         maxLength={MAX_CHARS}
         onChange={(e) => onChange(e.target.value)}
@@ -216,6 +209,9 @@ function MessageArea({
 }
 
 export default function ContactMe() {
+  const t = useTranslations("contact");
+  const subjects = t.raw("subjects") as string[];
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -224,13 +220,6 @@ export default function ContactMe() {
   const [subject, setSubject] = useState("");
   type Status = "idle" | "loading" | "success" | "error";
   const [status, setStatus] = useState<Status>("idle");
-
-  const subjects = [
-    "Decision Critical UX Design",
-    "Data Heavy Interface & Dashboard Design",
-    "Process & Workflow Simplification",
-    "UX Strategy & System Redesign",
-  ];
 
   const handleSend = async () => {
     if (!firstName || !email || !message) return;
@@ -256,7 +245,12 @@ export default function ContactMe() {
     }
   };
 
-  const btnLabel = status === "loading" ? "Sending..." : status === "success" ? "Message Sent!" : status === "error" ? "Error, try again" : "Send Message";
+  const btnLabel =
+    status === "loading" ? t("btnSending") :
+    status === "success" ? t("btnSuccess") :
+    status === "error" ? t("btnError") :
+    t("btnSend");
+
   const btnColor = status === "success" ? "#00C3D0" : status === "error" ? "#EF4444" : "#1a1a1a";
 
   return (
@@ -271,13 +265,12 @@ export default function ContactMe() {
           <div className="relative z-10 flex flex-col justify-between h-full gap-6 lg:gap-0">
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold leading-tight mb-3 sm:mb-4" style={{ color: "#00C3D0" }}>
-                Let&apos;s start
-                <br />
-                a conversation
+                {t("title").split(" a ").map((part, i, arr) =>
+                  i < arr.length - 1 ? <span key={i}>{part} a <br /></span> : <span key={i}>{part}</span>
+                )}
               </h1>
               <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>
-                UX/UI Expert specialized in visual clarity for complex systems.
-                Open to strategic collaborations and high-impact design challenges.
+                {t("subtitle")}
               </p>
             </div>
             <div className="flex flex-row lg:flex-col gap-4">
@@ -310,22 +303,27 @@ export default function ContactMe() {
         >
           <div className="flex flex-col gap-4 sm:gap-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <UnderlineInput label="First Name" value={firstName} onChange={setFirstName} />
-              <UnderlineInput label="Last Name" value={lastName} onChange={setLastName} />
+              <UnderlineInput label={t("firstNameLabel")} value={firstName} onChange={setFirstName} />
+              <UnderlineInput label={t("lastNameLabel")} value={lastName} onChange={setLastName} />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <UnderlineInput label="Email" type="email" value={email} onChange={setEmail} />
-              <UnderlineInput label="Phone Number (optional)" placeholder="+0 000 0000 000" type="tel" value={phone} onChange={setPhone} />
+              <UnderlineInput label={t("emailLabel")} type="email" value={email} onChange={setEmail} />
+              <UnderlineInput label={t("phoneLabel")} placeholder={t("phonePlaceholder")} type="tel" value={phone} onChange={setPhone} />
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-sm font-semibold" style={{ color: "#374151" }}>Select Subject?</span>
+              <span className="text-sm font-semibold" style={{ color: "#374151" }}>{t("subjectLabel")}</span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
                 {subjects.map((s) => (
                   <SubjectOption key={s} label={s} checked={subject === s} onChange={() => setSubject(s)} />
                 ))}
               </div>
             </div>
-            <MessageArea value={message} onChange={setMessage} />
+            <MessageArea
+              label={t("messageLabel")}
+              placeholder={t("messagePlaceholder")}
+              value={message}
+              onChange={setMessage}
+            />
           </div>
           <div className="flex justify-end mt-2">
             <button

@@ -1,39 +1,51 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import ParticleCard from "./ParticleCard";
 
-const projects = [
-  {
-    id: "fintech-platform",
-    title: "FinTech Platform",
-    description: "Designing scalable documentation architecture for global KYC Operations.",
-    tags: ["UX Research", "UI Design", "Design System"],
-    href: "/case-study/fintech",
-    imageBn: "/fintech-bn.png",
-    imageColor: "/fintech-c.png",
-  },
-  {
-    id: "registration-platform",
-    title: "Registration Platform for Readers",
-    description: "Design and layout of a digital platform to attract readers interested in exclusive benefits.",
-    tags: ["UX Strategy", "Prototyping", "Flow Design"],
-    href: "#",
-    imageBn: "/readers-bn.png",
-    imageColor: "/readers-c.png",
-  },
-  {
-    id: "social-media-strategy",
-    title: "Social Media Strategy and Content Design",
-    description: "Development of visual and audiovisual content for brand positioning and promotion on social media.",
-    tags: ["Content Strategy", "Brand Communication"],
-    href: "#",
-    imageBn: "/media-bn.png",
-    imageColor: "/media-c.png",
-  },
-];
-
 export default function SelectedWorks() {
+  const t = useTranslations("selectedWorks");
+
+  const projects = [
+    {
+      id: "fintech-platform",
+      title: "FinTech Platform",
+      description: t("fintech"),
+      tags: ["UX Research", "UI Design", "Design System"],
+      href: "/case-study/fintech",
+      imageBn: "/fintech-bn.png",
+      imageColor: "/fintech-c.png",
+    },
+    {
+      id: "social-media-strategy",
+      title: "Content Strategy & Visual Identity",
+      description: t("social"),
+      tags: ["Community Building", "Brand Strategy", "Content Design"],
+      href: "/case-study/social-media-strategy",
+      imageBn: "/media-bn.png",
+      imageColor: "/media-c.png",
+    },
+    {
+      id: "smart-documents-gtm",
+      title: "Smart Documents: Go To Market Strategy",
+      description: t("gtm"),
+      tags: ["UX Architecture", "Product Strategy", "Go To Market", "Conversion Design"],
+      href: "/case-study/smart-documents-gtm",
+      imageBn: "/gotomarket-bn.png",
+      imageColor: "/gotomarket-c.png",
+    },
+    {
+      id: "smart-documents",
+      title: "Smart Documents",
+      description: t("smart"),
+      tags: ["Product Concept", "UX Architecture", "Interaction Design"],
+      href: "/case-study/smart-documents",
+      imageBn: "/smart-bn.png",
+      imageColor: "/smart-c.png",
+    },
+  ];
+
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState(0);
@@ -68,53 +80,37 @@ export default function SelectedWorks() {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        Selected Works
+        {t("title")}
       </h2>
 
       <div className="relative flex items-center gap-3 lg:gap-6">
-        {/* Flecha izquierda */}
         <button
           onClick={prev}
-          className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300 text-sm"
+          className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300 text-sm self-stretch my-auto"
         >
-          ←
+          &#8592;
         </button>
 
-        {/* Cards — 1 en mobile, 2 en sm+ */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-            {getVisible()
-            .slice(0, 2)
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 min-w-0">
+          {getVisible()
+            .slice(1, 3)
             .map((projectIndex, i) => (
-            <ParticleCard
-            key={projects[projectIndex].id}
-            project={projects[projectIndex]}
-            index={i}
-          visible={visible}
-        className={i === 1 ? "hidden sm:flex sm:flex-col" : ""}
-        />
-        ))}
-      </div>
+              <ParticleCard
+                key={projects[projectIndex].id}
+                project={projects[projectIndex]}
+                index={i}
+                visible={visible}
+                className={i === 1 ? "hidden sm:block" : ""}
+              />
+            ))}
+        </div>
 
-        {/* Flecha derecha */}
         <button
           onClick={next}
-          className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300 text-sm"
+          className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300 text-sm self-stretch my-auto"
         >
-          →
+          &#8594;
         </button>
-      </div>
-
-      {/* Dots */}
-      <div className="flex justify-center gap-2 mt-8 lg:mt-10">
-        {projects.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? "bg-[#00C3D0] w-6" : "bg-[#E8E4DC] w-2"
-            }`}
-          />
-        ))}
       </div>
     </section>
   );

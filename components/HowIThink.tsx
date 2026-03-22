@@ -1,98 +1,41 @@
-"use client";
+import { getTranslations, getLocale } from "next-intl/server";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-
-const cards = [
-  {
-    icon: "/ux-research.svg",
-    title: "UX Research",
-    description: "Deep user insights and data-driven research to inform design decisions and validate product direction.",
-  },
-  {
-    icon: "/ui-design.svg",
-    title: "UI Design",
-    description: "Beautiful, intuitive interfaces that combine aesthetics with usability for exceptional user experiences.",
-  },
-  {
-    icon: "/design-systems.svg",
-    title: "Design Systems",
-    description: "Design that ensure consistency across your product ecosystem.",
-  },
-  {
-    icon: "/product-design.svg",
-    title: "Product Design",
-    description: "End-to-end product design from concept to launch, focusing on solving real user problems.",
-  },
-  {
-    icon: "/brand-experience.svg",
-    title: "Brand Experience",
-    description: "Cohesive brand identities that resonate with your audience and differentiate you in the market.",
-  },
-  {
-    icon: "/product-strategy.svg",
-    title: "Product Strategy",
-    description: "Strategic guidance to align design with business goals and create meaningful product roadmaps.",
-  },
+const icons = [
+  <svg key="search" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>,
+  <svg key="ui" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="3" width="7" height="18" rx="1"/><line x1="6" y1="7" x2="7" y2="7"/><line x1="6" y1="10" x2="7" y2="10"/><line x1="6" y1="13" x2="7" y2="13"/><path d="M13 5l4 4-6 6H7v-4l6-6z"/></svg>,
+  <svg key="grid" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>,
+  <svg key="stack" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><ellipse cx="12" cy="6" rx="9" ry="3"/><path d="M3 6v4c0 1.657 4.03 3 9 3s9-1.343 9-3V6"/><path d="M3 10v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/></svg>,
+  <svg key="star" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>,
+  <svg key="trend" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>,
 ];
 
-export default function HowIThink() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+export default async function HowIThink() {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "howIThinkPage" });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const cards = [
+    { icon: icons[0], title: t("card1title"), desc: t("card1desc") },
+    { icon: icons[1], title: t("card2title"), desc: t("card2desc") },
+    { icon: icons[2], title: t("card3title"), desc: t("card3desc") },
+    { icon: icons[3], title: t("card4title"), desc: t("card4desc") },
+    { icon: icons[4], title: t("card5title"), desc: t("card5desc") },
+    { icon: icons[5], title: t("card6title"), desc: t("card6desc") },
+  ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-24 bg-[#FFFCF6]"
-    >
-      <h2
-        className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00C3D0] mb-10 lg:mb-16 transition-all duration-700 ease-out ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        How I think
-      </h2>
-
-      {/* Mobile: 1 col / Tablet: 2 col / Desktop: 3 col */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E8E4DC]">
+    <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-12 lg:py-20 bg-[#FFFCF6]">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00C3D0] mb-10 lg:mb-14">
+        {t("title")}
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {cards.map((card, i) => (
           <div
             key={i}
-            className={`
-              group flex flex-col items-center text-center px-6 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 bg-[#FFFCF6]
-              border border-[#E8E4DC] cursor-default
-              transition-all duration-500 ease-out
-              hover:border-[#00C3D0]
-              ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-            `}
-            style={{ transitionDelay: `${i * 100}ms` }}
+            className="flex flex-col items-center text-center gap-3 p-6 rounded-2xl border border-transparent transition-all duration-300 hover:bg-[#F7F4EE] hover:shadow-md hover:-translate-y-1"
           >
-            <div className="mb-4 lg:mb-6 transition-transform duration-300 group-hover:scale-110">
-              <Image
-                src={card.icon}
-                alt={card.title}
-                width={48}
-                height={48}
-                className="object-contain w-10 h-10 lg:w-12 lg:h-12"
-              />
-            </div>
-            <h3 className="text-base lg:text-lg font-bold text-black mb-3 lg:mb-4 transition-colors duration-300 group-hover:text-[#00C3D0]">
-              {card.title}
-            </h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              {card.description}
-            </p>
+            <div className="mb-2">{card.icon}</div>
+            <h3 className="text-base font-bold text-gray-800">{card.title}</h3>
+            <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
           </div>
         ))}
       </div>
