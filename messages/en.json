@@ -3,7 +3,7 @@
     "logo": "NEXA",
     "byTheNumbers": "By the Numbers",
     "howIThink": "How I Think",
-    "selectedWorks": "Selected Works",
+    "selectedWorks": "Projects",
     "contactMe": "Contact Me"
   },
   "hero": {
@@ -49,12 +49,194 @@
     "card6title": "Product Strategy",
     "card6desc": "To align design with business objectives and create meaningful product roadmaps."
   },
+  "projects": {
+    "label": "Work",
+    "heading": "Projects",
+    "subheading": "Systems, experiences, and concepts designed to turn complexity into clarity, whether in real operational environments or strategic design explorations.",
+    "meta": {
+      "title": "Projects — Ray Viera",
+      "description": "Selected works and strategic design explorations by Ray Viera."
+    },
+    "selectedWorks": {
+      "tag": "Client Work",
+      "title": "Selected Works",
+      "description": "A selection of projects where design, strategy, and systems are used to transform complex challenges into clear and actionable experiences.",
+      "cta": "View Selected Works"
+    },
+    "strategicExplorations": {
+      "tag": "Design Exercises",
+      "title": "Strategic Explorations",
+      "description": "Design concepts and systems created to investigate opportunities, structure experiences, and explore new strategic directions.",
+      "cta": "View Explorations"
+    }
+  },
   "selectedWorks": {
+    "label": "Client Work",
     "title": "Selected Works",
-    "fintech": "Designing scalable documentation architecture for global KYC Operations.",
-    "social": "Development of visual and audiovisual content for brand positioning and promotion on social media.",
+    "subtitle": "A selection of projects developed in real-world environments, spanning operational systems, digital experiences, and brand communication.",
+    "cta": "View Case Study",
+    "fintechTag": "Fintech · Product Design",
+    "socialTag": "Brand · Content Strategy",
+    "fintech": {
+      "title": "FinTech Platform",
+      "description": "Designing scalable documentation architecture for global KYC Operations."
+    },
+    "social": {
+      "title": "Content Strategy & Visual Identity",
+      "description": "Development of visual and audiovisual content for brand positioning on social media."
+    },
+    "meta": {
+      "title": "Selected Works — Ray Viera",
+      "description": "Client projects in fintech product design and content strategy."
+    }
+  },
+  "strategicExplorations": {
+    "label": "Design Exercises",
+    "title": "Strategic Explorations",
+    "subtitle": "Design explorations used to investigate systems, experiences, and business opportunities through visual concepts and strategic proposals.",
+    "cta": "View Case Study",
+    "gtmTag": "Go To Market · UX",
+    "gtmTitle": "Smart Documents: Go To Market Strategy",
+    "smartTag": "Product Concept · AI",
+    "smartTitle": "Smart Documents",
+    "luxuryBrandTag": "Brand · Visual System",
+    "luxuryBrandTitle": "Luxury Brand Communication System",
+    "operationalUxTag": "Operational UX · Service Design",
+    "operationalUxTitle": "Operational UX for Shared Mobility",
     "gtm": "Exploring product positioning and conversion design for an AI document validation concept.",
-    "smart": "AI-assisted document validation for international logistics."
+    "smart": "AI-assisted document validation for international logistics.",
+    "luxuryBrand": "A complete visual identity and graphic language system for a premium sensory experience brand.",
+    "operationalUx": "A UX system focused on critical state communication for shared mobility operators.",
+    "meta": {
+      "title": "Strategic Explorations — Ray Viera",
+      "description": "48-hour design exercises in GTM strategy, UX systems, and brand communication."
+    }
+  },
+  "caseStudyLuxuryBrand": {
+    "tabs": ["Overview", "Brand Concept", "Color & Typography", "Visual System", "Photography & Tone", "Results & Learn"],
+    "overview": {
+      "tag": "CASE STUDY",
+      "title": "Luxury Brand Communication System",
+      "desc": "A complete visual identity and graphic language system for a premium sensory experience brand — designed in 48 hours.",
+      "roleLabel": "Role",
+      "roleValue": "Brand & Communication Design",
+      "typeLabel": "Project type",
+      "typeValue": "Technical design exercise",
+      "yearLabel": "Year",
+      "yearValue": "2026",
+      "scopeLabel": "Scope",
+      "scopeItems": ["Visual Identity", "Typography System", "Color Palette", "Photography Guidelines"]
+    },
+    "brandConcept": {
+      "title": "Brand Concept",
+      "desc": "A premium brand in the sensory wellness space needed a complete graphic communication system from scratch. The challenge: build a visual identity that communicates intimacy, sophistication, and trust — without being explicit. Every decision had to feel intentional, editorial, and emotionally resonant.",
+      "conceptTitle": "Touch as intimate language",
+      "conceptDesc": "The design system works through sensory abstraction — warm darkness, editorial curves, and visual suggestion rather than direct exposure.",
+      "pillars": ["Warm Darkness", "Editorial Line", "Visual Insinuation"]
+    },
+    "colorTypography": {
+      "title": "Color & Typography",
+      "typographySubtitle": "Titles",
+      "typographySubtitle1": "Emotional emphasis",
+      "typographySubtitle2": "Body of the text",
+      "paletteTitle": "Color Palette",
+      "paletteDesc": "Five tones used at 70/20/10 proportion",
+      "paletteDesc1": "TO MAINTAIN ATMOSPHERE AND HIERARCHY.",
+      "colors": [
+        { "name": "Noche", "hex": "#12100E" },
+        { "name": "Tierra", "hex": "#3A2E28" },
+        { "name": "Champagne", "hex": "#C9A882" },
+        { "name": "Mauve", "hex": "#D4A5A0" },
+        { "name": "Crema", "hex": "#F5F0E8" }
+      ],
+      "typographyTitle": "Typography",
+      "fonts": [
+        { "name": "Playfair Display", "use": "Display headings" },
+        { "name": "Cormorant Garamond Light Italic", "use": "Emotional emphasis" },
+        { "name": "Inter Light", "use": "Body text" }
+      ]
+    },
+   "visualSystem": {
+  "title": "Visual System",
+  "intro": "A complete graphic language covering:",
+  "items": [
+    "Logo usage",
+    "Color proportions",
+    "Typographic hierarchy",
+    "Composition principles",
+    "Decorative line system in champagne gold"
+  ],
+  "desc": "Every element reinforces the brand's sensory positioning."
+},
+"photographyTone": {
+      "title": "Photography and Tone",
+      "desc": "Black-and-white treatment with desaturated tones. Close-up shots that suggest texture and intimacy. Soft, diffused lighting with shadows that add depth. The system defines what to use and what to avoid, ensuring a consistent visual language across all touchpoints.",
+      "rules": [
+        { "label": "Treatment", "value": "Black and white, desaturated" },
+        { "label": "Frame", "value": "Close-up, focus on texture" },
+        { "label": "Lighting", "value": "Soft, diffused, with depth" }
+      ]
+    },
+    "results": {
+      "title": "Results & Learn",
+      "desc": "Delivered a complete mini brand manual in 48 hours — covering concept, palette, typography, photography guidelines, and usage rules.",
+      "learningItems": [
+        "Build emotionally-charged design systems under tight time constraints.",
+        "Translate brand positioning into concrete visual decisions.",
+        "Design for suggestion and atmosphere, not just aesthetics."
+      ]
+    }
+  },
+  "caseStudyOperationalUx": {
+    "tabs": ["Overview", "Problem", "Process", "Solution", "Interface", "Impact & Learning"],
+    "overview": {
+      "tag": "CASE STUDY",
+      "title": "Operational UX for Shared Mobility Services",
+      "desc": "A UX system focused on critical state communication and decision-making for shared mobility operators — designed in 48 hours.",
+      "roleLabel": "Role",
+      "roleValue": "UX Design · Service Design",
+      "typeLabel": "Project type",
+      "typeValue": "Technical design exercise",
+      "yearLabel": "Year",
+      "yearValue": "2026",
+      "scopeLabel": "Scope",
+      "scopeItems": ["Operational UX", "Systems Thinking", "Service Design", "State Management"]
+    },
+    "problem": {
+      "title": "Problem",
+      "info": "Critical information competes for attention.",
+      "desc": "Operators managing fleets of shared vehicles face a constant stream of status updates, alerts, and decisions. Without a clear visual hierarchy and state management system, critical information gets lost in noise — leading to delayed responses and operational errors.",
+      "title1": "Key principle",
+      "challenge": "Design an interface that makes the right action obvious at every moment.",
+      "detailimg": "Cognitive overload: critical information gets lost in the noise"
+    },
+    "process": {
+      "title": "Process",
+      "title1": "Designing for decision-making, not for visualization",
+      "desc": "Starting from the operator's mental model, I mapped the critical states a vehicle or trip can be in, and the decisions each state requires. I then designed a communication hierarchy: what needs immediate attention, what can wait, and what is purely informational.",
+      "steps": ["Map operator mental model", "Define critical states", "Design communication hierarchy", "Prioritize signal over noise"]
+    },
+    "solution": {
+      "title": "Solution",
+      "desc": "A mobile-first operational interface with a clear state management system. Each vehicle or trip state has a distinct visual treatment — color, iconography, and typography work together to communicate urgency and priority without requiring the operator to read every detail.",
+      "title1": "Key principle",
+      "keyPrinciple": "Key actions are always reachable within one tap."
+    },
+    "interface": {
+      "title": "Interface",
+      "desc": "The interface reduces the cognitive effort required to triage operational situations. By making state communication visual and immediate, operators can process more situations in less time."
+    },
+    "impact": {
+      "title": "Impact & Learning",
+      "impactTitle": "Impact",
+      "impactDesc": "The system reduces the cognitive effort required to triage operational situations. By making state communication visual and immediate, operators can process more situations in less time — reducing response latency and decision fatigue.",
+      "learningTitle": "Learning",
+      "learningItems": [
+        "Operational UX is not about aesthetics — it is about reducing friction at the moment of decision.",
+        "The most important design skill is knowing what to show, what to hide, and in what order.",
+        "Designing under a 48-hour constraint forced prioritization of signal over noise from the very first frame."
+      ]
+    }
   },
   "caseStudyFintech": {
     "tabs": ["Overview", "Problem", "Process", "Impact", "Learning"],

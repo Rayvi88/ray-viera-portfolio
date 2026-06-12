@@ -10,8 +10,8 @@ export default function SelectedWorks() {
   const projects = [
     {
       id: "fintech-platform",
-      title: "FinTech Platform",
-      description: t("fintech"),
+      title: t("fintech.title"),
+      description: t("fintech.description"),
       tags: ["UX Research", "UI Design", "Design System"],
       href: "/case-study/fintech",
       imageBn: "/fintech-bn.png",
@@ -19,30 +19,12 @@ export default function SelectedWorks() {
     },
     {
       id: "social-media-strategy",
-      title: "Content Strategy & Visual Identity",
-      description: t("social"),
+      title: t("social.title"),
+      description: t("social.description"),
       tags: ["Community Building", "Brand Strategy", "Content Design"],
       href: "/case-study/social-media-strategy",
       imageBn: "/media-bn.png",
       imageColor: "/media-c.png",
-    },
-    {
-      id: "smart-documents-gtm",
-      title: "Smart Documents: Go To Market Strategy",
-      description: t("gtm"),
-      tags: ["UX Architecture", "Product Strategy", "Go To Market", "Conversion Design"],
-      href: "/case-study/smart-documents-gtm",
-      imageBn: "/gotomarket-bn.png",
-      imageColor: "/gotomarket-c.png",
-    },
-    {
-      id: "smart-documents",
-      title: "Smart Documents",
-      description: t("smart"),
-      tags: ["Product Concept", "UX Architecture", "Interaction Design"],
-      href: "/case-study/smart-documents",
-      imageBn: "/smart-bn.png",
-      imageColor: "/smart-c.png",
     },
   ];
 
@@ -61,14 +43,10 @@ export default function SelectedWorks() {
     return () => observer.disconnect();
   }, []);
 
-  const prev = () => setCurrent((c) => (c === 0 ? projects.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === projects.length - 1 ? 0 : c + 1));
-
-  const getVisible = () => {
-    const prev_i = (current - 1 + projects.length) % projects.length;
-    const next_i = (current + 1) % projects.length;
-    return [prev_i, current, next_i];
-  };
+  const prev = () =>
+    setCurrent((c) => (c === 0 ? projects.length - 1 : c - 1));
+  const next = () =>
+    setCurrent((c) => (c === projects.length - 1 ? 0 : c + 1));
 
   return (
     <section
@@ -92,17 +70,15 @@ export default function SelectedWorks() {
         </button>
 
         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 min-w-0">
-          {getVisible()
-            .slice(1, 3)
-            .map((projectIndex, i) => (
-              <ParticleCard
-                key={projects[projectIndex].id}
-                project={projects[projectIndex]}
-                index={i}
-                visible={visible}
-                className={i === 1 ? "hidden sm:block" : ""}
-              />
-            ))}
+          {projects.map((project, i) => (
+            <ParticleCard
+              key={project.id}
+              project={project}
+              index={i}
+              visible={visible}
+              className={i === 1 ? "hidden sm:block" : ""}
+            />
+          ))}
         </div>
 
         <button

@@ -14,7 +14,7 @@ export default function Navbar() {
   const links = [
     { label: t("byTheNumbers"), href: "/by-the-numbers" },
     { label: t("howIThink"), href: "/how-i-think" },
-    { label: t("selectedWorks"), href: "/selected-works" },
+    { label: t("selectedWorks"), href: "/projects" },
     { label: t("contactMe"), href: "/contact" },
   ];
 

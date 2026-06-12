@@ -49,12 +49,194 @@
     "card6title": "Product Strategy",
     "card6desc": "Para alinear el diseño con los objetivos de negocio y crear hojas de ruta de producto significativas."
   },
+  "projects": {
+    "label": "Trabajo",
+    "heading": "Proyectos",
+    "subheading": "Sistemas, experiencias y conceptos diseñados para transformar complejidad en claridad, ya sea en operaciones reales o en ejercicios de exploración estratégica.",
+    "meta": {
+      "title": "Proyectos — Ray Viera",
+      "description": "Trabajo seleccionado y exploraciones estratégicas de diseño por Ray Viera."
+    },
+    "selectedWorks": {
+      "tag": "Trabajo con clientes",
+      "title": "Trabajo Seleccionado",
+      "description": "Una selección de proyectos donde diseño, estrategia y sistemas se utilizan para transformar desafíos complejos en experiencias claras y accionables.",
+      "cta": "Ver Trabajo Seleccionado"
+    },
+    "strategicExplorations": {
+      "tag": "Ejercicios de diseño",
+      "title": "Exploraciones Estratégicas",
+      "description": "Conceptos y sistemas de diseño creados para investigar oportunidades, estructurar experiencias y explorar nuevas direcciones estratégicas.",
+      "cta": "Ver Exploraciones"
+    }
+  },
   "selectedWorks": {
-    "title": "Proyectos",
-    "fintech": "Diseño de arquitectura de documentación escalable para operaciones KYC globales.",
-    "social": "Construcción de identidad de marca y estrategia de contenido de accesorios personalizados para mascotas.",
+    "label": "Trabajo con Clientes",
+    "title": "Trabajo Seleccionado",
+    "subtitle": "Una selección de proyectos desarrollados en contextos reales, desde sistemas operativos y experiencia digital hasta comunicación y posicionamiento de marca.",
+    "cta": "Ver Caso de Estudio",
+    "fintechTag": "Fintech · Diseño de Producto",
+    "socialTag": "Marca · Estrategia de Contenido",
+    "fintech": {
+      "title": "Plataforma FinTech",
+      "description": "Diseño de arquitectura de documentación escalable para operaciones KYC globales."
+    },
+    "social": {
+      "title": "Estrategia de Contenido e Identidad Visual",
+      "description": "Construcción de identidad de marca y estrategia de contenido para posicionamiento en redes sociales."
+    },
+    "meta": {
+      "title": "Trabajo Seleccionado — Ray Viera",
+      "description": "Proyectos con clientes en diseño de producto fintech y estrategia de contenido."
+    }
+  },
+  "strategicExplorations": {
+    "label": "Ejercicios de Diseño",
+    "title": "Exploraciones Estratégicas",
+    "subtitle": "Exploraciones de diseño utilizadas para investigar sistemas, experiencias y oportunidades de negocio a través de conceptos visuales y propuestas estratégicas.",
+    "cta": "Ver Caso de Estudio",
+    "gtmTag": "Go To Market · UX",
+    "gtmTitle": "Smart Documents: Estrategia Go To Market",
+    "smartTag": "Concepto de Producto · IA",
+    "smartTitle": "Smart Documents",
+    "luxuryBrandTag": "Marca · Sistema Visual",
+    "luxuryBrandTitle": "Sistema de Comunicación para Marca de Lujo",
+    "operationalUxTag": "UX Operacional · Diseño de Servicios",
+    "operationalUxTitle": "UX Operacional para Movilidad Compartida",
     "gtm": "Exploración de posicionamiento de producto y diseño de conversión para un concepto de validación de documentos con IA.",
-    "smart": "Validación de documentos asistida por IA para logística internacional."
+    "smart": "Validación de documentos asistida por IA para logística internacional.",
+    "luxuryBrand": "Un sistema completo de identidad visual y lenguaje gráfico para una marca de experiencias sensoriales premium.",
+    "operationalUx": "Un sistema UX enfocado en la comunicación de estados críticos para operadores de movilidad compartida.",
+    "meta": {
+      "title": "Exploraciones Estratégicas — Ray Viera",
+      "description": "Ejercicios de diseño de 48 horas en estrategia GTM, sistemas UX y comunicación de marca."
+    }
+  },
+  "caseStudyLuxuryBrand": {
+    "tabs": ["Resumen", "Concepto de Marca", "Color y Tipografía", "Sistema Visual", "Fotografía y Tono", "Resultados y Aprendizaje"],
+    "overview": {
+      "tag": "CASO DE ESTUDIO",
+      "title": "Sistema de Comunicación para Marca de Lujo",
+      "desc": "Un sistema completo de identidad visual y lenguaje gráfico para una marca de experiencias sensoriales premium — diseñado en 48 horas.",
+      "roleLabel": "Rol",
+      "roleValue": "Diseño de Marca y Comunicación",
+      "typeLabel": "Tipo de proyecto",
+      "typeValue": "Ejercicio técnico de diseño",
+      "yearLabel": "Año",
+      "yearValue": "2026",
+      "scopeLabel": "Alcance",
+      "scopeItems": ["Identidad Visual", "Sistema Tipográfico", "Paleta de Color", "Guías de Fotografía"]
+    },
+    "brandConcept": {
+      "title": "Concepto de Marca",
+      "desc": "Una marca premium en el espacio de bienestar sensorial necesitaba un sistema de comunicación gráfica completo desde cero. El reto: construir una identidad visual que comunique intimidad, sofisticación y confianza — sin ser explícita. Cada decisión tenía que sentirse intencional, editorial y emocionalmente resonante.",
+      "conceptTitle": "El tacto como lenguaje íntimo",
+      "conceptDesc": "El sistema de diseño trabaja desde la abstracción sensorial — oscuridad cálida, curvas editoriales e insinuación visual en lugar de exposición directa.",
+      "pillars": ["Oscuridad Cálida", "Línea Editorial", "Insinuación Visual"]
+    },
+    "colorTypography": {
+      "title": "Color y Tipografía",
+      "paletteTitle": "Paleta de Color",
+      "paletteDesc": "Cinco tonos usados en proporción 70/20/10", 
+      "paletteDesc1": "PARA MANTENER JERARQUIA.",
+      "colors": [
+        { "name": "Noche", "hex": "#12100E" },
+        { "name": "Tierra", "hex": "#3A2E28" },
+        { "name": "Champagne", "hex": "#C9A882" },
+        { "name": "Mauve", "hex": "#D4A5A0" },
+        { "name": "Crema", "hex": "#F5F0E8" }
+      ],
+      "typographyTitle": "Tipografía", 
+      "typographySubtitle": "Títulos",
+      "typographySubtitle1": "Énfasis emocional",
+      "typographySubtitle2": "Cuerpo de texto",
+      "fonts": [
+        { "name": "Playfair Display", "use": "Títulos principales" },
+        { "name": "Cormorant Garamond Light Italic", "use": "Énfasis emocional" },
+        { "name": "Inter Light", "use": "Cuerpo de texto" }
+      ]
+},
+    "visualSystem": {
+  "title": "Sistema Visual",
+  "intro": "Un lenguaje gráfico completo que cubre:",
+  "items": [
+    "Uso del logo",
+    "Proporciones de color",
+    "Jerarquía tipográfica.",
+    "Principios de composición",
+    "Sistema de líneas decorativas en champagne dorado."
+  ],
+  "desc": "Cada elemento refuerza el posicionamiento sensorial de la marca."
+},
+    "photographyTone": {
+      "title": "Fotografía y Tono",
+      "desc": "Tratamiento en blanco y negro con tonos desaturados. Encuadres cerrados que sugieren textura y contacto. Iluminación suave y difusa con sombras que aportan profundidad. El sistema define qué usar y qué evitar — manteniendo el lenguaje visual consistente en todos los puntos de contacto.",
+      "rules": [
+        { "label": "Tratamiento", "value": "Blanco y negro, desaturado" },
+        { "label": "Encuadre", "value": "Primer plano, foco en textura" },
+        { "label": "Iluminación", "value": "Suave, difusa, con profundidad" }
+      ]
+    },
+    "results": {
+      "title": "Resultados y Aprendizajes",
+      "desc": "Mini manual de marca entregado en 48 horas — cubriendo concepto, paleta, tipografía, guías de fotografía y reglas de uso.",
+      "learningItems": [
+        "Construir sistemas de diseño con carga emocional bajo restricciones de tiempo severas.",
+        "Traducir el posicionamiento de marca en decisiones visuales concretas.",
+        "Diseñar para la sugerencia y la atmósfera, no solo para la estética."
+      ]
+    }
+  },
+  "caseStudyOperationalUx": {
+    "tabs": ["Resumen", "Problema", "Proceso", "Solución", "Interfaz", "Impacto y Aprendizaje"],
+    "overview": {
+      "tag": "CASO DE ESTUDIO",
+      "title": "UX Operacional para Servicios de Movilidad Compartida",
+      "desc": "Un sistema UX enfocado en la comunicación de estados críticos y toma de decisiones para operadores de movilidad compartida — diseñado en 48 horas.",
+      "roleLabel": "Rol",
+      "roleValue": "Diseño UX · Diseño de Servicios",
+      "typeLabel": "Tipo de proyecto",
+      "typeValue": "Ejercicio técnico de diseño",
+      "yearLabel": "Año",
+      "yearValue": "2026",
+      "scopeLabel": "Alcance",
+      "scopeItems": ["UX Operacional", "Pensamiento Sistémico", "Diseño de Servicios", "Gestión de Estados"]
+    },
+    "problem": {
+      "title": "Problema",
+      "info": "La información crítica, compite por atención",
+      "desc": "Los operadores que gestionan flotas de vehículos compartidos enfrentan un flujo constante de actualizaciones de estado, alertas y decisiones. Sin una jerarquía visual clara y un sistema de gestión de estados, la información crítica se pierde en el ruido — generando respuestas tardías y errores operacionales.",
+      "title1": "Principio Clave",
+      "challenge": "Diseñar una interfaz que haga obvia la acción correcta en cada momento.",
+      "detailimg": "Sobrecarga cognitiva, información crítica se pierde en el ruido"
+    },
+    "process": {
+      "title": "Proceso",
+      "title1": "Diseñando para la decisión, no para la visualización",
+      "desc": "Partiendo del modelo mental del operador, mapeé los estados críticos en los que puede estar un vehículo o un viaje, y las decisiones que cada estado requiere. Luego diseñé una jerarquía de comunicación: qué necesita atención inmediata, qué puede esperar y qué es puramente informativo.",
+      "steps": ["Mapear modelo mental del operador", "Definir estados críticos", "Diseñar jerarquía de comunicación", "Priorizar señal sobre ruido"]
+    },
+    "solution": {
+      "title": "Solución",
+      "desc": "Una interfaz operacional mobile-first con un sistema claro de gestión de estados. Cada estado de vehículo o viaje tiene un tratamiento visual distinto — color, iconografía y tipografía trabajan juntos para comunicar urgencia y prioridad sin que el operador tenga que leer cada detalle.",
+      "title1": "Principio Clave",
+      "keyPrinciple": "Las acciones clave siempre están a un tap de distancia."
+    },
+    "interface": {
+      "title": "Interfaz",
+      "desc": "La interfaz reduce el esfuerzo cognitivo necesario para clasificar situaciones operacionales. Al hacer la comunicación de estados visual e inmediata, los operadores pueden procesar más situaciones en menos tiempo."
+    },
+    "impact": {
+      "title": "Impacto y Aprendizajes",
+      "impactTitle": "Impacto",
+      "impactDesc": "El sistema reduce el esfuerzo cognitivo necesario para clasificar situaciones operacionales. Al hacer la comunicación de estados visual e inmediata, los operadores pueden procesar más situaciones en menos tiempo — reduciendo la latencia de respuesta y la fatiga de decisión.",
+      "learningTitle": "Aprendizajes",
+      "learningItems": [
+        "El UX operacional no se trata de estética — se trata de reducir la fricción en el momento de la decisión.",
+        "La habilidad de diseño más importante es saber qué mostrar, qué ocultar y en qué orden.",
+        "Diseñar bajo una restricción de 48 horas forzó la priorización de la señal sobre el ruido desde el primer frame."
+      ]
+    }
   },
   "caseStudyFintech": {
     "tabs": ["Resumen", "Problema", "Proceso", "Impacto", "Aprendizaje"],

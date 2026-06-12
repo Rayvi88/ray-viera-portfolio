@@ -1,9 +1,9 @@
 import { getTranslations, getLocale } from "next-intl/server";
-import SelectedWorksPage from "@/components/SelectedWorksPage";
+import Projects from "@/components/Projects";
 
 export async function generateMetadata() {
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "selectedWorks" });
+  const t = await getTranslations({ locale, namespace: "projects" });
 
   return {
     title: t("meta.title"),
@@ -11,6 +11,6 @@ export async function generateMetadata() {
   };
 }
 
-export default function SelectedWorksPageRoute() {
-  return <SelectedWorksPage />;
+export default function ProjectsPage() {
+  return <Projects />;
 }
