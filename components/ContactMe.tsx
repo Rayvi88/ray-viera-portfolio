@@ -2,6 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
+import {
+  trackLinkedInClick,
+  trackEmailClick,
+  trackContactFormSubmit,
+} from "@/lib/analytics/events";
 
 interface Particle {
   id: number;
@@ -231,6 +236,7 @@ export default function ContactMe() {
         body: JSON.stringify({ firstName, lastName, email, phone, subject, message }),
       });
       if (res.ok) {
+        trackContactFormSubmit(); // ← evento formulario enviado
         setStatus("success");
         setFirstName(""); setLastName(""); setEmail("");
         setPhone(""); setMessage(""); setSubject("");
@@ -274,7 +280,15 @@ export default function ContactMe() {
               </p>
             </div>
             <div className="flex flex-row lg:flex-col gap-4">
-              <a href="https://www.linkedin.com/in/ray-viera/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-fit group">
+              {/* LinkedIn — con tracking */}
+
+              <a
+                href="https://www.linkedin.com/in/ray-viera/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 w-fit group"
+                onClick={trackLinkedInClick}
+              >
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-opacity duration-200 group-hover:opacity-80" style={{ backgroundColor: "#00C3D0" }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -283,15 +297,21 @@ export default function ContactMe() {
                   </svg>
                 </div>
               </a>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#00C3D0" }}>
+
+              {/* Email — convertido a <a> con tracking */}
+              <a
+                href="mailto:raymvier@gmail.com"
+                className="flex items-center gap-3 group"
+                onClick={trackEmailClick}
+              >
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-opacity duration-200 group-hover:opacity-80" style={{ backgroundColor: "#00C3D0" }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                 </div>
-                <span className="text-sm" style={{ color: "#374151" }}>raymvier@gmail.com</span>
-              </div>
+                <span className="text-sm transition-colors duration-200 group-hover:text-[#00C3D0]" style={{ color: "#374151" }}>raymvier@gmail.com</span>
+              </a>
             </div>
           </div>
         </div>
@@ -336,7 +356,8 @@ export default function ContactMe() {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+        </div>
+        </div>
+
   );
 }
