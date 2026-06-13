@@ -7,7 +7,7 @@ export const trackEvent = (
   eventName: string,
   params?: Record<string, unknown>
 ) => {
-  sendGAEvent('event', eventName, params)
+  sendGAEvent('event', eventName, params ?? {})
 }
 
 // — Contacto —
