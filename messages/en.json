@@ -179,7 +179,7 @@
     },
     "results": {
       "title": "Results & Learn",
-      "desc": "Delivered a complete mini brand manual in 48 hours — covering concept, palette, typography, photography guidelines, and usage rules.",
+      "desc": "Delivered a complete mini brand manual, covering concept, palette, typography, photography guidelines, and usage rules.",
       "learningItems": [
         "Build emotionally-charged design systems under tight time constraints.",
         "Translate brand positioning into concrete visual decisions.",
@@ -192,7 +192,7 @@
     "overview": {
       "tag": "CASE STUDY",
       "title": "Operational UX for Shared Mobility Services",
-      "desc": "A UX system focused on critical state communication and decision-making for shared mobility operators — designed in 48 hours.",
+      "desc": "A UX system focused on critical state communication and decision-making for shared mobility operators.",
       "roleLabel": "Role",
       "roleValue": "UX Design · Service Design",
       "typeLabel": "Project type",
@@ -205,7 +205,7 @@
     "problem": {
       "title": "Problem",
       "info": "Critical information competes for attention.",
-      "desc": "Operators managing fleets of shared vehicles face a constant stream of status updates, alerts, and decisions. Without a clear visual hierarchy and state management system, critical information gets lost in noise — leading to delayed responses and operational errors.",
+      "desc": "Operators managing fleets of shared vehicles face a constant stream of status updates, alerts, and decisions. Without a clear visual hierarchy and state management system, critical information gets lost in noise, leading to delayed responses and operational errors.",
       "title1": "Key principle",
       "challenge": "Design an interface that makes the right action obvious at every moment.",
       "detailimg": "Cognitive overload: critical information gets lost in the noise"
@@ -218,7 +218,7 @@
     },
     "solution": {
       "title": "Solution",
-      "desc": "A mobile-first operational interface with a clear state management system. Each vehicle or trip state has a distinct visual treatment — color, iconography, and typography work together to communicate urgency and priority without requiring the operator to read every detail.",
+      "desc": "A mobile-first operational interface with a clear state management system. Each vehicle or trip state has a distinct visual treatment, color, iconography, and typography work together to communicate urgency and priority without requiring the operator to read every detail.",
       "title1": "Key principle",
       "keyPrinciple": "Key actions are always reachable within one tap."
     },
@@ -229,12 +229,12 @@
     "impact": {
       "title": "Impact & Learning",
       "impactTitle": "Impact",
-      "impactDesc": "The system reduces the cognitive effort required to triage operational situations. By making state communication visual and immediate, operators can process more situations in less time — reducing response latency and decision fatigue.",
+      "impactDesc": "The system reduces the cognitive effort required to triage operational situations. By making state communication visual and immediate, operators can process more situations in less time, reducing response latency and decision fatigue.",
       "learningTitle": "Learning",
       "learningItems": [
-        "Operational UX is not about aesthetics — it is about reducing friction at the moment of decision.",
+        "Operational UX is not about aesthetics, it is about reducing friction at the moment of decision.",
         "The most important design skill is knowing what to show, what to hide, and in what order.",
-        "Designing under a 48-hour constraint forced prioritization of signal over noise from the very first frame."
+        "Designing constraint forced prioritization of signal over noise from the very first frame."
       ]
     }
   },
@@ -344,7 +344,7 @@
       "tag": "CASE STUDY",
       "title": "Smart Documents",
       "desc1": "AI assisted document validation for international logistics.",
-      "desc2": "Experimental Product Concept — 48h Design Challenge: how AI could reduce manual document verification in logistics operations.",
+      "desc2": "Experimental Product Concept, Design Challenge: how AI could reduce manual document verification in logistics operations.",
       "roleLabel": "Role",
       "roleValue": "Product Design",
       "typeLabel": "Project type",

@@ -117,7 +117,7 @@
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "Sistema de Comunicación para Marca de Lujo",
-      "desc": "Un sistema completo de identidad visual y lenguaje gráfico para una marca de experiencias sensoriales premium — diseñado en 48 horas.",
+      "desc": "Un sistema completo de identidad visual y lenguaje gráfico para una marca de experiencias sensoriales premium.",
       "roleLabel": "Rol",
       "roleValue": "Diseño de Marca y Comunicación",
       "typeLabel": "Tipo de proyecto",
@@ -129,9 +129,9 @@
     },
     "brandConcept": {
       "title": "Concepto de Marca",
-      "desc": "Una marca premium en el espacio de bienestar sensorial necesitaba un sistema de comunicación gráfica completo desde cero. El reto: construir una identidad visual que comunique intimidad, sofisticación y confianza — sin ser explícita. Cada decisión tenía que sentirse intencional, editorial y emocionalmente resonante.",
+      "desc": "Una marca premium en el espacio de bienestar sensorial necesitaba un sistema de comunicación gráfica completo desde cero. El reto: construir una identidad visual que comunique intimidad, sofisticación y confianza, sin ser explícita. Cada decisión tenía que sentirse intencional, editorial y emocionalmente resonante.",
       "conceptTitle": "El tacto como lenguaje íntimo",
-      "conceptDesc": "El sistema de diseño trabaja desde la abstracción sensorial — oscuridad cálida, curvas editoriales e insinuación visual en lugar de exposición directa.",
+      "conceptDesc": "El sistema de diseño trabaja desde la abstracción sensorial, oscuridad cálida, curvas editoriales e insinuación visual en lugar de exposición directa.",
       "pillars": ["Oscuridad Cálida", "Línea Editorial", "Insinuación Visual"]
     },
     "colorTypography": {
@@ -170,7 +170,7 @@
 },
     "photographyTone": {
       "title": "Fotografía y Tono",
-      "desc": "Tratamiento en blanco y negro con tonos desaturados. Encuadres cerrados que sugieren textura y contacto. Iluminación suave y difusa con sombras que aportan profundidad. El sistema define qué usar y qué evitar — manteniendo el lenguaje visual consistente en todos los puntos de contacto.",
+      "desc": "Tratamiento en blanco y negro con tonos desaturados. Encuadres cerrados que sugieren textura y contacto. Iluminación suave y difusa con sombras que aportan profundidad. El sistema define qué usar y qué evitar, manteniendo el lenguaje visual consistente en todos los puntos de contacto.",
       "rules": [
         { "label": "Tratamiento", "value": "Blanco y negro, desaturado" },
         { "label": "Encuadre", "value": "Primer plano, foco en textura" },
@@ -179,7 +179,7 @@
     },
     "results": {
       "title": "Resultados y Aprendizajes",
-      "desc": "Mini manual de marca entregado en 48 horas — cubriendo concepto, paleta, tipografía, guías de fotografía y reglas de uso.",
+      "desc": "Mini manual de marca, cubriendo concepto, paleta, tipografía, guías de fotografía y reglas de uso.",
       "learningItems": [
         "Construir sistemas de diseño con carga emocional bajo restricciones de tiempo severas.",
         "Traducir el posicionamiento de marca en decisiones visuales concretas.",
@@ -192,7 +192,7 @@
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "UX Operacional para Servicios de Movilidad Compartida",
-      "desc": "Un sistema UX enfocado en la comunicación de estados críticos y toma de decisiones para operadores de movilidad compartida — diseñado en 48 horas.",
+      "desc": "Un sistema UX enfocado en la comunicación de estados críticos y toma de decisiones para operadores de movilidad compartida.",
       "roleLabel": "Rol",
       "roleValue": "Diseño UX · Diseño de Servicios",
       "typeLabel": "Tipo de proyecto",
@@ -205,7 +205,7 @@
     "problem": {
       "title": "Problema",
       "info": "La información crítica, compite por atención",
-      "desc": "Los operadores que gestionan flotas de vehículos compartidos enfrentan un flujo constante de actualizaciones de estado, alertas y decisiones. Sin una jerarquía visual clara y un sistema de gestión de estados, la información crítica se pierde en el ruido — generando respuestas tardías y errores operacionales.",
+      "desc": "Los operadores que gestionan flotas de vehículos compartidos enfrentan un flujo constante de actualizaciones de estado, alertas y decisiones. Sin una jerarquía visual clara y un sistema de gestión de estados, la información crítica se pierde en el ruido, generando respuestas tardías y errores operacionales.",
       "title1": "Principio Clave",
       "challenge": "Diseñar una interfaz que haga obvia la acción correcta en cada momento.",
       "detailimg": "Sobrecarga cognitiva, información crítica se pierde en el ruido"
@@ -218,7 +218,7 @@
     },
     "solution": {
       "title": "Solución",
-      "desc": "Una interfaz operacional mobile-first con un sistema claro de gestión de estados. Cada estado de vehículo o viaje tiene un tratamiento visual distinto — color, iconografía y tipografía trabajan juntos para comunicar urgencia y prioridad sin que el operador tenga que leer cada detalle.",
+      "desc": "Una interfaz operacional mobile-first con un sistema claro de gestión de estados. Cada estado de vehículo o viaje tiene un tratamiento visual distinto, color, iconografía y tipografía trabajan juntos para comunicar urgencia y prioridad sin que el operador tenga que leer cada detalle.",
       "title1": "Principio Clave",
       "keyPrinciple": "Las acciones clave siempre están a un tap de distancia."
     },
@@ -232,7 +232,7 @@
       "impactDesc": "El sistema reduce el esfuerzo cognitivo necesario para clasificar situaciones operacionales. Al hacer la comunicación de estados visual e inmediata, los operadores pueden procesar más situaciones en menos tiempo — reduciendo la latencia de respuesta y la fatiga de decisión.",
       "learningTitle": "Aprendizajes",
       "learningItems": [
-        "El UX operacional no se trata de estética — se trata de reducir la fricción en el momento de la decisión.",
+        "El UX operacional no se trata de estética, se trata de reducir la fricción en el momento de la decisión.",
         "La habilidad de diseño más importante es saber qué mostrar, qué ocultar y en qué orden.",
         "Diseñar bajo una restricción de 48 horas forzó la priorización de la señal sobre el ruido desde el primer frame."
       ]
@@ -344,7 +344,7 @@
       "tag": "CASO DE ESTUDIO",
       "title": "Smart Documents",
       "desc1": "Validación de documentos asistida por IA para logística internacional.",
-      "desc2": "Concepto de Producto Experimental — Reto de Diseño 48h: cómo la IA podría reducir la verificación manual de documentos en operaciones logísticas.",
+      "desc2": "Concepto de Producto Experimental. Reto de Diseño: cómo la IA podría reducir la verificación manual de documentos en operaciones logísticas.",
       "roleLabel": "Rol",
       "roleValue": "Product Design",
       "typeLabel": "Tipo de proyecto",
