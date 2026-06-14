@@ -24,10 +24,7 @@ export default function CaseStudyOperationalUx() {
   const scopeItems = t.raw("overview.scopeItems") as string[];
   const processSteps = t.raw("process.steps") as string[];
   const learningItems = t.raw("impact.learningItems") as string[];
-
-  const prev = () => setActiveTab((i) => (i === 0 ? tabs.length - 1 : i - 1));
-  const next = () => setActiveTab((i) => (i === tabs.length - 1 ? 0 : i + 1));
-
+  
   const vehicleStates = [
     { label: "Activo", icon: "✓", color: "#4CAF50", bg: "#F0FFF4", objective: "Operación normal", action: "Monitorear disponibilidad" },
     { label: "Batería baja", icon: "🔋", color: "#FF5722", bg: "#FFF3F0", objective: "Prevenir interrupción", action: "Dirigir a zona de recarga" },

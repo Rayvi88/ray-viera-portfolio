@@ -8,7 +8,6 @@ import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytic
 export default function CaseStudyLuxuryBrand() {
   const t = useTranslations("caseStudyLuxuryBrand");
   const [activeTab, setActiveTab] = useState(0);
-const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (index: number) => {
     setActiveTab(index);
@@ -32,9 +31,6 @@ const [activeTab, setActiveTab] = useState(0);
     "Composición elegante y tipografía con carácter editorial.",
     "Sugerencia y detalle, en lugar de exposición, menos es más.",
   ];
-
-  const prev = () => setActiveTab((i) => (i === 0 ? tabs.length - 1 : i - 1));
-  const next = () => setActiveTab((i) => (i === tabs.length - 1 ? 0 : i + 1));
 
   return (
     <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-8 lg:py-12 bg-[#FFFCF6]">
