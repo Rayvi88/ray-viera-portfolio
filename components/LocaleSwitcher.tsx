@@ -3,6 +3,7 @@
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useTransition } from "react";
+import { trackLocaleSwitch } from "@/lib/analytics/events";
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
@@ -12,6 +13,7 @@ export default function LocaleSwitcher() {
 
   const toggle = () => {
     const nextLocale = locale === "en" ? "es" : "en";
+    trackLocaleSwitch(locale, nextLocale);
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
     });

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { trackProjectCardClick } from "@/lib/analytics/events";
 
 export default function StrategicExplorations() {
   const t = useTranslations("strategicExplorations");
@@ -166,9 +167,10 @@ export default function StrategicExplorations() {
                   style={{ gap: "16px" }}
                 >
                   {slideCards.map((card, i) => (
-                    <Link
+                   <Link
                       key={card.key}
                       href={card.href}
+                      onClick={() => trackProjectCardClick(card.key)}
                       className="group block flex-1 min-w-0"
                     >
                       <div

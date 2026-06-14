@@ -6,6 +6,7 @@ import { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import Particles from "@tsparticles/react";
 import Image from "next/image";
+import { trackProjectCardClick } from "@/lib/analytics/events";
 
 interface Project {
   id: string;
@@ -45,6 +46,7 @@ export default function ParticleCard({ project, index, visible, className = "" }
   return (
     <Link
       href={project.href}
+      onClick={() => trackProjectCardClick(project.id)}
       className={`
         group block rounded-none transition-all duration-700 ease-out
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}

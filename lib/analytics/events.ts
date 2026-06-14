@@ -34,8 +34,8 @@ export const trackCaseStudyCompleted = (caseStudy: string) =>
   trackEvent(GA_EVENTS.CASE_STUDY_COMPLETED, { case_study: caseStudy })
 
 // — Home —
-export const trackHeroCtaClick = () =>
-  trackEvent(GA_EVENTS.HERO_CTA_CLICK)
+export const trackHeroCtaClick = (cta: string) =>
+  trackEvent(GA_EVENTS.HERO_CTA_CLICK, { cta })
 
 export const trackHeroScroll = () =>
   trackEvent(GA_EVENTS.HERO_SCROLL)

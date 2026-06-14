@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "./LocaleSwitcher";
+import { trackNavLinkClick } from "@/lib/analytics/events";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -24,7 +25,10 @@ export default function Navbar() {
       <Link
         href="/"
         className="text-lg font-bold tracking-widest hover:text-[#00C3D0] transition"
-        onClick={() => setOpen(false)}
+        onClick={() => {
+          setOpen(false);
+          trackNavLinkClick("home");
+        }}
       >
         {t("logo")}
       </Link>
@@ -37,6 +41,7 @@ export default function Navbar() {
             <li key={item.href}>
               <Link
                 href={item.href}
+                onClick={() => trackNavLinkClick(item.href)}
                 className={`cursor-pointer transition font-medium ${
                   isActive
                     ? "text-[#00C3D0] font-bold border-b-2 border-[#00C3D0] pb-0.5"
@@ -88,7 +93,10 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  trackNavLinkClick(item.href);
+                }}
                 className={`px-6 py-3 text-sm font-medium transition ${
                   isActive
                     ? "text-[#00C3D0] font-bold"

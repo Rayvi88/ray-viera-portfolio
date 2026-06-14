@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { trackHeroCtaClick } from "@/lib/analytics/events";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -22,6 +23,7 @@ export default function Hero() {
         <div className="mt-6 lg:mt-8 flex gap-3 lg:gap-4">
           <Link
             href="/contact"
+            onClick={() => trackHeroCtaClick("contact")}
             className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
           >
             {t("contactMe")}
@@ -29,6 +31,7 @@ export default function Hero() {
 
           <Link
             href="/selected-works"
+            onClick={() => trackHeroCtaClick("selected_works")}
             className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
           >
             {t("selectedWorks")}

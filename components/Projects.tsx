@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { trackProjectCardClick } from "@/lib/analytics/events";
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -52,7 +53,12 @@ export default function Projects() {
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {cards.map((card) => (
-            <Link key={card.key} href={card.href} className="group block">
+            <Link
+              key={card.key}
+              href={card.href}
+              className="group block"
+              onClick={() => trackProjectCardClick(card.key)}
+            >
               <div
                 className="border rounded-sm overflow-hidden transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl"
                 style={{ borderColor: "#E8E4DC", background: "#F7F4EE" }}
