@@ -3,10 +3,22 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
 
 export default function CaseStudyOperationalUx() {
   const t = useTranslations("caseStudyOperationalUx");
-  const [activeTab, setActiveTab] = useState(0);
+ const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabChange = (index: number) => {
+    setActiveTab(index);
+    trackCaseStudyTabChange("operational-ux", tabs[index]);
+    if (index === tabs.length - 1) {
+      trackCaseStudyCompleted("operational-ux");
+    }
+  };
+
+  const prev = () => handleTabChange(activeTab === 0 ? tabs.length - 1 : activeTab - 1);
+  const next = () => handleTabChange(activeTab === tabs.length - 1 ? 0 : activeTab + 1);
 
   const tabs = t.raw("tabs") as string[];
   const scopeItems = t.raw("overview.scopeItems") as string[];
@@ -204,7 +216,7 @@ export default function CaseStudyOperationalUx() {
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
               <button
-                onClick={() => setActiveTab(i)}
+                onClick={() => handleTabChange(i)}
                 className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${
                   i === activeTab ? "text-[#00C3D0] font-bold" : "text-[#888] hover:text-[#00C3D0]"
                 }`}

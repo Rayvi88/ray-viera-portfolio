@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
 
 function OverviewTab() {
   const t = useTranslations("caseStudySocialMedia");
@@ -314,9 +315,16 @@ export default function CaseStudySocialMediaStrategy() {
 
   const [activeTab, setActiveTab] = useState(0);
 
-  const prev = () => setActiveTab((tab) => (tab === 0 ? tabs.length - 1 : tab - 1));
-  const next = () => setActiveTab((tab) => (tab === tabs.length - 1 ? 0 : tab + 1));
+  const handleTabChange = (index: number) => {
+    setActiveTab(index);
+    trackCaseStudyTabChange("social-media", tabs[index]);
+    if (index === tabs.length - 1) {
+      trackCaseStudyCompleted("social-media");
+    }
+  };
 
+  const prev = () => handleTabChange(activeTab === 0 ? tabs.length - 1 : activeTab - 1);
+  const next = () => handleTabChange(activeTab === tabs.length - 1 ? 0 : activeTab + 1);
   const renderTab = () => {
     switch (activeTab) {
       case 0: return <OverviewTab />;
@@ -347,7 +355,7 @@ export default function CaseStudySocialMediaStrategy() {
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
               <button
-                onClick={() => setActiveTab(i)}
+                onClick={() => handleTabChange(i)}
                 className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${
                   i === activeTab ? "text-[#00C3D0] font-bold" : "text-gray-500 hover:text-[#00C3D0]"
                 }`}

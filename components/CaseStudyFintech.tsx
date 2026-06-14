@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
 
 function OverviewTab() {
   const t = useTranslations("caseStudyFintech");
@@ -279,10 +280,18 @@ export default function CaseStudyFintech() {
   const t = useTranslations("caseStudyFintech");
   const tabs = t.raw("tabs") as string[];
 
-  const [activeTab, setActiveTab] = useState(0);
+ const [activeTab, setActiveTab] = useState(0);
 
-  const prev = () => setActiveTab((t) => (t === 0 ? tabs.length - 1 : t - 1));
-  const next = () => setActiveTab((t) => (t === tabs.length - 1 ? 0 : t + 1));
+  const handleTabChange = (index: number) => {
+    setActiveTab(index);
+    trackCaseStudyTabChange("fintech", tabs[index]);
+    if (index === tabs.length - 1) {
+      trackCaseStudyCompleted("fintech");
+    }
+  };
+
+  const prev = () => handleTabChange(activeTab === 0 ? tabs.length - 1 : activeTab - 1);
+  const next = () => handleTabChange(activeTab === tabs.length - 1 ? 0 : activeTab + 1);
 
   const renderTab = () => {
     switch (activeTab) {
@@ -320,7 +329,7 @@ export default function CaseStudyFintech() {
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
               <button
-                onClick={() => setActiveTab(i)}
+                onClick={() => handleTabChange(i)}
                 className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${
                   i === activeTab ? "text-[#00C3D0] font-bold" : "text-gray-500 hover:text-[#00C3D0]"
                 }`}

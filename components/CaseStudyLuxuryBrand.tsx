@@ -3,11 +3,23 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
 
 export default function CaseStudyLuxuryBrand() {
   const t = useTranslations("caseStudyLuxuryBrand");
   const [activeTab, setActiveTab] = useState(0);
+const [activeTab, setActiveTab] = useState(0);
 
+  const handleTabChange = (index: number) => {
+    setActiveTab(index);
+    trackCaseStudyTabChange("luxury-brand", tabs[index]);
+    if (index === tabs.length - 1) {
+      trackCaseStudyCompleted("luxury-brand");
+    }
+  };
+
+  const prev = () => handleTabChange(activeTab === 0 ? tabs.length - 1 : activeTab - 1);
+  const next = () => handleTabChange(activeTab === tabs.length - 1 ? 0 : activeTab + 1);
   const tabs = t.raw("tabs") as string[];
   const colors = t.raw("colorTypography.colors") as { name: string; hex: string }[];
   const fonts = t.raw("colorTypography.fonts") as { name: string; use: string }[];
@@ -243,7 +255,7 @@ export default function CaseStudyLuxuryBrand() {
         <div className="flex items-center gap-4 lg:gap-6 overflow-x-auto pb-1">
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
-              <button onClick={() => setActiveTab(i)} className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${i === activeTab ? "text-[#00C3D0] font-bold" : "text-[#888] hover:text-[#00C3D0]"}`}>
+              <button onClick={() => handleTabChange(i)} className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${i === activeTab ? "text-[#00C3D0] font-bold" : "text-[#888] hover:text-[#00C3D0]"}`}>
                 {tab}
               </button>
               {i < tabs.length - 1 && <span className="text-[#ccc] text-xs">|</span>}
