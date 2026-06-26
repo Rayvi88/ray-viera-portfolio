@@ -42,7 +42,7 @@ export default function Projects() {
           {t("label")}
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-light text-[#1a1a1a] leading-tight mb-3">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#00C3D0] leading-tight mb-3">
           {t("heading")}
         </h2>
 

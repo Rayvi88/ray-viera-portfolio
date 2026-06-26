@@ -20,6 +20,21 @@ export default function Hero() {
           {t("subheadline")}
         </p>
 
+        {/* NEXA LABS hook */}
+        <div className="mt-6 lg:mt-8 inline-flex flex-col gap-1 border-l-2 border-[#00C3D0] pl-4">
+          <p className="text-xs tracking-[0.1em] uppercase text-[#888]">
+            {t("nexaHook")}
+          </p>
+          <Link
+            href="/nexa-labs"
+            onClick={() => trackHeroCtaClick("nexa_labs")}
+            className="text-sm text-[#1a1a1a] font-medium hover:text-[#00C3D0] transition-colors duration-200 flex items-center gap-1.5"
+          >
+            {t("nexaHookCta")}
+            <span className="text-[#00C3D0]">→</span>
+          </Link>
+        </div>
+
         <div className="mt-6 lg:mt-8 flex gap-3 lg:gap-4">
           <Link
             href="/contact"

@@ -12,7 +12,9 @@
     "highlight": "clarity",
     "subheadline": "I help teams launch and scale products with clarity and purpose.",
     "contactMe": "Contact me",
-    "selectedWorks": "Selected works"
+    "selectedWorks": "Selected works",
+    "nexaHook": "Does your brand have a system, or just a logo?",
+    "nexaHookCta": "Take the Brand Chaos Score →"
   },
   "footer": {
     "copy": "© 2026 Ray Viera. All rights reserved."
@@ -611,5 +613,212 @@
     "btnSending": "Sending...",
     "btnSuccess": "Message Sent!",
     "btnError": "Error, try again"
+  },
+  "nexaLab": {
+  "nav": "NEXA LABS",
+  "lab01": {
+    "author": "By Ray Viera",
+    "date": "June 2026",
+    "hook": "Does your brand have a system — or just a logo?",
+    "hookCta": "Take the Brand Chaos Score →",
+    "eyebrow": "NEXA LABS · Lab 01",
+    "title": "How much chaos does your brand have?",
+    "subtitle": "12 questions to find out the real state of your brand. Get your Brand Chaos Score and a personalized report.",
+    "meta": {
+      "questions": "12",
+      "questionsLabel": "questions",
+      "time": "3 min",
+      "timeLabel": "duration",
+      "cost": "free",
+      "costLabel": "no cost"
+    },
+    "startBtn": "Start diagnosis →",
+    "essay": {
+      "eyebrow": "NEXA LABS · Lab 01 — Brand Operating System",
+      "title": "Why your brand looks good and everything still costs twice as much",
+      "metaDescription": "Discover your Brand Chaos Score. 12 questions to assess your brand identity system and find out what's blocking your growth.",
+      "body": "They have a logo. A color palette. An Instagram feed with visual consistency and a website that makes a strong first impression.\n\nAnd yet — every time something needs to be produced, a campaign, a post, a client deliverable, the process starts almost from scratch. Someone searches for the right file across three different folders. Someone asks whether this version of the logo is the correct one. Someone waits for approval from the one person who always has to approve everything.\n\nThe problem isn't the brand. It's that the brand has no system.\n\nA brand identity system isn't the guidelines document that lives in a PDF no one opens. It's the set of documented decisions, organized brand assets, and defined processes that allow anyone on the team to produce on-brand work — without asking, without waiting, without redoing.\n\nWithout that system, growth has an invisible ceiling. You can bring in more clients, hire more people, invest more in content — and still feel just as trapped in the day-to-day operation. Your brand doesn't scale because your operation isn't ready to.",
+      "ctaLabel": "Assess your brand now",
+      "author": "By Ray Viera",
+      "date": "June 2026"
+    },
+    "progress": "of 12",
+    "prev": "← Previous",
+    "next": "Next →",
+    "finish": "See my result →",
+    "emailTitle": "Your result is ready",
+    "emailSubtitle": "Enter your email to see your Brand Chaos Score and receive your personalized report.",
+    "emailPlaceholder": "you@email.com",
+    "emailBtn": "See my result →",
+    "emailPrivacy": "No spam. Just your report. Unsubscribe anytime.",
+    "resultsEyebrow": "Your Brand Chaos Score",
+    "dimensionLabel": "Result by dimension",
+    "profileLabel": "Brand profile",
+    "risksLabel": "Main risks detected",
+    "prioritiesLabel": "Recommended priorities",
+    "downloadBtn": "Save report",
+    "scheduleBtn": "Schedule a call →",
+    "levels": {
+      "chaotic": "Chaotic",
+      "deficient": "Deficient",
+      "functional": "Functional",
+      "scalable": "Scalable"
+    },
+    "levelDescriptions": {
+      "chaotic": "Your brand depends entirely on you. Without a system, growth is blocked.",
+      "deficient": "You have scattered elements but no structure. Every project starts from scratch.",
+      "functional": "You have a solid foundation, but scalability is limited. A system can multiply your capacity.",
+      "scalable": "Your brand has real structure. The next level is to optimize and automate."
+    },
+    "ctaMessages": {
+      "chaotic": "Your brand needs a system urgently. We can transform it in 4–6 weeks with the Brand Operating System.",
+      "deficient": "You have the foundation. The BOS organizes everything that already exists and turns it into a scalable system.",
+      "functional": "You're close. A complete BOS takes you to the next level without starting from scratch.",
+      "scalable": "Excellent structure. The BOS + Digital Experience takes your system to the next level."
+    },
+    "dimensions": {
+      "identity": "Visual identity",
+      "content": "Content",
+      "assets": "Assets & organization",
+      "processes": "Internal processes",
+      "scalability": "Scalability"
+    },
+    "questions": [
+      {
+        "dim": "identity",
+        "text": "Does your brand have documented visual guidelines?",
+        "options": [
+          "We have nothing defined",
+          "We have a logo, but nothing else",
+          "We have some elements, but they're not documented",
+          "We have a complete, up-to-date brand manual"
+        ]
+      },
+      {
+        "dim": "identity",
+        "text": "How consistent is your brand's visual presence across all channels?",
+        "options": [
+          "Every piece looks different — no coherence",
+          "There's some consistency, but it depends on who's doing it",
+          "Mostly consistent, with some variations",
+          "Completely consistent across all touchpoints"
+        ]
+      },
+      {
+        "dim": "content",
+        "text": "Does your team know what type of content can and cannot be published?",
+        "options": [
+          "No criteria — everyone decides on their own",
+          "Informal criteria, passed by word of mouth",
+          "Some written criteria, but incomplete",
+          "A clear content guide that everyone knows"
+        ]
+      },
+      {
+        "dim": "content",
+        "text": "How long does it take to produce and approve a piece of content?",
+        "options": [
+          "Days or weeks, with many revisions",
+          "More than a day, with at least 3 revisions",
+          "Less than a day, with 1–2 revisions",
+          "Clear process, few revisions, flows on its own"
+        ]
+      },
+      {
+        "dim": "assets",
+        "text": "Where are your brand files right now?",
+        "options": [
+          "On someone's phone or computer — not sure exactly",
+          "In various folders with no clear organization",
+          "In a shared folder, partially organized",
+          "In a centralized system, accessible to the whole team"
+        ]
+      },
+      {
+        "dim": "assets",
+        "text": "If you needed the logo in high resolution tomorrow, how long would it take to find it?",
+        "options": [
+          "More than 30 minutes, or I don't know where it is",
+          "Between 10 and 30 minutes",
+          "Less than 10 minutes",
+          "Less than 2 minutes — always accessible"
+        ]
+      },
+      {
+        "dim": "assets",
+        "text": "Can your team create brand materials without asking you for files every time?",
+        "options": [
+          "No — they always ask me",
+          "Sometimes, but they prefer to confirm with me",
+          "Most of the time, but something's always missing",
+          "Yes — everything is available and they know where it is"
+        ]
+      },
+      {
+        "dim": "processes",
+        "text": "Do you have your business processes documented?",
+        "options": [
+          "Nothing is documented — it's all in my head",
+          "Some processes are written, but not updated",
+          "The main processes are documented",
+          "Everything is documented and the team follows it"
+        ]
+      },
+      {
+        "dim": "processes",
+        "text": "What happens if you're unavailable for a week?",
+        "options": [
+          "The business stops or generates many errors",
+          "Someone can cover, but with many questions",
+          "The team can operate with minimal supervision",
+          "The business runs fine without me"
+        ]
+      },
+      {
+        "dim": "processes",
+        "text": "How do you handle client deliverable approvals?",
+        "options": [
+          "No defined process — WhatsApp or whatever works",
+          "Informal, but works most of the time",
+          "We have a process, but it's not always followed",
+          "Clear process, documented and always respected"
+        ]
+      },
+      {
+        "dim": "scalability",
+        "text": "If you doubled your clients tomorrow, could your operation handle it?",
+        "options": [
+          "No — it would collapse",
+          "With a lot of effort and probable quality loss",
+          "Yes, with some adjustments",
+          "Yes — the system is ready to scale"
+        ]
+      },
+      {
+        "dim": "scalability",
+        "text": "Could someone new understand and run your brand in less than a week?",
+        "options": [
+          "Impossible without me explaining everything personally",
+          "With a lot of help from me, maybe",
+          "With some guidance, probably yes",
+          "Yes — we have enough documentation to onboard quickly"
+        ]
+      }
+    ],
+    "risks": {
+      "identity": "Lack of documented visual criteria — each piece depends on whoever's doing it.",
+      "content": "Unstructured content process — endless revisions and dependency on the brand leader.",
+      "assets": "Scattered assets — time lost searching for files in every project.",
+      "processes": "Personality-driven operation — the business can't function without you present.",
+      "scalability": "Blocked scalability — growing means collapsing the current operation."
+    },
+    "priorities": {
+      "identity": { "action": "Create a documented visual system", "sub": "A brand manual with clear, accessible guidelines." },
+      "content": { "action": "Define a content approval workflow", "sub": "Written criteria and a review process within 24h." },
+      "assets": { "action": "Centralize and organize brand assets", "sub": "One repository, accessible to the entire team." },
+      "processes": { "action": "Document key business processes", "sub": "SOPs that allow operation without depending on the leader." },
+      "scalability": { "action": "Design the system to scale", "sub": "A structure that supports growth without collapsing operations." }
+    }
   }
+}
 }
