@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const locales = ["en", "es"];
 const GA_ID = "G-ZGVBE1LREG";
@@ -21,21 +21,10 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}');
-        `}
-      </Script>
       <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
       </NextIntlClientProvider>
+      <GoogleAnalytics gaId={GA_ID} />
     </>
   );
 }
