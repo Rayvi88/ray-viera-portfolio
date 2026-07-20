@@ -13,6 +13,7 @@
     "@tsparticles/react": "^3.0.0",
     "chart.js": "^4.5.1",
     "framer-motion": "^12.34.3",
+    "jspdf": "^4.2.1",
     "next": "16.1.6",
     "next-intl": "^4.8.3",
     "react": "19.2.3",

@@ -4,7 +4,8 @@
     "byTheNumbers": "En Números",
     "howIThink": "Cómo Pienso",
     "selectedWorks": "Proyectos",
-    "contactMe": "Contacto"
+    "contactMe": "Contacto",
+    "atlas": "Atlas"
   },
   "hero": {
     "headline1": "Diseñando sistemas",
@@ -13,8 +14,8 @@
     "subheadline": "Ayudo a equipos a lanzar y escalar productos con claridad y propósito.",
     "contactMe": "Contáctame",
     "selectedWorks": "Ver proyectos",
-    "nexaHook": "¿Tu marca tiene sistema — o solo tiene logo?",
-    "nexaHookCta": "Descubre tu Brand Chaos Score →"
+    "nexaHook": "¿Tu marca tiene sistema, o solo tiene logo?",
+    "nexaHookCta": "Empieza tu Brand Operating System. Lab-001 ya disponible"
   },
   "footer": {
     "copy": "© 2026 Ray Viera. Todos los derechos reservados."
@@ -115,7 +116,14 @@
     }
   },
   "caseStudyLuxuryBrand": {
-    "tabs": ["Resumen", "Concepto de Marca", "Color y Tipografía", "Sistema Visual", "Fotografía y Tono", "Resultados y Aprendizaje"],
+    "tabs": [
+      "Resumen",
+      "Concepto de Marca",
+      "Color y Tipografía",
+      "Sistema Visual",
+      "Fotografía y Tono",
+      "Resultados y Aprendizaje"
+    ],
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "Sistema de Comunicación para Marca de Lujo",
@@ -127,56 +135,98 @@
       "yearLabel": "Año",
       "yearValue": "2026",
       "scopeLabel": "Alcance",
-      "scopeItems": ["Identidad Visual", "Sistema Tipográfico", "Paleta de Color", "Guías de Fotografía"]
+      "scopeItems": [
+        "Identidad Visual",
+        "Sistema Tipográfico",
+        "Paleta de Color",
+        "Guías de Fotografía"
+      ]
     },
     "brandConcept": {
       "title": "Concepto de Marca",
       "desc": "Una marca premium en el espacio de bienestar sensorial necesitaba un sistema de comunicación gráfica completo desde cero. El reto: construir una identidad visual que comunique intimidad, sofisticación y confianza, sin ser explícita. Cada decisión tenía que sentirse intencional, editorial y emocionalmente resonante.",
       "conceptTitle": "El tacto como lenguaje íntimo",
       "conceptDesc": "El sistema de diseño trabaja desde la abstracción sensorial, oscuridad cálida, curvas editoriales e insinuación visual en lugar de exposición directa.",
-      "pillars": ["Oscuridad Cálida", "Línea Editorial", "Insinuación Visual"]
+      "pillars": [
+        "Oscuridad Cálida",
+        "Línea Editorial",
+        "Insinuación Visual"
+      ]
     },
     "colorTypography": {
       "title": "Color y Tipografía",
       "paletteTitle": "Paleta de Color",
-      "paletteDesc": "Cinco tonos usados en proporción 70/20/10", 
+      "paletteDesc": "Cinco tonos usados en proporción 70/20/10",
       "paletteDesc1": "PARA MANTENER JERARQUIA.",
       "colors": [
-        { "name": "Noche", "hex": "#12100E" },
-        { "name": "Tierra", "hex": "#3A2E28" },
-        { "name": "Champagne", "hex": "#C9A882" },
-        { "name": "Mauve", "hex": "#D4A5A0" },
-        { "name": "Crema", "hex": "#F5F0E8" }
+        {
+          "name": "Noche",
+          "hex": "#12100E"
+        },
+        {
+          "name": "Tierra",
+          "hex": "#3A2E28"
+        },
+        {
+          "name": "Champagne",
+          "hex": "#C9A882"
+        },
+        {
+          "name": "Mauve",
+          "hex": "#D4A5A0"
+        },
+        {
+          "name": "Crema",
+          "hex": "#F5F0E8"
+        }
       ],
-      "typographyTitle": "Tipografía", 
+      "typographyTitle": "Tipografía",
       "typographySubtitle": "Títulos",
       "typographySubtitle1": "Énfasis emocional",
       "typographySubtitle2": "Cuerpo de texto",
       "fonts": [
-        { "name": "Playfair Display", "use": "Títulos principales" },
-        { "name": "Cormorant Garamond Light Italic", "use": "Énfasis emocional" },
-        { "name": "Inter Light", "use": "Cuerpo de texto" }
+        {
+          "name": "Playfair Display",
+          "use": "Títulos principales"
+        },
+        {
+          "name": "Cormorant Garamond Light Italic",
+          "use": "Énfasis emocional"
+        },
+        {
+          "name": "Inter Light",
+          "use": "Cuerpo de texto"
+        }
       ]
-},
+    },
     "visualSystem": {
-  "title": "Sistema Visual",
-  "intro": "Un lenguaje gráfico completo que cubre:",
-  "items": [
-    "Uso del logo",
-    "Proporciones de color",
-    "Jerarquía tipográfica.",
-    "Principios de composición",
-    "Sistema de líneas decorativas en champagne dorado."
-  ],
-  "desc": "Cada elemento refuerza el posicionamiento sensorial de la marca."
-},
+      "title": "Sistema Visual",
+      "intro": "Un lenguaje gráfico completo que cubre:",
+      "items": [
+        "Uso del logo",
+        "Proporciones de color",
+        "Jerarquía tipográfica.",
+        "Principios de composición",
+        "Sistema de líneas decorativas en champagne dorado."
+      ],
+      "desc": "Cada elemento refuerza el posicionamiento sensorial de la marca."
+    },
     "photographyTone": {
       "title": "Fotografía y Tono",
       "desc": "Tratamiento en blanco y negro con tonos desaturados. Encuadres cerrados que sugieren textura y contacto. Iluminación suave y difusa con sombras que aportan profundidad. El sistema define qué usar y qué evitar, manteniendo el lenguaje visual consistente en todos los puntos de contacto.",
       "rules": [
-        { "label": "Tratamiento", "value": "Blanco y negro, desaturado" },
-        { "label": "Encuadre", "value": "Primer plano, foco en textura" },
-        { "label": "Iluminación", "value": "Suave, difusa, con profundidad" }
+        {
+          "label": "Tratamiento",
+          "value": "Blanco y negro, desaturado"
+        },
+        {
+          "label": "Encuadre",
+          "value": "Primer plano, foco en textura"
+        },
+        {
+          "label": "Iluminación",
+          "value": "Suave, difusa, con profundidad"
+        }
       ]
     },
     "results": {
@@ -190,7 +240,14 @@
     }
   },
   "caseStudyOperationalUx": {
-    "tabs": ["Resumen", "Problema", "Proceso", "Solución", "Interfaz", "Impacto y Aprendizaje"],
+    "tabs": [
+      "Resumen",
+      "Problema",
+      "Proceso",
+      "Solución",
+      "Interfaz",
+      "Impacto y Aprendizaje"
+    ],
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "UX Operacional para Servicios de Movilidad Compartida",
@@ -202,7 +259,12 @@
       "yearLabel": "Año",
       "yearValue": "2026",
       "scopeLabel": "Alcance",
-      "scopeItems": ["UX Operacional", "Pensamiento Sistémico", "Diseño de Servicios", "Gestión de Estados"]
+      "scopeItems": [
+        "UX Operacional",
+        "Pensamiento Sistémico",
+        "Diseño de Servicios",
+        "Gestión de Estados"
+      ]
     },
     "problem": {
       "title": "Problema",
@@ -216,7 +278,12 @@
       "title": "Proceso",
       "title1": "Diseñando para la decisión, no para la visualización",
       "desc": "Partiendo del modelo mental del operador, mapeé los estados críticos en los que puede estar un vehículo o un viaje, y las decisiones que cada estado requiere. Luego diseñé una jerarquía de comunicación: qué necesita atención inmediata, qué puede esperar y qué es puramente informativo.",
-      "steps": ["Mapear modelo mental del operador", "Definir estados críticos", "Diseñar jerarquía de comunicación", "Priorizar señal sobre ruido"]
+      "steps": [
+        "Mapear modelo mental del operador",
+        "Definir estados críticos",
+        "Diseñar jerarquía de comunicación",
+        "Priorizar señal sobre ruido"
+      ]
     },
     "solution": {
       "title": "Solución",
@@ -231,7 +298,7 @@
     "impact": {
       "title": "Impacto y Aprendizajes",
       "impactTitle": "Impacto",
-      "impactDesc": "El sistema reduce el esfuerzo cognitivo necesario para clasificar situaciones operacionales. Al hacer la comunicación de estados visual e inmediata, los operadores pueden procesar más situaciones en menos tiempo — reduciendo la latencia de respuesta y la fatiga de decisión.",
+      "impactDesc": "El sistema reduce el esfuerzo cognitivo necesario para clasificar situaciones operacionales. Al hacer la comunicación de estados visual e inmediata, los operadores pueden procesar más situaciones en menos tiempo, reduciendo la latencia de respuesta y la fatiga de decisión.",
       "learningTitle": "Aprendizajes",
       "learningItems": [
         "El UX operacional no se trata de estética, se trata de reducir la fricción en el momento de la decisión.",
@@ -241,11 +308,23 @@
     }
   },
   "caseStudyFintech": {
-    "tabs": ["Resumen", "Problema", "Proceso", "Impacto", "Aprendizaje"],
+    "tabs": [
+      "Resumen",
+      "Problema",
+      "Proceso",
+      "Impacto",
+      "Aprendizaje"
+    ],
     "stats": [
-      { "label": "% Tiempo de respuesta" },
-      { "label": "% Tiempo de resolución" },
-      { "label": "% Casos escalados" }
+      {
+        "label": "% Tiempo de respuesta"
+      },
+      {
+        "label": "% Tiempo de resolución"
+      },
+      {
+        "label": "% Casos escalados"
+      }
     ],
     "overview": {
       "tag": "CASO DE ESTUDIO",
@@ -261,11 +340,22 @@
     "problem": {
       "title": "El proceso de verificación carecía de consistencia, velocidad y escalabilidad",
       "col1title": "Problemas Operativos",
-      "col1items": ["Criterios de decisión inconsistentes", "8+ semanas de onboarding", "Escalaciones frecuentes"],
+      "col1items": [
+        "Criterios de decisión inconsistentes",
+        "8+ semanas de onboarding",
+        "Escalaciones frecuentes"
+      ],
       "col2title": "Riesgos de Negocio",
-      "col2items": ["Cumplimiento dependiente de conocimiento tácito", "Incumplimientos de SLA"],
+      "col2items": [
+        "Cumplimiento dependiente de conocimiento tácito",
+        "Incumplimientos de SLA"
+      ],
       "col3title": "Impacto en el Cliente",
-      "col3items": ["Demora", "Frustración", "Reseñas negativas"],
+      "col3items": [
+        "Demora",
+        "Frustración",
+        "Reseñas negativas"
+      ],
       "vocTitle": "Voz del Cliente",
       "voc1": "Envié los documentos pero nadie respondió.",
       "voc2": "Rechazaron mis documentos sin explicación.",
@@ -281,22 +371,46 @@
       "afterValue": "Sistema estructurado basado en riesgo",
       "riskTitle": "Modelo de Riesgo",
       "levels": [
-        { "level": "Nivel 1", "risk": "Riesgo bajo", "desc": "Automatizado, vía rápida" },
-        { "level": "Nivel 2", "risk": "Riesgo medio", "desc": "Verificación guiada" },
-        { "level": "Nivel 3", "risk": "Riesgo alto", "desc": "Requiere escalación" }
+        {
+          "level": "Nivel 1",
+          "risk": "Riesgo bajo",
+          "desc": "Automatizado, vía rápida"
+        },
+        {
+          "level": "Nivel 2",
+          "risk": "Riesgo medio",
+          "desc": "Verificación guiada"
+        },
+        {
+          "level": "Nivel 3",
+          "risk": "Riesgo alto",
+          "desc": "Requiere escalación"
+        }
       ],
       "frameworkTitle": "Marco de Decisión",
-      "steps": ["Caso Enviado", "Validación Doc.", "Clasificación de Riesgo", "Resultado Estandarizado"],
+      "steps": [
+        "Caso Enviado",
+        "Validación Doc.",
+        "Clasificación de Riesgo",
+        "Resultado Estandarizado"
+      ],
       "frameworkCaption": "Se reemplazaron las decisiones dependientes del analista con clasificación basada en reglas.",
       "knowledgeTitle": "Sistema de Conocimiento",
-      "knowledgeItems": ["Lineamientos", "Árboles de Decisión", "Rutas de Escalación"]
+      "knowledgeItems": [
+        "Lineamientos",
+        "Árboles de Decisión",
+        "Rutas de Escalación"
+      ]
     },
     "impact": {
       "title": "Resultados e Impacto",
       "subtitle": "Un marco de decisión estructurado que reemplaza el juicio del analista.",
       "systemShiftTitle": "Cambio de Sistema",
       "systemShiftDesc": "El rediseño operativo redujo la dependencia en analistas individuales",
-      "systemShiftItems": ["Equipo optimizado de 14 a 8 analistas", "Tiempo de onboarding reducido un 50%"],
+      "systemShiftItems": [
+        "Equipo optimizado de 14 a 8 analistas",
+        "Tiempo de onboarding reducido un 50%"
+      ],
       "systemShiftCaption": "Mismo volumen de verificación",
       "perfTitle": "Impacto en rendimiento",
       "perfValue": "-70%",
@@ -306,10 +420,30 @@
       "perfDesc": "Los flujos y plantillas estandarizados redujeron la variabilidad en el manejo de casos.",
       "metricsTitle": "Métricas Operativas",
       "metrics": [
-        { "label": "Tiempo Promedio de Respuesta", "value": "120 - 15", "unit": "mins", "delta": "85%" },
-        { "label": "Reducción en capacitación", "value": "16 - 8", "unit": "semanas", "delta": "40%" },
-        { "label": "Tiempo Promedio de Resolución", "value": "24", "unit": "Horas", "delta": "53%" },
-        { "label": "Satisfacción del Cliente", "value": "4.3", "unit": "", "delta": "46%" }
+        {
+          "label": "Tiempo Promedio de Respuesta",
+          "value": "120 - 15",
+          "unit": "mins",
+          "delta": "85%"
+        },
+        {
+          "label": "Reducción en capacitación",
+          "value": "16 - 8",
+          "unit": "semanas",
+          "delta": "40%"
+        },
+        {
+          "label": "Tiempo Promedio de Resolución",
+          "value": "24",
+          "unit": "Horas",
+          "delta": "53%"
+        },
+        {
+          "label": "Satisfacción del Cliente",
+          "value": "4.3",
+          "unit": "",
+          "delta": "46%"
+        }
       ],
       "businessTitle": "Impacto de Negocio",
       "businessItems1": [
@@ -341,7 +475,14 @@
     }
   },
   "caseStudySmartDocuments": {
-    "tabs": ["Resumen", "Problema", "Producto", "Enfoque de Diseño", "Solución de Interfaz", "Aprendizaje"],
+    "tabs": [
+      "Resumen",
+      "Problema",
+      "Producto",
+      "Enfoque de Diseño",
+      "Solución de Interfaz",
+      "Aprendizaje"
+    ],
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "Smart Documents",
@@ -354,7 +495,11 @@
       "yearLabel": "Año",
       "yearValue": "2026",
       "scopeLabel": "Alcance",
-      "scopeItems": ["Concepto de producto", "Arquitectura UX", "Diseño de interacción"]
+      "scopeItems": [
+        "Concepto de producto",
+        "Arquitectura UX",
+        "Diseño de interacción"
+      ]
     },
     "problem": {
       "contextTitle": "Contexto",
@@ -368,10 +513,22 @@
       "riskLabel": "Riesgo de inconsistencias",
       "riskDesc": "La validación manual aumenta la probabilidad de errores humanos.",
       "docs": [
-        { "title": "Factura", "desc": "Contiene información de facturación sensible que debe coincidir con los datos del envío y el producto en otros documentos." },
-        { "title": "Lista de Empaque", "desc": "Las descripciones y cantidades de artículos suelen usar diferentes nomenclaturas (kilogramos, gramos, unidades), dificultando las comparaciones directas." },
-        { "title": "Conocimiento de Embarque", "desc": "Registra los detalles de transporte y envío que deben alinearse con la factura y la lista de empaque." },
-        { "title": "Validación del Analista", "desc": "Los analistas deben comparar manualmente todos los documentos para identificar discrepancias, aumentando el riesgo de demoras y errores humanos." }
+        {
+          "title": "Factura",
+          "desc": "Contiene información de facturación sensible que debe coincidir con los datos del envío y el producto en otros documentos."
+        },
+        {
+          "title": "Lista de Empaque",
+          "desc": "Las descripciones y cantidades de artículos suelen usar diferentes nomenclaturas (kilogramos, gramos, unidades), dificultando las comparaciones directas."
+        },
+        {
+          "title": "Conocimiento de Embarque",
+          "desc": "Registra los detalles de transporte y envío que deben alinearse con la factura y la lista de empaque."
+        },
+        {
+          "title": "Validación del Analista",
+          "desc": "Los analistas deben comparar manualmente todos los documentos para identificar discrepancias, aumentando el riesgo de demoras y errores humanos."
+        }
       ]
     },
     "product": {
@@ -380,23 +537,46 @@
       "desc2": "La plataforma extrae información clave de facturas, listas de empaque y conocimientos de embarque, habilitando la verificación cruzada automatizada.",
       "desc3": "Esto reduce el análisis manual mientras mejora la precisión en la validación de envíos.",
       "features": [
-        { "title": "Extracción automática de documentos", "desc": "El sistema captura campos de datos clave de facturas, listas de empaque y conocimientos de embarque." },
-        { "title": "Normalización de datos", "desc": "La información se estandariza entre documentos para resolver inconsistencias de nomenclatura y unidades." },
-        { "title": "Validación cruzada de documentos", "desc": "La plataforma compara automáticamente cantidades, referencias y detalles de envío entre documentos." }
+        {
+          "title": "Extracción automática de documentos",
+          "desc": "El sistema captura campos de datos clave de facturas, listas de empaque y conocimientos de embarque."
+        },
+        {
+          "title": "Normalización de datos",
+          "desc": "La información se estandariza entre documentos para resolver inconsistencias de nomenclatura y unidades."
+        },
+        {
+          "title": "Validación cruzada de documentos",
+          "desc": "La plataforma compara automáticamente cantidades, referencias y detalles de envío entre documentos."
+        }
       ],
-      "slides": ["/product-1-es.png", "/product-2-es.png", "/product-3-es.png", "/product-4-es.png", "/product-5-es.png"]
+      "slides": [
+        "/product-1-es.png",
+        "/product-2-es.png",
+        "/product-3-es.png",
+        "/product-4-es.png",
+        "/product-5-es.png"
+      ]
     },
     "designApproach": {
       "title": "Enfoque de Diseño",
       "subtitle": "Cómo se estructuró la solución dentro de un reto de diseño de 48 horas.",
       "card1title": "Comprensión de Documentos",
       "card1desc": "Identificar los documentos logísticos clave involucrados en la validación de envíos:",
-      "card1items": ["Factura", "Lista de empaque", "Conocimiento de embarque"],
+      "card1items": [
+        "Factura",
+        "Lista de empaque",
+        "Conocimiento de embarque"
+      ],
       "card1goal": "Objetivo:",
       "card1goalDesc": "determinar los campos de datos necesarios para la comparación entre documentos.",
       "card2title": "Lógica de Extracción de Datos",
       "card2desc": "Definir cómo el sistema podría extraer y estructurar automáticamente los campos de datos relevantes de los documentos.",
-      "card2items": ["Cantidad de producto", "Referencias de envío", "Descripciones de artículos."],
+      "card2items": [
+        "Cantidad de producto",
+        "Referencias de envío",
+        "Descripciones de artículos."
+      ],
       "workflowTitle": "Flujo de Validación",
       "workflowDesc": "Diseñar un flujo que permita a los usuarios detectar rápidamente inconsistencias entre documentos y confirmar o resolver problemas de validación."
     },
@@ -404,9 +584,18 @@
       "title": "Solución de Interfaz",
       "subtitle": "Convirtiendo el concepto en una interfaz funcional.",
       "slides": [
-        { "title": "Carga y Procesamiento de Documentos", "desc": "Los usuarios cargan documentos logísticos como facturas, listas de empaque y conocimientos de embarque. El sistema procesa cada archivo y extrae campos de datos estructurados automáticamente." },
-        { "title": "Extracción Automática de Datos", "desc": "Una vez cargados, la plataforma identifica los campos de datos clave dentro de cada documento y los estructura para su validación. Esto permite revisar la información extraída rápidamente sin leer cada documento manualmente." },
-        { "title": "Comparación entre Documentos", "desc": "El sistema compara atributos clave entre documentos para detectar inconsistencias. Campos como cantidad, referencias de envío y descripciones de artículos se comparan automáticamente." }
+        {
+          "title": "Carga y Procesamiento de Documentos",
+          "desc": "Los usuarios cargan documentos logísticos como facturas, listas de empaque y conocimientos de embarque. El sistema procesa cada archivo y extrae campos de datos estructurados automáticamente."
+        },
+        {
+          "title": "Extracción Automática de Datos",
+          "desc": "Una vez cargados, la plataforma identifica los campos de datos clave dentro de cada documento y los estructura para su validación. Esto permite revisar la información extraída rápidamente sin leer cada documento manualmente."
+        },
+        {
+          "title": "Comparación entre Documentos",
+          "desc": "El sistema compara atributos clave entre documentos para detectar inconsistencias. Campos como cantidad, referencias de envío y descripciones de artículos se comparan automáticamente."
+        }
       ]
     },
     "learning": {
@@ -414,15 +603,30 @@
       "impactTitle": "Impacto",
       "impactDesc1": "Automatizar la validación cruzada de documentos podría reducir significativamente el tiempo necesario para revisar documentación logística.",
       "impactDesc2": "Al extraer y comparar automáticamente los atributos clave del envío, el sistema permite a los equipos logísticos identificar inconsistencias más rápido y minimizar el trabajo de verificación manual.",
-      "impactItems": ["Revisión de documentos más rápida.", "Validación manual reducida.", "Mayor precisión en los envíos."],
+      "impactItems": [
+        "Revisión de documentos más rápida.",
+        "Validación manual reducida.",
+        "Mayor precisión en los envíos."
+      ],
       "learningsTitle": "Aprendizajes",
       "learningsDesc1": "Diseñar este concepto en un reto de 48 horas requirió enfocarse en el flujo principal en lugar de construir un producto completo.",
       "learningsDesc2": "El ejercicio reforzó la importancia de estructurar procesos complejos de validación documental en pasos de interfaz claros y accionables.",
-      "learningsItems": ["Priorizar flujos principales bajo restricciones de tiempo.", "Diseñar sistemas para productos basados en documentos.", "Equilibrar automatización con validación humana."]
+      "learningsItems": [
+        "Priorizar flujos principales bajo restricciones de tiempo.",
+        "Diseñar sistemas para productos basados en documentos.",
+        "Equilibrar automatización con validación humana."
+      ]
     }
   },
   "caseStudyGTM": {
-    "tabs": ["Resumen", "Posicionamiento", "Gráfico Principal", "Estrategia de Mercado", "Narrativa del Producto", "Impacto"],
+    "tabs": [
+      "Resumen",
+      "Posicionamiento",
+      "Gráfico Principal",
+      "Estrategia de Mercado",
+      "Narrativa del Producto",
+      "Impacto"
+    ],
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "Reto de Comunicación de Producto",
@@ -434,25 +638,65 @@
       "typeLabel": "Tipo de proyecto",
       "typeValue": "Ejercicio de diseño conceptual",
       "scopeLabel": "Alcance",
-      "scopeItems": ["Go to market", "Arquitectura UX", "Estrategia de producto"],
+      "scopeItems": [
+        "Go to market",
+        "Arquitectura UX",
+        "Estrategia de producto"
+      ],
       "yearLabel": "Año",
       "yearValue": "2026"
     },
     "positioning": {
       "title": "Posicionamiento del Producto",
       "audiences": [
-        { "title": "Embarcadores", "sub": "Marítimo, aéreo, terrestre", "badge": "↓ 40% de demoras por documentación" },
-        { "title": "Agentes aduanales", "sub": "Brokers, aduanas", "badge": "↓ 90% Correcciones" },
-        { "title": "Analistas logísticos", "sub": "Importadores, exportadores, transitarios", "badge": "⏱ horas ahorradas al mes" }
+        {
+          "title": "Embarcadores",
+          "sub": "Marítimo, aéreo, terrestre",
+          "badge": "↓ 40% de demoras por documentación"
+        },
+        {
+          "title": "Agentes aduanales",
+          "sub": "Brokers, aduanas",
+          "badge": "↓ 90% Correcciones"
+        },
+        {
+          "title": "Analistas logísticos",
+          "sub": "Importadores, exportadores, transitarios",
+          "badge": "⏱ horas ahorradas al mes"
+        }
       ],
       "colGeneric": "Soluciones Genéricas",
       "colGenericSub": "(Otras plataformas)",
       "colSmart": "Smart Documents",
       "comparison": [
-        { "aspect": "Enfoque", "generic": "Cualquier documento", "smart": "Especializado en logística (facturas, listas de empaque, declaraciones aduanales).", "boldPart": "", "suffix": "" },
-        { "aspect": "Validación", "generic": "Extracción genérica", "smart": "Validación cruzada inteligente (peso en factura vs. cantidades, SKUs, errores lógicos).", "boldPart": "", "suffix": "" },
-        { "aspect": "Tiempo", "generic": "Variable (requiere capacitación)", "smart": "", "boldPart": "2 horas a 5 minutos", "suffix": " por embarque." },
-        { "aspect": "Idioma", "generic": "Requiere configuración manual", "smart": "Nativo, multilingüe.", "boldPart": "", "suffix": "" }
+        {
+          "aspect": "Enfoque",
+          "generic": "Cualquier documento",
+          "smart": "Especializado en logística (facturas, listas de empaque, declaraciones aduanales).",
+          "boldPart": "",
+          "suffix": ""
+        },
+        {
+          "aspect": "Validación",
+          "generic": "Extracción genérica",
+          "smart": "Validación cruzada inteligente (peso en factura vs. cantidades, SKUs, errores lógicos).",
+          "boldPart": "",
+          "suffix": ""
+        },
+        {
+          "aspect": "Tiempo",
+          "generic": "Variable (requiere capacitación)",
+          "smart": "",
+          "boldPart": "2 horas a 5 minutos",
+          "suffix": " por embarque."
+        },
+        {
+          "aspect": "Idioma",
+          "generic": "Requiere configuración manual",
+          "smart": "Nativo, multilingüe.",
+          "boldPart": "",
+          "suffix": ""
+        }
       ],
       "calloutTitle": "El primer validador nativo de documentos para comercio exterior",
       "calloutDesc": "Smart Documents no es solo un lector de PDFs genérico. Entiende la terminología, detecta discrepancias en pesos y volúmenes, y verifica facturas, listas de empaque y conocimientos de embarque."
@@ -489,9 +733,18 @@
       "validationTitle": "Validación Completada",
       "validationSub": "Embarcación EMB-2024-001",
       "metrics": [
-        { "value": "3", "label": "Documentos revisados" },
-        { "value": "1", "label": "Pendientes" },
-        { "value": "4:32", "label": "Tiempo de revisión" }
+        {
+          "value": "3",
+          "label": "Documentos revisados"
+        },
+        {
+          "value": "1",
+          "label": "Pendientes"
+        },
+        {
+          "value": "4:32",
+          "label": "Tiempo de revisión"
+        }
       ],
       "savedText": "Ahorraste",
       "savedValue": "1:59",
@@ -501,14 +754,36 @@
     "impact": {
       "title": "Impacto",
       "metrics": [
-        { "value": "96%", "label": "Reducción de tiempo", "sub": "2 horas → 5 minutos por embarque" },
-        { "value": "99.2%", "label": "Precisión", "sub": "vs. 85% manual" },
-        { "value": "97.5h", "label": "Ahorro mensual", "sub": "por cliente (50 embarques)" },
-        { "value": "40%", "label": "Menos demoras", "sub": "Embarcadores" }
+        {
+          "value": "96%",
+          "label": "Reducción de tiempo",
+          "sub": "2 horas → 5 minutos por embarque"
+        },
+        {
+          "value": "99.2%",
+          "label": "Precisión",
+          "sub": "vs. 85% manual"
+        },
+        {
+          "value": "97.5h",
+          "label": "Ahorro mensual",
+          "sub": "por cliente (50 embarques)"
+        },
+        {
+          "value": "40%",
+          "label": "Menos demoras",
+          "sub": "Embarcadores"
+        }
       ],
       "metrics2": [
-        { "value": "90%", "label": "menos correcciones en declaraciones aduanales" },
-        { "value": "95%", "label": "Reducción de multas por clasificación" }
+        {
+          "value": "90%",
+          "label": "menos correcciones en declaraciones aduanales"
+        },
+        {
+          "value": "95%",
+          "label": "Reducción de multas por clasificación"
+        }
       ],
       "roiLabel": "ROI estimado para el cliente promedio",
       "roiValue": "+15.000 USD ahorrados por año",
@@ -517,7 +792,14 @@
     }
   },
   "caseStudySocialMedia": {
-    "tabs": ["Resumen", "Análisis de Contenido", "Oportunidades", "Sistema Visual", "Ejecución", "Resultados"],
+    "tabs": [
+      "Resumen",
+      "Análisis de Contenido",
+      "Oportunidades",
+      "Sistema Visual",
+      "Ejecución",
+      "Resultados"
+    ],
     "overview": {
       "tag": "CASO DE ESTUDIO",
       "title": "Estrategia de Contenido e Identidad Visual",
@@ -530,15 +812,28 @@
       "yearLabel": "Año",
       "yearValue": "2026",
       "scopeLabel": "Alcance",
-      "scopeItems": ["Estrategia de Contenido", "UX para Consumo en Redes Sociales", "Sistema Visual para Contenido (Reels & Feed)"]
+      "scopeItems": [
+        "Estrategia de Contenido",
+        "UX para Consumo en Redes Sociales",
+        "Sistema Visual para Contenido (Reels & Feed)"
+      ]
     },
     "contentAnalysis": {
       "title": "Análisis de Contenido",
       "subtitle": "Un análisis de las publicaciones reveló patrones claros en el rendimiento del contenido.",
       "worksTitle": "Qué funciona",
-      "worksItems": ["Entretenido, emocional y educativo.", "Rostros y expresiones (personas + mascotas).", "Hooks visuales dinámicos.", "Storytelling en formato."],
+      "worksItems": [
+        "Entretenido, emocional y educativo.",
+        "Rostros y expresiones (personas + mascotas).",
+        "Hooks visuales dinámicos.",
+        "Storytelling en formato."
+      ],
       "doesntTitle": "Qué No Funciona",
-      "doesntItems": ["Contenido solo de texto.", "Hooks estáticos o poco llamativos.", "Baja estimulación visual inicial."],
+      "doesntItems": [
+        "Contenido solo de texto.",
+        "Hooks estáticos o poco llamativos.",
+        "Baja estimulación visual inicial."
+      ],
       "insightTitle": "Insight Clave",
       "insightDesc": "El contenido de alto rendimiento prioriza estímulos visuales inmediatos sobre el texto, especialmente en los primeros segundos del Reel."
     },
@@ -546,32 +841,77 @@
       "title": "Oportunidades",
       "subtitle": "Se identificaron áreas de mejora para potenciar el rendimiento y maximizar el crecimiento del contenido.",
       "items": [
-        { "title": "Optimizar Hooks Visuales", "desc": "Crear hooks más impactantes en los primeros segundos del Reel." },
-        { "title": "Fomentar la Interacción", "desc": "Añadir llamadas a la acción para incentivar comentarios y reacciones." },
-        { "title": "Temas de Contenido", "desc": "Desarrollar contenido alrededor de temas recurrentes para mantener la audiencia comprometida." },
-        { "title": "Innovación en Formato", "desc": "Desarrollar contenido alrededor de temas recurrentes para mantener la audiencia comprometida." }
+        {
+          "title": "Optimizar Hooks Visuales",
+          "desc": "Crear hooks más impactantes en los primeros segundos del Reel."
+        },
+        {
+          "title": "Fomentar la Interacción",
+          "desc": "Añadir llamadas a la acción para incentivar comentarios y reacciones."
+        },
+        {
+          "title": "Temas de Contenido",
+          "desc": "Desarrollar contenido alrededor de temas recurrentes para mantener la audiencia comprometida."
+        },
+        {
+          "title": "Innovación en Formato",
+          "desc": "Desarrollar contenido alrededor de temas recurrentes para mantener la audiencia comprometida."
+        }
       ]
     },
     "visualSystem": {
       "title": "Sistema Visual",
       "subtitle": "Consistencia, energía, cercanía",
       "reelStructureLabel": "Estructura del Reel",
-      "frames": ["Hook", "Solución", "Cierre"],
+      "frames": [
+        "Hook",
+        "Solución",
+        "Cierre"
+      ],
       "contentsLabel": "Contenidos",
-      "contentItems": ["Emoción", "Educación", "Cuidado", "Entretenimiento"],
+      "contentItems": [
+        "Emoción",
+        "Educación",
+        "Cuidado",
+        "Entretenimiento"
+      ],
       "toneLabel": "Tono de Marca",
-      "toneItems": ["Cercano", "Confiable", "Humano"],
+      "toneItems": [
+        "Cercano",
+        "Confiable",
+        "Humano"
+      ],
       "colorsLabel": "Colores",
       "typographyLabel": "Tipografía",
-      "fonts": ["Monserrat", "Poppins", "BEBAS NEUE", "Roboto"]
+      "fonts": [
+        "Monserrat",
+        "Poppins",
+        "BEBAS NEUE",
+        "Roboto"
+      ]
     },
     "execution": {
       "title": "Ejecución",
       "subtitle": "Se creó contenido para Reels usando hooks visuales, storytelling y llamadas a la acción, garantizando consistencia y optimización continua.",
       "reels": [
-        { "title": "Educativo + Emocional", "desc": "Uso de mascota y reacciones humanas → alta retención", "link": "https://www.instagram.com/kurama_pub", "linkLabel": "Ver en Instagram" },
-        { "title": "Divertido + Práctico", "desc": "Tips claros y dinámicos → fácil de seguir", "link": "https://www.instagram.com/kurama_pub", "linkLabel": "Ver en Instagram" },
-        { "title": "Transformación", "desc": "Visuales \"antes y después\" → impacto emocional", "link": "https://www.instagram.com/kurama_pub", "linkLabel": "Ver en Instagram" }
+        {
+          "title": "Educativo + Emocional",
+          "desc": "Uso de mascota y reacciones humanas → alta retención",
+          "link": "https://www.instagram.com/kurama_pub",
+          "linkLabel": "Ver en Instagram"
+        },
+        {
+          "title": "Divertido + Práctico",
+          "desc": "Tips claros y dinámicos → fácil de seguir",
+          "link": "https://www.instagram.com/kurama_pub",
+          "linkLabel": "Ver en Instagram"
+        },
+        {
+          "title": "Transformación",
+          "desc": "Visuales \"antes y después\" → impacto emocional",
+          "link": "https://www.instagram.com/kurama_pub",
+          "linkLabel": "Ver en Instagram"
+        }
       ],
       "disclaimer": "Cada pieza fue diseñada como un experimento controlado para validar patrones de contenido."
     },
@@ -579,9 +919,21 @@
       "title": "Resultados",
       "subtitle": "La implementación de una estrategia enfocada en Reels, optimización visual y consistencia generó una mejora significativa en el rendimiento de la cuenta.",
       "stats": [
-        { "value": "10.184", "delta": "↑427%", "label": "Visualizaciones" },
-        { "value": "17", "delta": "↑100%", "label": "Conversaciones" },
-        { "value": "305", "delta": "↑92%", "label": "Interacciones" }
+        {
+          "value": "10.184",
+          "delta": "↑427%",
+          "label": "Visualizaciones"
+        },
+        {
+          "value": "17",
+          "delta": "↑100%",
+          "label": "Conversaciones"
+        },
+        {
+          "value": "305",
+          "delta": "↑92%",
+          "label": "Interacciones"
+        }
       ],
       "learningTitle": "Aprendizajes",
       "learningItems": [
@@ -615,210 +967,488 @@
     "btnError": "Error, intenta de nuevo"
   },
   "nexaLab": {
-  "nav": "NEXA LABS",
-  "lab01": {
-    "author": "By Ray Viera",
-    "date": "June 2026",
-    "hook": "¿Tu marca tiene sistema, o solo tiene logo?",
-    "hookCta": "Descubre tu Brand Chaos Score →",
-    "eyebrow": "NEXA LABS · Lab 01",
-    "title": "¿Cuánto caos tiene tu marca?",
-    "subtitle": "12 preguntas para descubrir el nivel real de organización de tu marca. Obtén tu Brand Chaos Score y un reporte personalizado.",
-    "meta": {
-      "questions": "12",
-      "questionsLabel": "preguntas",
-      "time": "3 min",
-      "timeLabel": "duración",
-      "cost": "gratis",
-      "costLabel": "sin costo"
-    },
-    "startBtn": "Comenzar diagnóstico →",
-    "essay": {
-      "eyebrow": "NEXA LABS · Lab 01 — Brand Operating System",
-      "title": "Por qué tu marca se ve bien y aún así todo cuesta el doble",
-      "metaDescription": "Descubre tu Brand Chaos Score. 12 preguntas para evaluar tu sistema de marca y encontrar exactamente qué está bloqueando tu crecimiento.",
-      "body": "Tienen logo. Tienen paleta de colores. Tienen Instagram con coherencia visual y una web que da buena impresión.\n\nY aun así, cada vez que hay que producir algo — una campaña, un post, un entregable para un cliente — el proceso empieza casi desde cero. Alguien busca el archivo correcto en tres carpetas distintas. Alguien pregunta si esta versión del logo es la buena. Alguien espera aprobación de quien siempre tiene que aprobar todo.\n\nEl problema no es la identidad visual. Es que la marca no tiene sistema.\n\nUn sistema de marca no es el manual que vive en PDF y nadie abre. Es el conjunto de decisiones documentadas, activos de marca organizados y procesos definidos que permiten que cualquier persona del equipo produzca con criterio — sin preguntar, sin esperar, sin rehacer.\n\nSin ese sistema, el crecimiento tiene un techo invisible. Puedes conseguir más clientes, contratar más personas, invertir más en contenido — y seguir sintiéndote igual de atrapada en la operación. Tu marca no escala porque tu operación no está lista para hacerlo.",
-      "ctaLabel": "Evalúa tu marca ahora",
-      "author": "Por Ray Viera",
-      "date": "Junio 2026"
-    },
-    "progress": "de 12",
-    "prev": "← Anterior",
-    "next": "Siguiente →",
-    "finish": "Ver mi resultado →",
-    "emailTitle": "Tu resultado está listo",
-    "emailSubtitle": "Ingresa tu email para ver tu Brand Chaos Score y recibir el reporte personalizado.",
-    "emailPlaceholder": "tu@email.com",
-    "emailBtn": "Ver mi resultado →",
-    "emailPrivacy": "Sin spam. Solo tu reporte. Puedes darte de baja cuando quieras.",
-    "resultsEyebrow": "Tu Brand Chaos Score",
-    "dimensionLabel": "Resultado por dimensión",
-    "profileLabel": "Perfil de marca",
-    "risksLabel": "Principales riesgos detectados",
-    "prioritiesLabel": "Prioridades recomendadas",
-    "downloadBtn": "Guardar reporte",
-    "scheduleBtn": "Agendar llamada →",
-    "levels": {
-      "chaotic": "Caótico",
-      "deficient": "Deficiente",
-      "functional": "Funcional",
-      "scalable": "Escalable"
-    },
-    "levelDescriptions": {
-      "chaotic": "Tu marca depende completamente de ti. Sin un sistema, el crecimiento está bloqueado.",
-      "deficient": "Tienes elementos dispersos, pero sin estructura. Cada proyecto es un esfuerzo desde cero.",
-      "functional": "Hay bases sólidas, pero la escalabilidad está limitada. Un sistema puede multiplicar tu capacidad.",
-      "scalable": "Tu marca tiene estructura real. El siguiente nivel es optimizar y automatizar."
-    },
-    "ctaMessages": {
-      "chaotic": "Tu marca necesita un sistema urgente. Podemos transformarla en 4-6 semanas con el Brand Operating System.",
-      "deficient": "Tienes la base. El BOS organiza todo lo que ya existe y lo convierte en un sistema escalable.",
-      "functional": "Estás cerca. Un BOS completo te lleva al siguiente nivel sin empezar desde cero.",
-      "scalable": "Excelente estructura. El BOS + Digital Experience lleva tu sistema al siguiente nivel."
-    },
-    "dimensions": {
-      "identity": "Identidad visual",
-      "content": "Contenido",
-      "assets": "Activos y organización",
-      "processes": "Procesos internos",
-      "scalability": "Escalabilidad"
-    },
-    "questions": [
-      {
-        "dim": "identity",
-        "text": "¿Tu marca tiene lineamientos visuales documentados?",
-        "options": [
-          "No tenemos nada definido",
-          "Tenemos logo, pero nada más",
-          "Tenemos algunos elementos, pero no están documentados",
-          "Tenemos un manual de marca completo y actualizado"
-        ]
+    "nav": "NEXA LABS",
+    "lab01": {
+      "author": "By Ray Viera",
+      "date": "June 2026",
+      "hook": "¿Tu marca tiene sistema, o solo tiene logo?",
+      "hookCta": "Descubre tu Brand Chaos Score →",
+      "eyebrow": "NEXA LABS · Lab 01",
+      "title": "¿Cuánto caos tiene tu marca?",
+      "subtitle": "12 preguntas para descubrir el nivel real de organización de tu marca. Obtén tu Brand Chaos Score y un reporte personalizado.",
+      "meta": {
+        "questions": "12",
+        "questionsLabel": "preguntas",
+        "time": "3 min",
+        "timeLabel": "duración",
+        "cost": "gratis",
+        "costLabel": "sin costo"
       },
-      {
-        "dim": "identity",
-        "text": "¿Cómo es la consistencia visual de tu marca en todos tus canales?",
-        "options": [
-          "Cada pieza se ve diferente, no hay coherencia",
-          "Hay algo de consistencia, pero depende de quién lo haga",
-          "Es mayormente consistente, con algunas variaciones",
-          "Completamente consistente en todos los puntos de contacto"
-        ]
+      "startBtn": "Comenzar diagnóstico →",
+      "essay": {
+        "eyebrow": "NEXA LABS · Lab 01 — Brand Operating System",
+        "title": "Por qué tu marca se ve bien y aún así todo cuesta el doble",
+        "metaDescription": "Descubre tu Brand Chaos Score. 12 preguntas para evaluar tu sistema de marca y encontrar exactamente qué está bloqueando tu crecimiento.",
+        "body": "Tienen logo. Tienen paleta de colores. Tienen Instagram con coherencia visual y una web que da buena impresión.\n\nY aun así, cada vez que hay que producir algo — una campaña, un post, un entregable para un cliente — el proceso empieza casi desde cero. Alguien busca el archivo correcto en tres carpetas distintas. Alguien pregunta si esta versión del logo es la buena. Alguien espera aprobación de quien siempre tiene que aprobar todo.\n\nEl problema no es la identidad visual. Es que la marca no tiene sistema.\n\nUn sistema de marca no es el manual que vive en PDF y nadie abre. Es el conjunto de decisiones documentadas, activos de marca organizados y procesos definidos que permiten que cualquier persona del equipo produzca con criterio — sin preguntar, sin esperar, sin rehacer.\n\nSin ese sistema, el crecimiento tiene un techo invisible. Puedes conseguir más clientes, contratar más personas, invertir más en contenido — y seguir sintiéndote igual de atrapada en la operación. Tu marca no escala porque tu operación no está lista para hacerlo.",
+        "ctaLabel": "Evalúa tu marca ahora",
+        "author": "Por Ray Viera",
+        "date": "Junio 2026"
       },
-      {
-        "dim": "content",
-        "text": "¿Tu equipo sabe qué tipo de contenido puede y no puede publicar?",
-        "options": [
-          "No hay criterios, cada uno decide",
-          "Hay criterios informales, de palabra",
-          "Hay algunos criterios escritos, pero incompletos",
-          "Hay una guía de contenido clara que todos conocen"
-        ]
+      "progress": "de 12",
+      "prev": "← Anterior",
+      "next": "Siguiente →",
+      "finish": "Ver mi resultado →",
+      "emailTitle": "Tu resultado está listo",
+      "emailSubtitle": "Ingresa tu email para ver tu Brand Chaos Score y recibir el reporte personalizado.",
+      "emailPlaceholder": "tu@email.com",
+      "emailBtn": "Ver mi resultado →",
+      "emailPrivacy": "Sin spam. Solo tu reporte. Puedes darte de baja cuando quieras.",
+      "resultsEyebrow": "Tu Brand Chaos Score",
+      "dimensionLabel": "Resultado por dimensión",
+      "profileLabel": "Perfil de marca",
+      "risksLabel": "Principales riesgos detectados",
+      "prioritiesLabel": "Prioridades recomendadas",
+      "downloadBtn": "Guardar reporte",
+      "scheduleBtn": "Agendar llamada →",
+      "levels": {
+        "chaotic": "Caótico",
+        "deficient": "Deficiente",
+        "functional": "Funcional",
+        "scalable": "Escalable"
       },
-      {
-        "dim": "content",
-        "text": "¿Cuánto tiempo toma producir y aprobar una pieza de contenido?",
-        "options": [
-          "Días o semanas, con muchas revisiones",
-          "Más de un día, con al menos 3 revisiones",
-          "Menos de un día, con 1-2 revisiones",
-          "Proceso claro, pocas revisiones, fluye solo"
-        ]
+      "levelDescriptions": {
+        "chaotic": "Tu marca depende completamente de ti. Sin un sistema, el crecimiento está bloqueado.",
+        "deficient": "Tienes elementos dispersos, pero sin estructura. Cada proyecto es un esfuerzo desde cero.",
+        "functional": "Hay bases sólidas, pero la escalabilidad está limitada. Un sistema puede multiplicar tu capacidad.",
+        "scalable": "Tu marca tiene estructura real. El siguiente nivel es optimizar y automatizar."
       },
-      {
-        "dim": "assets",
-        "text": "¿Dónde están los archivos de tu marca ahora mismo?",
-        "options": [
-          "En el teléfono o computador de alguien, no sé exactamente",
-          "En varias carpetas sin organización clara",
-          "En una carpeta compartida, organizada parcialmente",
-          "En un sistema centralizado, accesible para todo el equipo"
-        ]
+      "ctaMessages": {
+        "chaotic": "Tu marca necesita un sistema urgente. Podemos transformarla en 4-6 semanas con el Brand Operating System.",
+        "deficient": "Tienes la base. El BOS organiza todo lo que ya existe y lo convierte en un sistema escalable.",
+        "functional": "Estás cerca. Un BOS completo te lleva al siguiente nivel sin empezar desde cero.",
+        "scalable": "Excelente estructura. El BOS + Digital Experience lleva tu sistema al siguiente nivel."
       },
-      {
-        "dim": "assets",
-        "text": "Si mañana necesitas el logo en alta resolución, ¿cuánto tardas en encontrarlo?",
-        "options": [
-          "Más de 30 minutos, o no sé dónde está",
-          "Entre 10 y 30 minutos",
-          "Menos de 10 minutos",
-          "Menos de 2 minutos, siempre accesible"
-        ]
+      "dimensions": {
+        "identity": "Identidad visual",
+        "content": "Contenido",
+        "assets": "Activos y organización",
+        "processes": "Procesos internos",
+        "scalability": "Escalabilidad"
       },
-      {
-        "dim": "assets",
-        "text": "¿Tu equipo puede crear piezas de marca sin pedirte los archivos cada vez?",
-        "options": [
-          "No, siempre me los piden a mí",
-          "A veces, pero prefieren pedirme confirmación",
-          "La mayoría de las veces pueden, pero falta algo",
-          "Sí, todo está disponible y saben dónde está"
-        ]
+      "questions": [
+        {
+          "dim": "identity",
+          "text": "¿Tu marca tiene lineamientos visuales documentados?",
+          "options": [
+            "No tenemos nada definido",
+            "Tenemos logo, pero nada más",
+            "Tenemos algunos elementos, pero no están documentados",
+            "Tenemos un manual de marca completo y actualizado"
+          ]
+        },
+        {
+          "dim": "identity",
+          "text": "¿Cómo es la consistencia visual de tu marca en todos tus canales?",
+          "options": [
+            "Cada pieza se ve diferente, no hay coherencia",
+            "Hay algo de consistencia, pero depende de quién lo haga",
+            "Es mayormente consistente, con algunas variaciones",
+            "Completamente consistente en todos los puntos de contacto"
+          ]
+        },
+        {
+          "dim": "content",
+          "text": "¿Tu equipo sabe qué tipo de contenido puede y no puede publicar?",
+          "options": [
+            "No hay criterios, cada uno decide",
+            "Hay criterios informales, de palabra",
+            "Hay algunos criterios escritos, pero incompletos",
+            "Hay una guía de contenido clara que todos conocen"
+          ]
+        },
+        {
+          "dim": "content",
+          "text": "¿Cuánto tiempo toma producir y aprobar una pieza de contenido?",
+          "options": [
+            "Días o semanas, con muchas revisiones",
+            "Más de un día, con al menos 3 revisiones",
+            "Menos de un día, con 1-2 revisiones",
+            "Proceso claro, pocas revisiones, fluye solo"
+          ]
+        },
+        {
+          "dim": "assets",
+          "text": "¿Dónde están los archivos de tu marca ahora mismo?",
+          "options": [
+            "En el teléfono o computador de alguien, no sé exactamente",
+            "En varias carpetas sin organización clara",
+            "En una carpeta compartida, organizada parcialmente",
+            "En un sistema centralizado, accesible para todo el equipo"
+          ]
+        },
+        {
+          "dim": "assets",
+          "text": "Si mañana necesitas el logo en alta resolución, ¿cuánto tardas en encontrarlo?",
+          "options": [
+            "Más de 30 minutos, o no sé dónde está",
+            "Entre 10 y 30 minutos",
+            "Menos de 10 minutos",
+            "Menos de 2 minutos, siempre accesible"
+          ]
+        },
+        {
+          "dim": "assets",
+          "text": "¿Tu equipo puede crear piezas de marca sin pedirte los archivos cada vez?",
+          "options": [
+            "No, siempre me los piden a mí",
+            "A veces, pero prefieren pedirme confirmación",
+            "La mayoría de las veces pueden, pero falta algo",
+            "Sí, todo está disponible y saben dónde está"
+          ]
+        },
+        {
+          "dim": "processes",
+          "text": "¿Tienes documentados los procesos de tu negocio?",
+          "options": [
+            "Nada está documentado, todo está en mi cabeza",
+            "Algunos procesos están escritos, pero no actualizados",
+            "Los procesos principales están documentados",
+            "Todo está documentado y el equipo los sigue"
+          ]
+        },
+        {
+          "dim": "processes",
+          "text": "¿Qué pasa si no estás disponible por una semana?",
+          "options": [
+            "El negocio se detiene o genera muchos errores",
+            "Alguien puede cubrir, pero con muchas preguntas",
+            "El equipo puede operar con supervisión mínima",
+            "El negocio funciona sin mí sin problema"
+          ]
+        },
+        {
+          "dim": "processes",
+          "text": "¿Cómo manejas las aprobaciones de entregables con clientes?",
+          "options": [
+            "Sin proceso definido, por WhatsApp o como sea",
+            "Informal, pero funciona la mayoría de las veces",
+            "Tenemos un proceso, pero no siempre se sigue",
+            "Proceso claro, documentado y respetado siempre"
+          ]
+        },
+        {
+          "dim": "scalability",
+          "text": "Si duplicaras tus clientes mañana, ¿tu operación podría manejarlo?",
+          "options": [
+            "No, colapsaría",
+            "Con mucho esfuerzo y probable pérdida de calidad",
+            "Sí, con algunos ajustes",
+            "Sí, el sistema está listo para escalar"
+          ]
+        },
+        {
+          "dim": "scalability",
+          "text": "¿Alguien nuevo podría entender y operar tu marca en menos de una semana?",
+          "options": [
+            "Imposible, sin que yo lo explique todo personalmente",
+            "Con mucha ayuda de mi parte, quizás",
+            "Con algo de orientación, probablemente sí",
+            "Sí, hay documentación suficiente para onboardear rápido"
+          ]
+        }
+      ],
+      "risks": {
+        "identity": "Falta de criterios visuales documentados — cada pieza depende del criterio del momento.",
+        "content": "Proceso de contenido sin estructura — revisiones interminables y dependencia del líder de marca.",
+        "assets": "Activos dispersos — tiempo perdido buscando archivos en cada proyecto.",
+        "processes": "Operación personalista — el negocio no puede funcionar sin ti presente.",
+        "scalability": "Escalabilidad bloqueada — crecer implica colapsar la operación actual."
       },
-      {
-        "dim": "processes",
-        "text": "¿Tienes documentados los procesos de tu negocio?",
-        "options": [
-          "Nada está documentado, todo está en mi cabeza",
-          "Algunos procesos están escritos, pero no actualizados",
-          "Los procesos principales están documentados",
-          "Todo está documentado y el equipo los sigue"
-        ]
-      },
-      {
-        "dim": "processes",
-        "text": "¿Qué pasa si no estás disponible por una semana?",
-        "options": [
-          "El negocio se detiene o genera muchos errores",
-          "Alguien puede cubrir, pero con muchas preguntas",
-          "El equipo puede operar con supervisión mínima",
-          "El negocio funciona sin mí sin problema"
-        ]
-      },
-      {
-        "dim": "processes",
-        "text": "¿Cómo manejas las aprobaciones de entregables con clientes?",
-        "options": [
-          "Sin proceso definido, por WhatsApp o como sea",
-          "Informal, pero funciona la mayoría de las veces",
-          "Tenemos un proceso, pero no siempre se sigue",
-          "Proceso claro, documentado y respetado siempre"
-        ]
-      },
-      {
-        "dim": "scalability",
-        "text": "Si duplicaras tus clientes mañana, ¿tu operación podría manejarlo?",
-        "options": [
-          "No, colapsaría",
-          "Con mucho esfuerzo y probable pérdida de calidad",
-          "Sí, con algunos ajustes",
-          "Sí, el sistema está listo para escalar"
-        ]
-      },
-      {
-        "dim": "scalability",
-        "text": "¿Alguien nuevo podría entender y operar tu marca en menos de una semana?",
-        "options": [
-          "Imposible, sin que yo lo explique todo personalmente",
-          "Con mucha ayuda de mi parte, quizás",
-          "Con algo de orientación, probablemente sí",
-          "Sí, hay documentación suficiente para onboardear rápido"
-        ]
+      "priorities": {
+        "identity": {
+          "action": "Crear sistema visual documentado",
+          "sub": "Manual de marca con lineamientos claros y accesibles."
+        },
+        "content": {
+          "action": "Definir flujo de aprobación de contenido",
+          "sub": "Criterios escritos y proceso de revisión en máximo 24h."
+        },
+        "assets": {
+          "action": "Centralizar y organizar activos de marca",
+          "sub": "Un repositorio único, accesible para todo el equipo."
+        },
+        "processes": {
+          "action": "Documentar procesos clave del negocio",
+          "sub": "SOPs que permitan operar sin depender del líder de marca."
+        },
+        "scalability": {
+          "action": "Diseñar el sistema para escalar",
+          "sub": "Estructura que soporte crecimiento sin colapsar la operación."
+        }
       }
-    ],
-    "risks": {
-      "identity": "Falta de criterios visuales documentados — cada pieza depende del criterio del momento.",
-      "content": "Proceso de contenido sin estructura — revisiones interminables y dependencia del líder de marca.",
-      "assets": "Activos dispersos — tiempo perdido buscando archivos en cada proyecto.",
-      "processes": "Operación personalista — el negocio no puede funcionar sin ti presente.",
-      "scalability": "Escalabilidad bloqueada — crecer implica colapsar la operación actual."
+    }
+  },
+  "atlas": {
+    "lab001": {
+      "welcome": {
+        "title": "Bienvenido al LAB",
+        "description": "Este diagnóstico te ayudará a descubrir qué tan dependiente es tu negocio de personas y no de sistemas.",
+        "stats": {
+          "dimensions": "6 DIMENSIONES",
+          "time": "3-5 MIN",
+          "resultsLine1": "RESULTADOS",
+          "resultsLine2": "ACCIONABLES"
+        },
+        "cta": "COMENZAR ANÁLISIS",
+        "privacy": "TUS RESPUESTAS SON 100% CONFIDENCIALES.",
+        "close": "Cerrar"
+      },
+      "articleExcerpt": {
+        "tag": "LAB-001",
+        "kicker": "OPERATIONAL DEPENDENCY SYSTEM",
+        "byline": "Por Ray Viera · Julio 2026",
+        "titleStart": "Por qué tu marca",
+        "titleHighlight": "se ve bien",
+        "titleEnd": "y aún así todo cuesta el doble",
+        "paragraph1": "Tienes logo, tienes paleta de colores, tienes Redes Sociales con coherencia visual y una web que da buena impresión.",
+        "paragraph2": "Y aun así, cada vez que hay que producir algo, una campaña, un post, un entregable, el proceso empieza casi desde cero.",
+        "closingLine": "El problema no es la identidad visual. Es que la marca no tiene sistema."
+      },
+      "sidebar": {
+        "progressLabel": "Tu progreso",
+        "progressValue": "{current} de {total}",
+        "viewFullDiagnostic": "Ver diagnóstico completo",
+        "confidentiality": "Confidencialidad",
+        "reviewInfo": "Revisar información",
+        "dimensions": {
+          "assets": "Activos de marca",
+          "access": "Acceso y velocidad",
+          "autonomy": "Autonomía",
+          "documentation": "Documentación",
+          "operation": "Operación sin TI",
+          "approvals": "Aprobaciones"
+        },
+        "resultLabel": "Resultado"
+      },
+      "questions": {
+        "q1": {
+          "scenario": "Imagina que mañana tu diseñador renuncia. ¿Qué tan fácil te sería encontrar los archivos correctos?",
+          "context": "Necesitas enviar el logo a un cliente en menos de cinco minutos.",
+          "options": [
+            {
+              "title": "Está en el computador de esa persona.",
+              "subtitle": "Dependo de alguien para acceder."
+            },
+            {
+              "title": "Hay varias carpetas y tocaría buscar.",
+              "subtitle": "No hay un lugar definido."
+            },
+            {
+              "title": "Está organizado en Drive.",
+              "subtitle": "Es accesible, pero no está optimizado."
+            },
+            {
+              "title": "Existe una biblioteca central.",
+              "subtitle": "Cualquiera puede encontrarlo rápido."
+            }
+          ]
+        },
+        "q2": {
+          "scenario": "Necesitas enviar un patrocinio en diez minutos. El cliente pide el logo en SVG",
+          "context": "¿Qué pasa?",
+          "options": [
+            {
+              "title": "No sabemos donde está",
+              "subtitle": "Esto toma más del tiempo esperado"
+            },
+            {
+              "title": "Alguien comienza a buscar",
+              "subtitle": "No hay un lugar definido"
+            },
+            {
+              "title": "Lo encontramos relativamente rápido",
+              "subtitle": "Es accesible, pero no está optimizado."
+            },
+            {
+              "title": "Dos clics y listo",
+              "subtitle": "Cualquiera puede encontrarlo rápido."
+            }
+          ]
+        },
+        "q3": {
+          "scenario": "Tu diseñador está de vacaciones y el cliente necesita una pieza urgente.",
+          "context": "¿Qué pasa?",
+          "options": [
+            {
+              "title": "No, siempre me los piden a mí",
+              "subtitle": "Sin mí, no saben dónde buscar ni qué usar."
+            },
+            {
+              "title": "A veces, pero prefieren pedirme confirmación",
+              "subtitle": "Pueden hacerlo pero necesitan validarlo conmigo"
+            },
+            {
+              "title": "La mayoría de las veces pueden, pero falta algo",
+              "subtitle": "Tienen lo básico, pero aún dependen de mí en algunas cosas"
+            },
+            {
+              "title": "Si, todo está disponible y saben dónde está",
+              "subtitle": "Pueden actuar con total autonomía y confianza."
+            }
+          ]
+        },
+        "q4": {
+          "scenario": "Necesitas capacitar a alguien nuevo para integrarse al negocio",
+          "context": "¿Tienes documentados los procesos clave para que pueda aprender y operar correctamente?",
+          "options": [
+            {
+              "title": "Nada está documentado, todo está en mi cabeza.",
+              "subtitle": "Cada vez tengo que explicar desde cero."
+            },
+            {
+              "title": "Algunos procesos están escritos, pero no actualizados",
+              "subtitle": "La información existe, pero está desordenada o desactualizada"
+            },
+            {
+              "title": "Los procesos principales están documentados",
+              "subtitle": "Están claros y sirven como guía para el equipo."
+            },
+            {
+              "title": "Todo está documentado y el equipo los sigue",
+              "subtitle": "Hay documentación completa, vigente y utilizada."
+            }
+          ]
+        },
+        "q5": {
+          "scenario": "No estarás disponible por una semana por un viaje imprevisto",
+          "context": "¿Qué pasa con tu negocio mientras tanto?",
+          "options": [
+            {
+              "title": "El negocio se detiene o genera muchos errores",
+              "subtitle": "Todo depende de ti"
+            },
+            {
+              "title": "Alguien puede cubrir, pero con muchas preguntas",
+              "subtitle": "Pueden avanzar, pero se presentan bloqueos y dudas constantes"
+            },
+            {
+              "title": "El equipo puede operar con supervisión mínima",
+              "subtitle": "Siguen funcionando con relativa independencia"
+            },
+            {
+              "title": "El negocio funciona sin ningún problema",
+              "subtitle": "El sistema está listo para operar de forma autónoma"
+            }
+          ]
+        },
+        "q6": {
+          "scenario": "El cliente envía comentarios sobre una pieza entregada",
+          "context": "¿Cómo manejas el ciclo de aprobaciones hasta llegar a la versión final?",
+          "options": [
+            {
+              "title": "Sin proceso definido, por WhatsApp o como sea",
+              "subtitle": "Se pierde información y hay idas y vueltas constantes"
+            },
+            {
+              "title": "Informal, pero funciona la mayoría de las veces",
+              "subtitle": "No está documentado, pero de alguna manera se resuelve"
+            },
+            {
+              "title": "Tenemos un proceso, pero no siempre se sigue",
+              "subtitle": "Existe, pero se salta con frecuencia"
+            },
+            {
+              "title": "Proceso claro, documentado y respetado siempre",
+              "subtitle": "Todos saben los pasos y se respeta el flujo."
+            }
+          ]
+        }
+      },
+      "checkpoints": {
+        "title": "DEPENDENCIA DETECTADA.",
+        "assets": {
+          "low": "Tus archivos de marca viven en la cabeza de una persona, no en un sistema. Si esa persona no está, la producción se detiene.",
+          "mid": "Los archivos existen, pero encontrarlos toma tiempo y preguntas. La organización funciona a medias: sostiene, no escala.",
+          "high": "Cualquiera en tu equipo encuentra el activo correcto en segundos, sin preguntar a nadie. Eso ya no es suerte, es sistema."
+        },
+        "processes": {
+          "low": "Cada pieza se produce distinto según quién la haga. No hay un proceso: hay memoria de quien lleva más tiempo ahí.",
+          "mid": "Hay pasos definidos, pero dependen de que alguien se acuerde de seguirlos. El proceso existe en teoría, no en la práctica diaria.",
+          "high": "Producir algo nuevo no exige reinventar el camino cada vez. El proceso sostiene la calidad sin que tú tengas que estar encima."
+        },
+        "continue": "Continuar"
+      },
+      "result": {
+        "eyebrow": "ANÁLISIS TÉCNICO",
+        "heading": "Tu reporte de Dependencia Operativa está listo",
+        "scoreTitle": "NIVEL DE DEPENDENCIA",
+        "bands": {
+          "low": "DEPENDENCIA BAJA",
+          "mid": "DEPENDENCIA MEDIA",
+          "high": "DEPENDENCIA ALTA"
+        },
+        "bandDescriptions": {
+          "low": "Tu operación ya sostiene sin depender de personas específicas. Buena base para escalar.",
+          "mid": "Hay bases sólidas, pero aún hay áreas críticas que frenan la escalabilidad del equipo.",
+          "high": "Tu operación depende fuertemente de personas puntuales. Esto es un riesgo real para escalar."
+        },
+        "byDimensionTitle": "RESULTADO POR DIMENSIÓN",
+        "radarTitle": "TU PERFIL OPERATIVO",
+        "bannerTitle": "PRÓXIMO PASO RECOMENDADO",
+        "bannerText": "Tu mayor oportunidad está en \"{dim1}\" y \"{dim2}\". Fortalecer estas áreas tendrá el mayor impacto en tu escalabilidad.",
+        "ctaNextLab": "Continuar con LAB-002 →",
+        "ctaContact": "Esto tiene arreglo, hablemos",
+        "downloadPdf": "Descargar resultado (PDF)",
+        "restart": "Rehacer diagnóstico",
+        "generatedOnLabel": "Generado el",
+        "footerNote": "Diagnóstico LAB-001 · Ray Viera · ray-viera-portfolio.vercel.app",
+        "alreadyCompletedNote": "Ya completaste este diagnóstico. Este es tu resultado guardado."
+      },
+      "article": {
+        "eyebrow": "ATLAS · LAB-001",
+        "title": "Por qué tu marca se ve bien y aún así todo cuesta el doble",
+        "author": "Por Ray Viera",
+        "date": "Julio 2026",
+        "paragraphs": [
+          "Tienes logo, tienes paleta de colores, tienes Redes Sociales con coherencia visual y una web que da buena impresión.",
+          "Y aun así, cada vez que hay que producir algo, una campaña, un post, un entregable para un cliente, el proceso empieza casi desde cero. Alguien busca el archivo correcto en tres carpetas distintas. Alguien pregunta si esta versión del logo es la buena. Alguien espera aprobación de quien siempre tiene que aprobar todo.",
+          "El problema no es la identidad visual. Es que la marca no tiene sistema.",
+          "Un sistema de marca no es el manual que vive en PDF y nadie abre. Es el conjunto de decisiones documentadas, activos de marca organizados y procesos definidos que permiten que cualquier persona del equipo produzca con criterio: sin preguntar, sin esperar, sin rehacer.",
+          "Sin ese sistema, el crecimiento tiene un techo invisible. Puedes conseguir más clientes, contratar más personas, invertir más en contenido, y seguir sintiéndote igual de atrapada en la operación. Tu marca no escala porque tu operación no está lista para hacerlo."
+        ],
+        "cta": "Empieza tu diagnóstico LAB-001 →",
+        "metaDescription": "Descubre tu Nivel de Dependencia Operativa. 6 preguntas para evaluar tu sistema de marca y encontrar exactamente qué está bloqueando tu crecimiento."
+      }
     },
-    "priorities": {
-      "identity": { "action": "Crear sistema visual documentado", "sub": "Manual de marca con lineamientos claros y accesibles." },
-      "content": { "action": "Definir flujo de aprobación de contenido", "sub": "Criterios escritos y proceso de revisión en máximo 24h." },
-      "assets": { "action": "Centralizar y organizar activos de marca", "sub": "Un repositorio único, accesible para todo el equipo." },
-      "processes": { "action": "Documentar procesos clave del negocio", "sub": "SOPs que permitan operar sin depender del líder de marca." },
-      "scalability": { "action": "Diseñar el sistema para escalar", "sub": "Estructura que soporte crecimiento sin colapsar la operación." }
-   }
+    "index": {
+      "eyebrow": "ATLAS",
+      "heading": "Tu Brand Operating System",
+      "subheading": "Un repositorio vivo de diagnósticos aplicados. Completa los 3 labs para desbloquear tu radar combinado de 5 dimensiones.",
+      "progress": "{completed} / {total} completados",
+      "viewResult": "Ver resultado",
+      "start": "Empezar",
+      "resume": "Continuar",
+      "talk": "Hablemos",
+      "building": "Construyendo {lab}",
+      "comingSoon": "Próximamente",
+      "available": "Disponible",
+      "inProgress": "En progreso",
+      "completed": "Completado",
+      "scoreLabel": "Score {score}/100",
+      "labs": {
+        "lab001": {
+          "name": "Dependencia operativa",
+          "tag": "LAB-001"
+        },
+        "lab002": {
+          "name": "Sistema visual y contenido",
+          "tag": "LAB-002"
+        },
+        "lab003": {
+          "name": "Operación y escala",
+          "tag": "LAB-003"
+        }
+      }
+    }
   }
-}
 }

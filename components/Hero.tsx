@@ -26,8 +26,8 @@ export default function Hero() {
             {t("nexaHook")}
           </p>
           <Link
-            href="/nexa-labs"
-            onClick={() => trackHeroCtaClick("nexa_labs")}
+            href="/atlas/lab-001"
+            onClick={() => trackHeroCtaClick("atlas_lab_001")}
             className="text-sm text-[#1a1a1a] font-medium hover:text-[#00C3D0] transition-colors duration-200 flex items-center gap-1.5"
           >
             {t("nexaHookCta")}

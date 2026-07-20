@@ -21,6 +21,17 @@ export const GA_EVENTS = {
   // NEXA LAB
   NEXALAB_INTERACTION: 'nexalab_interaction',
 
+  // Atlas — LAB-001 y siguientes
+  ATLAS_LAB_OPENED: 'atlas_lab_opened',
+  ATLAS_LAB_STARTED: 'atlas_lab_started',
+  ATLAS_QUESTION_ANSWERED: 'atlas_question_answered',
+  ATLAS_CHECKPOINT_REACHED: 'atlas_checkpoint_reached',
+  ATLAS_LAB_COMPLETED: 'atlas_lab_completed',
+  ATLAS_RESULT_VIEWED_RETURNING: 'atlas_result_viewed_returning',
+  ATLAS_RESULT_PDF_DOWNLOAD: 'atlas_result_pdf_download',
+  ATLAS_RESULT_CONTACT_CLICK: 'atlas_result_contact_click',
+  ATLAS_RESULT_NEXT_LAB_CLICK: 'atlas_result_next_lab_click',
+
   // CONTACT
   CONTACT_FORM_SUBMIT: 'contact_form_submit',
 } as const

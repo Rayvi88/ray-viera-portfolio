@@ -51,6 +51,55 @@ export const trackLocaleSwitch = (from: string, to: string) =>
 export const trackNexaLabInteraction = (action: string) =>
   trackEvent(GA_EVENTS.NEXALAB_INTERACTION, { action })
 
+// — Atlas — LAB-001 y siguientes —
+export const trackAtlasLabOpened = (labId: string) =>
+  trackEvent(GA_EVENTS.ATLAS_LAB_OPENED, { lab_id: labId })
+
+export const trackAtlasLabStarted = (labId: string) =>
+  trackEvent(GA_EVENTS.ATLAS_LAB_STARTED, { lab_id: labId })
+
+export const trackAtlasQuestionAnswered = (
+  labId: string,
+  dimension: string,
+  questionIndex: number,
+  tier: number
+) =>
+  trackEvent(GA_EVENTS.ATLAS_QUESTION_ANSWERED, {
+    lab_id: labId,
+    dimension,
+    question_index: questionIndex,
+    tier,
+  })
+
+export const trackAtlasCheckpointReached = (
+  labId: string,
+  group: string,
+  tier: string
+) => trackEvent(GA_EVENTS.ATLAS_CHECKPOINT_REACHED, { lab_id: labId, group, tier })
+
+export const trackAtlasLabCompleted = (
+  labId: string,
+  overallScore: number,
+  band: string
+) =>
+  trackEvent(GA_EVENTS.ATLAS_LAB_COMPLETED, {
+    lab_id: labId,
+    overall_score: overallScore,
+    band,
+  })
+
+export const trackAtlasResultViewedReturning = (labId: string) =>
+  trackEvent(GA_EVENTS.ATLAS_RESULT_VIEWED_RETURNING, { lab_id: labId })
+
+export const trackAtlasResultPdfDownload = (labId: string) =>
+  trackEvent(GA_EVENTS.ATLAS_RESULT_PDF_DOWNLOAD, { lab_id: labId })
+
+export const trackAtlasResultContactClick = (labId: string) =>
+  trackEvent(GA_EVENTS.ATLAS_RESULT_CONTACT_CLICK, { lab_id: labId })
+
+export const trackAtlasResultNextLabClick = (labId: string) =>
+  trackEvent(GA_EVENTS.ATLAS_RESULT_NEXT_LAB_CLICK, { lab_id: labId })
+
 // — CONTACT —
 export const trackContactFormSubmit = () =>
   trackEvent(GA_EVENTS.CONTACT_FORM_SUBMIT)
