@@ -24,7 +24,10 @@ export default async function LocaleLayout({
       <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
       </NextIntlClientProvider>
-      <GoogleAnalytics gaId={GA_ID} />
+
+      {process.env.NODE_ENV === "production" && (
+        <GoogleAnalytics gaId={GA_ID} />
+      )}
     </>
   );
 }
