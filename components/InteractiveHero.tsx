@@ -63,7 +63,7 @@ export default function InteractiveHero() {
   const initScene = useCallback((w: number, h: number) => {
     particlesRef.current = Array.from({ length: N_PARTICLES }, () => ({
       x: rand(0, w), y: rand(0, h),
-      vx: rand(-0.5, 0.5), vy: rand(-0.5, 0.5),
+      vx: rand(-0.15, 0.15), vy: rand(-0.15, 0.15),
       r: rand(1.5, 3),
       opacity: rand(0.35, 0.75),
       opacityDir: Math.random() > 0.5 ? 1 : -1,
@@ -73,8 +73,8 @@ export default function InteractiveHero() {
       id: item.id,
       x: INIT_POS[i].rx * w,
       y: INIT_POS[i].ry * h,
-      vx: rand(-0.35, 0.35),
-      vy: rand(-0.35, 0.35),
+      vx: rand(-0.12, 0.12),
+      vy: rand(-0.12, 0.12),
       label: item.label,
       description: item.description,
     }));
@@ -135,7 +135,7 @@ export default function InteractiveHero() {
               p.vy += dy * force;
               // limitar velocidad máxima
               const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-              if (speed > 2.5) { p.vx = (p.vx / speed) * 2.5; p.vy = (p.vy / speed) * 2.5; }
+              if (speed > 0.8) { p.vx = (p.vx / speed) * 0.8; p.vy = (p.vy / speed) * 0.8; }
             }
           }
 
