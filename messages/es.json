@@ -8,14 +8,40 @@
     "atlas": "Atlas"
   },
   "hero": {
-    "headline1": "Diseñando sistemas",
-    "headline2": "complejos con",
+    "headline1": "Diseñando sistemas complejos para que",
+    "headline2": "funcionen con",
     "highlight": "claridad",
-    "subheadline": "Ayudo a equipos a lanzar y escalar productos con claridad y propósito.",
+    "subheadline": "Cuando los procesos se fragmentan, las experiencias se complican y los equipos pierden foco, el problema no siempre necesita otra herramienta. A veces necesita un sistema mejor diseñado.",
     "contactMe": "Contáctame",
     "selectedWorks": "Ver proyectos",
     "nexaHook": "¿Tu marca tiene sistema, o solo tiene logo?",
     "nexaHookCta": "Empieza tu Brand Operating System. Lab-001 ya disponible"
+  },
+  "interactiveHero": {
+  "headlineStart": "La complejidad no desaparece.",
+  "headlineHighlight": "Se organiza, conecta y diseña.",
+  "items": {
+    "procesos": {
+      "title": "Procesos",
+      "description": "Diseño y optimizo procesos para convertir la complejidad operativa en sistemas más claros, eficientes y escalables."
+    },
+    "uxui": {
+      "title": "UX/UI",
+      "description": "Creo experiencias digitales centradas en las personas, combinando investigación, estructura y diseño de interfaces."
+    },
+    "estrategia": {
+      "title": "Estrategia",
+      "description": "Conecto las necesidades del negocio con las necesidades de las personas para tomar mejores decisiones de diseño y producto."
+    },
+    "colaboracion": {
+      "title": "Colaboración",
+      "description": "Trabajo entre equipos y disciplinas para alinear personas, conocimiento y objetivos alrededor de soluciones concretas."
+    },
+    "innovacion": {
+      "title": "Innovación",
+      "description": "Exploro nuevas formas de resolver problemas complejos mediante tecnología, experimentación y pensamiento sistémico."
+    }
+  }
   },
   "footer": {
     "copy": "© 2026 Ray Viera. Todos los derechos reservados."
@@ -966,229 +992,8 @@
     "btnSuccess": "¡Mensaje Enviado!",
     "btnError": "Error, intenta de nuevo"
   },
-  "nexaLab": {
-    "nav": "NEXA LABS",
-    "lab01": {
-      "author": "By Ray Viera",
-      "date": "June 2026",
-      "hook": "¿Tu marca tiene sistema, o solo tiene logo?",
-      "hookCta": "Descubre tu Brand Chaos Score →",
-      "eyebrow": "NEXA LABS · Lab 01",
-      "title": "¿Cuánto caos tiene tu marca?",
-      "subtitle": "12 preguntas para descubrir el nivel real de organización de tu marca. Obtén tu Brand Chaos Score y un reporte personalizado.",
-      "meta": {
-        "questions": "12",
-        "questionsLabel": "preguntas",
-        "time": "3 min",
-        "timeLabel": "duración",
-        "cost": "gratis",
-        "costLabel": "sin costo"
-      },
-      "startBtn": "Comenzar diagnóstico →",
-      "essay": {
-        "eyebrow": "NEXA LABS · Lab 01 — Brand Operating System",
-        "title": "Por qué tu marca se ve bien y aún así todo cuesta el doble",
-        "metaDescription": "Descubre tu Brand Chaos Score. 12 preguntas para evaluar tu sistema de marca y encontrar exactamente qué está bloqueando tu crecimiento.",
-        "body": "Tienen logo. Tienen paleta de colores. Tienen Instagram con coherencia visual y una web que da buena impresión.\n\nY aun así, cada vez que hay que producir algo — una campaña, un post, un entregable para un cliente — el proceso empieza casi desde cero. Alguien busca el archivo correcto en tres carpetas distintas. Alguien pregunta si esta versión del logo es la buena. Alguien espera aprobación de quien siempre tiene que aprobar todo.\n\nEl problema no es la identidad visual. Es que la marca no tiene sistema.\n\nUn sistema de marca no es el manual que vive en PDF y nadie abre. Es el conjunto de decisiones documentadas, activos de marca organizados y procesos definidos que permiten que cualquier persona del equipo produzca con criterio — sin preguntar, sin esperar, sin rehacer.\n\nSin ese sistema, el crecimiento tiene un techo invisible. Puedes conseguir más clientes, contratar más personas, invertir más en contenido — y seguir sintiéndote igual de atrapada en la operación. Tu marca no escala porque tu operación no está lista para hacerlo.",
-        "ctaLabel": "Evalúa tu marca ahora",
-        "author": "Por Ray Viera",
-        "date": "Junio 2026"
-      },
-      "progress": "de 12",
-      "prev": "← Anterior",
-      "next": "Siguiente →",
-      "finish": "Ver mi resultado →",
-      "emailTitle": "Tu resultado está listo",
-      "emailSubtitle": "Ingresa tu email para ver tu Brand Chaos Score y recibir el reporte personalizado.",
-      "emailPlaceholder": "tu@email.com",
-      "emailBtn": "Ver mi resultado →",
-      "emailPrivacy": "Sin spam. Solo tu reporte. Puedes darte de baja cuando quieras.",
-      "resultsEyebrow": "Tu Brand Chaos Score",
-      "dimensionLabel": "Resultado por dimensión",
-      "profileLabel": "Perfil de marca",
-      "risksLabel": "Principales riesgos detectados",
-      "prioritiesLabel": "Prioridades recomendadas",
-      "downloadBtn": "Guardar reporte",
-      "scheduleBtn": "Agendar llamada →",
-      "levels": {
-        "chaotic": "Caótico",
-        "deficient": "Deficiente",
-        "functional": "Funcional",
-        "scalable": "Escalable"
-      },
-      "levelDescriptions": {
-        "chaotic": "Tu marca depende completamente de ti. Sin un sistema, el crecimiento está bloqueado.",
-        "deficient": "Tienes elementos dispersos, pero sin estructura. Cada proyecto es un esfuerzo desde cero.",
-        "functional": "Hay bases sólidas, pero la escalabilidad está limitada. Un sistema puede multiplicar tu capacidad.",
-        "scalable": "Tu marca tiene estructura real. El siguiente nivel es optimizar y automatizar."
-      },
-      "ctaMessages": {
-        "chaotic": "Tu marca necesita un sistema urgente. Podemos transformarla en 4-6 semanas con el Brand Operating System.",
-        "deficient": "Tienes la base. El BOS organiza todo lo que ya existe y lo convierte en un sistema escalable.",
-        "functional": "Estás cerca. Un BOS completo te lleva al siguiente nivel sin empezar desde cero.",
-        "scalable": "Excelente estructura. El BOS + Digital Experience lleva tu sistema al siguiente nivel."
-      },
-      "dimensions": {
-        "identity": "Identidad visual",
-        "content": "Contenido",
-        "assets": "Activos y organización",
-        "processes": "Procesos internos",
-        "scalability": "Escalabilidad"
-      },
-      "questions": [
-        {
-          "dim": "identity",
-          "text": "¿Tu marca tiene lineamientos visuales documentados?",
-          "options": [
-            "No tenemos nada definido",
-            "Tenemos logo, pero nada más",
-            "Tenemos algunos elementos, pero no están documentados",
-            "Tenemos un manual de marca completo y actualizado"
-          ]
-        },
-        {
-          "dim": "identity",
-          "text": "¿Cómo es la consistencia visual de tu marca en todos tus canales?",
-          "options": [
-            "Cada pieza se ve diferente, no hay coherencia",
-            "Hay algo de consistencia, pero depende de quién lo haga",
-            "Es mayormente consistente, con algunas variaciones",
-            "Completamente consistente en todos los puntos de contacto"
-          ]
-        },
-        {
-          "dim": "content",
-          "text": "¿Tu equipo sabe qué tipo de contenido puede y no puede publicar?",
-          "options": [
-            "No hay criterios, cada uno decide",
-            "Hay criterios informales, de palabra",
-            "Hay algunos criterios escritos, pero incompletos",
-            "Hay una guía de contenido clara que todos conocen"
-          ]
-        },
-        {
-          "dim": "content",
-          "text": "¿Cuánto tiempo toma producir y aprobar una pieza de contenido?",
-          "options": [
-            "Días o semanas, con muchas revisiones",
-            "Más de un día, con al menos 3 revisiones",
-            "Menos de un día, con 1-2 revisiones",
-            "Proceso claro, pocas revisiones, fluye solo"
-          ]
-        },
-        {
-          "dim": "assets",
-          "text": "¿Dónde están los archivos de tu marca ahora mismo?",
-          "options": [
-            "En el teléfono o computador de alguien, no sé exactamente",
-            "En varias carpetas sin organización clara",
-            "En una carpeta compartida, organizada parcialmente",
-            "En un sistema centralizado, accesible para todo el equipo"
-          ]
-        },
-        {
-          "dim": "assets",
-          "text": "Si mañana necesitas el logo en alta resolución, ¿cuánto tardas en encontrarlo?",
-          "options": [
-            "Más de 30 minutos, o no sé dónde está",
-            "Entre 10 y 30 minutos",
-            "Menos de 10 minutos",
-            "Menos de 2 minutos, siempre accesible"
-          ]
-        },
-        {
-          "dim": "assets",
-          "text": "¿Tu equipo puede crear piezas de marca sin pedirte los archivos cada vez?",
-          "options": [
-            "No, siempre me los piden a mí",
-            "A veces, pero prefieren pedirme confirmación",
-            "La mayoría de las veces pueden, pero falta algo",
-            "Sí, todo está disponible y saben dónde está"
-          ]
-        },
-        {
-          "dim": "processes",
-          "text": "¿Tienes documentados los procesos de tu negocio?",
-          "options": [
-            "Nada está documentado, todo está en mi cabeza",
-            "Algunos procesos están escritos, pero no actualizados",
-            "Los procesos principales están documentados",
-            "Todo está documentado y el equipo los sigue"
-          ]
-        },
-        {
-          "dim": "processes",
-          "text": "¿Qué pasa si no estás disponible por una semana?",
-          "options": [
-            "El negocio se detiene o genera muchos errores",
-            "Alguien puede cubrir, pero con muchas preguntas",
-            "El equipo puede operar con supervisión mínima",
-            "El negocio funciona sin mí sin problema"
-          ]
-        },
-        {
-          "dim": "processes",
-          "text": "¿Cómo manejas las aprobaciones de entregables con clientes?",
-          "options": [
-            "Sin proceso definido, por WhatsApp o como sea",
-            "Informal, pero funciona la mayoría de las veces",
-            "Tenemos un proceso, pero no siempre se sigue",
-            "Proceso claro, documentado y respetado siempre"
-          ]
-        },
-        {
-          "dim": "scalability",
-          "text": "Si duplicaras tus clientes mañana, ¿tu operación podría manejarlo?",
-          "options": [
-            "No, colapsaría",
-            "Con mucho esfuerzo y probable pérdida de calidad",
-            "Sí, con algunos ajustes",
-            "Sí, el sistema está listo para escalar"
-          ]
-        },
-        {
-          "dim": "scalability",
-          "text": "¿Alguien nuevo podría entender y operar tu marca en menos de una semana?",
-          "options": [
-            "Imposible, sin que yo lo explique todo personalmente",
-            "Con mucha ayuda de mi parte, quizás",
-            "Con algo de orientación, probablemente sí",
-            "Sí, hay documentación suficiente para onboardear rápido"
-          ]
-        }
-      ],
-      "risks": {
-        "identity": "Falta de criterios visuales documentados — cada pieza depende del criterio del momento.",
-        "content": "Proceso de contenido sin estructura — revisiones interminables y dependencia del líder de marca.",
-        "assets": "Activos dispersos — tiempo perdido buscando archivos en cada proyecto.",
-        "processes": "Operación personalista — el negocio no puede funcionar sin ti presente.",
-        "scalability": "Escalabilidad bloqueada — crecer implica colapsar la operación actual."
-      },
-      "priorities": {
-        "identity": {
-          "action": "Crear sistema visual documentado",
-          "sub": "Manual de marca con lineamientos claros y accesibles."
-        },
-        "content": {
-          "action": "Definir flujo de aprobación de contenido",
-          "sub": "Criterios escritos y proceso de revisión en máximo 24h."
-        },
-        "assets": {
-          "action": "Centralizar y organizar activos de marca",
-          "sub": "Un repositorio único, accesible para todo el equipo."
-        },
-        "processes": {
-          "action": "Documentar procesos clave del negocio",
-          "sub": "SOPs que permitan operar sin depender del líder de marca."
-        },
-        "scalability": {
-          "action": "Diseñar el sistema para escalar",
-          "sub": "Estructura que soporte crecimiento sin colapsar la operación."
-        }
-      }
-    }
-  },
-  "atlas": {
+  
+"atlas": {
     "lab001": {
       "welcome": {
         "title": "Bienvenido al LAB",
@@ -1451,4 +1256,5 @@
       }
     }
   }
+}
 }

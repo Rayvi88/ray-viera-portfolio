@@ -7,12 +7,14 @@ import PageTransition from "@/components/PageTransition";
 export default function Home() {
   return (
     <PageTransition>
-      <div className="h-screen overflow-hidden flex flex-col">
+      <div className="min-h-screen flex flex-col">
         <BackgroundClient />
         <Navbar />
+
         <main className="flex-1 flex flex-col">
           <Hero />
         </main>
+
         <Footer />
       </div>
     </PageTransition>

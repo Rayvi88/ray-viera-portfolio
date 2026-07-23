@@ -9,17 +9,44 @@
   },
   "hero": {
     "headline1": "Designing complex",
-    "headline2": "systems with",
+    "headline2": "systems so they function with",
     "highlight": "clarity",
-    "subheadline": "I help teams launch and scale products with clarity and purpose.",
+    "subheadline": "When processes fragment, experiences get complicated and teams lose focus, the problem doesn't always need another tool. Sometimes it needs a better-designed system.",
     "contactMe": "Contact me",
     "selectedWorks": "Selected works",
     "nexaHook": "Does your brand have a system, or just a logo?",
     "nexaHookCta": "Start your Brand Operating System. Lab-001 available now"
   },
+    "interactiveHero": {
+    "headlineStart": "Complexity doesn't disappear.",
+    "headlineHighlight": "It is organized, connected, designed.",
+    "items": {
+      "procesos": {
+        "title": "Processes",
+        "description": "I transform complex processes into clear, structured, and easy-to-operate systems."
+      },
+      "uxui": {
+        "title": "UX / UI",
+        "description": "I design digital experiences that connect people's needs with business goals."
+      },
+      "estrategia": {
+        "title": "Strategy",
+        "description": "I connect vision, data, and context to turn complex problems into opportunities for action."
+      },
+      "colaboracion": {
+        "title": "Collaboration",
+        "description": "I create structures that help teams work with greater clarity, autonomy, and alignment."
+      },
+      "innovacion": {
+        "title": "Innovation",
+        "description": "I explore new ways to solve problems and turn ideas into solutions that can evolve."
+      }
+    }
+  },
   "footer": {
     "copy": "© 2026 Ray Viera. All rights reserved."
   },
+
   "byTheNumbers": {
     "title": "By the Numbers",
     "p1bold": "I care about building things that make sense.",
@@ -98,8 +125,8 @@
     "title": "Strategic Explorations",
     "subtitle": "Design explorations used to investigate systems, experiences, and business opportunities through visual concepts and strategic proposals.",
     "cta": "View Case Study",
-    "gtmTag": "Go To Market · UX",
-    "gtmTitle": "Smart Documents: Go To Market Strategy",
+    "gtmTag": "Go-to-Market · UX",
+    "gtmTitle": "Smart Documents: Go-to-Market · UX Strategy",
     "smartTag": "Product Concept · AI",
     "smartTitle": "Smart Documents",
     "luxuryBrandTag": "Brand · Visual System",
@@ -413,24 +440,23 @@
       ],
       "systemShiftCaption": "Same verification volume",
       "perfTitle": "Performance impact",
-      "perfValue": "-70%",
-      "perfMetric": "Average Response Time",
-      "perfAfter": "15 min",
-      "perfBefore": "(Before: 80 min)",
-      "perfDesc": "Standardized flows and templates reduced variability in case handling.",
-      "metricsTitle": "Operational Metrics",
+      "perfValue": "-87.5%",
+"perfMetric": "Average Response Time",
+"perfAfter": "15 min",
+"perfBefore": "(Before: 120 min)",
+"perfDesc": "Standardized flows and templates reduced variability in case handling.",
       "metrics": [
         {
-          "label": "Average Response Time",
-          "value": "120 - 15",
-          "unit": "mins",
-          "delta": "85%"
-        },
+      "label": "Average Response Time",
+      "value": "120 - 15",
+      "unit": "mins",
+      "delta": "87.5%"
+      },
         {
           "label": "Reduction in training",
           "value": "16 - 8",
           "unit": "weeks",
-          "delta": "40%"
+          "delta": "50%"
         },
         {
           "label": "Average Resolution Time",
@@ -441,8 +467,8 @@
         {
           "label": "Customer Satisfaction",
           "value": "4.3",
-          "unit": "",
-          "delta": "46%"
+          "unit": "/5",
+          "delta": "Customer satisfaction score"
         }
       ],
       "businessTitle": "Business Impact",
@@ -452,7 +478,7 @@
       ],
       "businessItems2": [
         "Increased operational scalability without linear headcount growth",
-        "Improve communication consistency."
+        "Improved communication consistency"
       ]
     },
     "learning": {
@@ -639,8 +665,8 @@
       "typeValue": "Conceptual design exercise",
       "scopeLabel": "Scope",
       "scopeItems": [
-        "Got to market",
-        "UX architecture",
+        "Go-to-Market Strategy",
+        "UX Architecture",
         "Product Strategy"
       ],
       "yearLabel": "Year",
@@ -704,17 +730,17 @@
     "masterGraphic": {
       "title": "Master Graphic",
       "desc1": "The design incorporates the \"before, AI after\" contrast so that any carrier, customs broker, or logistics analyst can grasp the unique value proposition in seconds. AI transforms a tedious, error-prone process into ultra-fast, accurate validation.",
-      "desc2": "The design follows the principle of clarity over decoration: typographic hierarchy, semantic colors (red-green), recognizable iconography, and a direct CTA, \"Validate your first shipment,\" invites friction less action.",
+      "desc2": "The design follows the principle of clarity over decoration: typographic hierarchy, semantic colors (red and green), recognizable iconography, and a direct CTA, \"Validate your first shipment,\" invite frictionless action.",
       "desc3": "The modular structure allows it to be scaled to banners, emails, or micro videos without losing impact, just as the marketing brief required."
     },
     "marketStrategy": {
-      "title": "Go To Market Strategy",
+      "title": "Go-to-Market Strategy",
       "impactLabel": "Projected impact",
       "impactDesc": "An average customer processes 50 shipments per month, saving 97.5 hours per month. Errors are reduced by 90% in customs corrections, and carrier delays are reduced by 40%.",
       "marketStrategyImg": "/marketstrategy.png"
     },
     "narrative": {
-      "title": "Go To Market Strategy",
+      "title": "Go-to-Market Strategy",
       "beforeLabel": "Before",
       "afterLabel": "After",
       "beforeItems": [
@@ -851,11 +877,11 @@
         },
         {
           "title": "Contents Topics",
-          "desc": "Develop content around recurring themes to keep readers engaged."
+          "desc": "Develop recurring content themes to maintain audience interest and engagement."
         },
         {
-          "title": "Innovation in Format",
-          "desc": "Develop content around recurring themes to keep readers engaged."
+          "title": "Format Innovation",
+          "desc": "Experiment with different content formats to keep the audience engaged and discover new ways to communicate the brand."
         }
       ]
     },
@@ -965,228 +991,6 @@
     "btnSending": "Sending...",
     "btnSuccess": "Message Sent!",
     "btnError": "Error, try again"
-  },
-  "nexaLab": {
-    "nav": "NEXA LABS",
-    "lab01": {
-      "author": "By Ray Viera",
-      "date": "June 2026",
-      "hook": "Does your brand have a system — or just a logo?",
-      "hookCta": "Take the Brand Chaos Score →",
-      "eyebrow": "NEXA LABS · Lab 01",
-      "title": "How much chaos does your brand have?",
-      "subtitle": "12 questions to find out the real state of your brand. Get your Brand Chaos Score and a personalized report.",
-      "meta": {
-        "questions": "12",
-        "questionsLabel": "questions",
-        "time": "3 min",
-        "timeLabel": "duration",
-        "cost": "free",
-        "costLabel": "no cost"
-      },
-      "startBtn": "Start diagnosis →",
-      "essay": {
-        "eyebrow": "NEXA LABS · Lab 01 — Brand Operating System",
-        "title": "Why your brand looks good and everything still costs twice as much",
-        "metaDescription": "Discover your Brand Chaos Score. 12 questions to assess your brand identity system and find out what's blocking your growth.",
-        "body": "They have a logo. A color palette. An Instagram feed with visual consistency and a website that makes a strong first impression.\n\nAnd yet — every time something needs to be produced, a campaign, a post, a client deliverable, the process starts almost from scratch. Someone searches for the right file across three different folders. Someone asks whether this version of the logo is the correct one. Someone waits for approval from the one person who always has to approve everything.\n\nThe problem isn't the brand. It's that the brand has no system.\n\nA brand identity system isn't the guidelines document that lives in a PDF no one opens. It's the set of documented decisions, organized brand assets, and defined processes that allow anyone on the team to produce on-brand work — without asking, without waiting, without redoing.\n\nWithout that system, growth has an invisible ceiling. You can bring in more clients, hire more people, invest more in content — and still feel just as trapped in the day-to-day operation. Your brand doesn't scale because your operation isn't ready to.",
-        "ctaLabel": "Assess your brand now",
-        "author": "By Ray Viera",
-        "date": "June 2026"
-      },
-      "progress": "of 12",
-      "prev": "← Previous",
-      "next": "Next →",
-      "finish": "See my result →",
-      "emailTitle": "Your result is ready",
-      "emailSubtitle": "Enter your email to see your Brand Chaos Score and receive your personalized report.",
-      "emailPlaceholder": "you@email.com",
-      "emailBtn": "See my result →",
-      "emailPrivacy": "No spam. Just your report. Unsubscribe anytime.",
-      "resultsEyebrow": "Your Brand Chaos Score",
-      "dimensionLabel": "Result by dimension",
-      "profileLabel": "Brand profile",
-      "risksLabel": "Main risks detected",
-      "prioritiesLabel": "Recommended priorities",
-      "downloadBtn": "Save report",
-      "scheduleBtn": "Schedule a call →",
-      "levels": {
-        "chaotic": "Chaotic",
-        "deficient": "Deficient",
-        "functional": "Functional",
-        "scalable": "Scalable"
-      },
-      "levelDescriptions": {
-        "chaotic": "Your brand depends entirely on you. Without a system, growth is blocked.",
-        "deficient": "You have scattered elements but no structure. Every project starts from scratch.",
-        "functional": "You have a solid foundation, but scalability is limited. A system can multiply your capacity.",
-        "scalable": "Your brand has real structure. The next level is to optimize and automate."
-      },
-      "ctaMessages": {
-        "chaotic": "Your brand needs a system urgently. We can transform it in 4–6 weeks with the Brand Operating System.",
-        "deficient": "You have the foundation. The BOS organizes everything that already exists and turns it into a scalable system.",
-        "functional": "You're close. A complete BOS takes you to the next level without starting from scratch.",
-        "scalable": "Excellent structure. The BOS + Digital Experience takes your system to the next level."
-      },
-      "dimensions": {
-        "identity": "Visual identity",
-        "content": "Content",
-        "assets": "Assets & organization",
-        "processes": "Internal processes",
-        "scalability": "Scalability"
-      },
-      "questions": [
-        {
-          "dim": "identity",
-          "text": "Does your brand have documented visual guidelines?",
-          "options": [
-            "We have nothing defined",
-            "We have a logo, but nothing else",
-            "We have some elements, but they're not documented",
-            "We have a complete, up-to-date brand manual"
-          ]
-        },
-        {
-          "dim": "identity",
-          "text": "How consistent is your brand's visual presence across all channels?",
-          "options": [
-            "Every piece looks different — no coherence",
-            "There's some consistency, but it depends on who's doing it",
-            "Mostly consistent, with some variations",
-            "Completely consistent across all touchpoints"
-          ]
-        },
-        {
-          "dim": "content",
-          "text": "Does your team know what type of content can and cannot be published?",
-          "options": [
-            "No criteria — everyone decides on their own",
-            "Informal criteria, passed by word of mouth",
-            "Some written criteria, but incomplete",
-            "A clear content guide that everyone knows"
-          ]
-        },
-        {
-          "dim": "content",
-          "text": "How long does it take to produce and approve a piece of content?",
-          "options": [
-            "Days or weeks, with many revisions",
-            "More than a day, with at least 3 revisions",
-            "Less than a day, with 1–2 revisions",
-            "Clear process, few revisions, flows on its own"
-          ]
-        },
-        {
-          "dim": "assets",
-          "text": "Where are your brand files right now?",
-          "options": [
-            "On someone's phone or computer — not sure exactly",
-            "In various folders with no clear organization",
-            "In a shared folder, partially organized",
-            "In a centralized system, accessible to the whole team"
-          ]
-        },
-        {
-          "dim": "assets",
-          "text": "If you needed the logo in high resolution tomorrow, how long would it take to find it?",
-          "options": [
-            "More than 30 minutes, or I don't know where it is",
-            "Between 10 and 30 minutes",
-            "Less than 10 minutes",
-            "Less than 2 minutes — always accessible"
-          ]
-        },
-        {
-          "dim": "assets",
-          "text": "Can your team create brand materials without asking you for files every time?",
-          "options": [
-            "No — they always ask me",
-            "Sometimes, but they prefer to confirm with me",
-            "Most of the time, but something's always missing",
-            "Yes — everything is available and they know where it is"
-          ]
-        },
-        {
-          "dim": "processes",
-          "text": "Do you have your business processes documented?",
-          "options": [
-            "Nothing is documented — it's all in my head",
-            "Some processes are written, but not updated",
-            "The main processes are documented",
-            "Everything is documented and the team follows it"
-          ]
-        },
-        {
-          "dim": "processes",
-          "text": "What happens if you're unavailable for a week?",
-          "options": [
-            "The business stops or generates many errors",
-            "Someone can cover, but with many questions",
-            "The team can operate with minimal supervision",
-            "The business runs fine without me"
-          ]
-        },
-        {
-          "dim": "processes",
-          "text": "How do you handle client deliverable approvals?",
-          "options": [
-            "No defined process — WhatsApp or whatever works",
-            "Informal, but works most of the time",
-            "We have a process, but it's not always followed",
-            "Clear process, documented and always respected"
-          ]
-        },
-        {
-          "dim": "scalability",
-          "text": "If you doubled your clients tomorrow, could your operation handle it?",
-          "options": [
-            "No — it would collapse",
-            "With a lot of effort and probable quality loss",
-            "Yes, with some adjustments",
-            "Yes — the system is ready to scale"
-          ]
-        },
-        {
-          "dim": "scalability",
-          "text": "Could someone new understand and run your brand in less than a week?",
-          "options": [
-            "Impossible without me explaining everything personally",
-            "With a lot of help from me, maybe",
-            "With some guidance, probably yes",
-            "Yes — we have enough documentation to onboard quickly"
-          ]
-        }
-      ],
-      "risks": {
-        "identity": "Lack of documented visual criteria — each piece depends on whoever's doing it.",
-        "content": "Unstructured content process — endless revisions and dependency on the brand leader.",
-        "assets": "Scattered assets — time lost searching for files in every project.",
-        "processes": "Personality-driven operation — the business can't function without you present.",
-        "scalability": "Blocked scalability — growing means collapsing the current operation."
-      },
-      "priorities": {
-        "identity": {
-          "action": "Create a documented visual system",
-          "sub": "A brand manual with clear, accessible guidelines."
-        },
-        "content": {
-          "action": "Define a content approval workflow",
-          "sub": "Written criteria and a review process within 24h."
-        },
-        "assets": {
-          "action": "Centralize and organize brand assets",
-          "sub": "One repository, accessible to the entire team."
-        },
-        "processes": {
-          "action": "Document key business processes",
-          "sub": "SOPs that allow operation without depending on the leader."
-        },
-        "scalability": {
-          "action": "Design the system to scale",
-          "sub": "A structure that supports growth without collapsing operations."
-        }
-      }
-    }
   },
   "atlas": {
     "lab001": {
@@ -1423,7 +1227,7 @@
     "index": {
       "eyebrow": "ATLAS",
       "heading": "Your Brand Operating System",
-      "subheading": "A living repository of applied diagnostics. Complete all 3 labs to unlock your combined 5-dimension radar.",
+      "subheading": "A living repository of applied diagnostics. Complete the labs to build a clearer picture of how your business operates, where dependency exists, and what to improve next.",
       "progress": "{completed} / {total} completed",
       "viewResult": "View result",
       "start": "Start",
