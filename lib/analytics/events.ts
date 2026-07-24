@@ -100,6 +100,19 @@ export const trackAtlasResultContactClick = (labId: string) =>
 export const trackAtlasResultNextLabClick = (labId: string) =>
   trackEvent(GA_EVENTS.ATLAS_RESULT_NEXT_LAB_CLICK, { lab_id: labId })
 
-// — CONTACT —
+// — Contact —
 export const trackContactFormSubmit = () =>
   trackEvent(GA_EVENTS.CONTACT_FORM_SUBMIT)
+
+// — About Me —
+export const trackAboutMeOpened = () =>
+  trackEvent(GA_EVENTS.ABOUT_ME_OPENED)
+
+export const trackAboutMeClosed = () =>
+  trackEvent(GA_EVENTS.ABOUT_ME_CLOSED)
+
+export const trackAboutMePhotoReveal = () =>
+  trackEvent(GA_EVENTS.ABOUT_ME_PHOTO_REVEAL)
+
+export const trackAboutMeIconHovered = (icon: string) =>
+  trackEvent(GA_EVENTS.ABOUT_ME_ICON_HOVERED, { icon_label: icon })

@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import PhotoReveal from "@/components/PhotoReveal";
+import {
+  trackAboutMeClosed,
+  trackAboutMeIconHovered,
+} from "@/lib/analytics/events";
 
 interface Dot { x: number; y: number; vx: number; vy: number; r: number; o: number; od: number; }
 const rand = (a: number, b: number) => Math.random() * (b - a) + a;
@@ -32,12 +36,18 @@ export default function AboutMeModal({ onClose }: Props) {
   const dotsRef   = useRef<Dot[]>([]);
   const rafRef    = useRef<number>(0);
 
+  const handleClose = () => {
+    trackAboutMeClosed();
+    onClose();
+  };
+
   // cerrar con Escape
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [onClose]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // partículas
   useEffect(() => {
@@ -122,14 +132,14 @@ export default function AboutMeModal({ onClose }: Props) {
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ background: "rgba(26,26,26,0.45)", backdropFilter: "blur(8px)" }}
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
       <div
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg"
         style={{
           background: "#FFFCF6",
           boxShadow: "0 24px 64px rgba(0,0,0,0.18)",
-          animation: "modalIn 260ms cubic-bezier(.16,1,.3,1) forwards",
+          animation: "modalIn 400ms cubic-bezier(.16,1,.3,1) forwards",
         }}
       >
         {/* Canvas partículas */}
@@ -141,7 +151,7 @@ export default function AboutMeModal({ onClose }: Props) {
 
         {/* Botón cerrar */}
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center text-[#1a1a1a]/40 hover:text-[#00C3D0] transition-colors"
           aria-label="Cerrar"
         >
@@ -183,7 +193,10 @@ export default function AboutMeModal({ onClose }: Props) {
                   <div
                     key={icon.label}
                     className="flex flex-col items-center gap-2 cursor-pointer relative"
-                    onMouseEnter={() => setHoveredIcon(icon.label)}
+                    onMouseEnter={() => {
+                      setHoveredIcon(icon.label);
+                      trackAboutMeIconHovered(icon.label);
+                    }}
                     onMouseLeave={() => setHoveredIcon(null)}
                   >
                     {/* Tooltip */}
@@ -231,8 +244,8 @@ export default function AboutMeModal({ onClose }: Props) {
                     <span
                       className="font-mono tracking-wide uppercase transition-all duration-300"
                       style={{
-                        fontSize: isHovered ? "11px" : "10px",
-                        color:    isHovered ? "#00C3D0" : "rgba(26,26,26,0.5)",
+                        fontSize:   isHovered ? "11px" : "10px",
+                        color:      isHovered ? "#00C3D0" : "rgba(26,26,26,0.5)",
                         fontWeight: isHovered ? 600 : 400,
                       }}
                     >
@@ -245,11 +258,6 @@ export default function AboutMeModal({ onClose }: Props) {
           </div>
 
           {/* ── Columna derecha — Photo Reveal ── */}
-          {/* 
-            Concepto: boceto (profile-01.jpg) abajo = quién soy
-                      foto real (profile-02.png) arriba = lo que domino
-            El usuario arrastra para revelar el journey completo
-          */}
           <div className="relative min-h-[360px] md:min-h-0 rounded-r-lg overflow-hidden">
             <PhotoReveal
               front="/profile-01.jpg"
@@ -261,7 +269,7 @@ export default function AboutMeModal({ onClose }: Props) {
 
       <style>{`
         @keyframes modalIn {
-          from { opacity: 0; transform: scale(0.96) translateY(12px); }
+          from { opacity: 0; transform: scale(0.92) translateY(20px); }
           to   { opacity: 1; transform: scale(1) translateY(0); }
         }
         @keyframes fadeInUp {

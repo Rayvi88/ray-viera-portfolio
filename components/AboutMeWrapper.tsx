@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import dynamic from "next/dynamic";
+import { trackAboutMeOpened } from "@/lib/analytics/events";
 
 const AboutMeModal = dynamic(() => import("@/components/AboutMeModal"), { ssr: false });
 
@@ -14,7 +15,10 @@ export default function AboutMeWrapper() {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setOpen(true);
+          trackAboutMeOpened();
+        }}
         className="group relative inline-flex items-center gap-2 px-6 py-3 border border-[#00C3D0] text-sm font-mono tracking-[0.12em] uppercase transition-all duration-300 hover:bg-[#00C3D0] hover:text-[#FFFCF6] text-[#00C3D0]"
         style={{ borderRadius: "2px" }}
       >

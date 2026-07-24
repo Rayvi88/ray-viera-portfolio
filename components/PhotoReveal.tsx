@@ -1,18 +1,19 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
+import { trackAboutMePhotoReveal } from "@/lib/analytics/events";
 
 interface Props {
-  front: string; // imagen debajo (profile-01.jpg — blanco y negro)
-  back: string;  // imagen encima (profile-02.png — con pinturas)
+  front: string;
+  back: string;
   alt?: string;
 }
 
 export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState(50); // % de izquierda a derecha
+  const [position, setPosition] = useState(50);
   const [dragging, setDragging] = useState(false);
-  const [touched, setTouched] = useState(false); // si el usuario ya interactuó
+  const [touched, setTouched] = useState(false);
 
   const getPercent = useCallback((clientX: number) => {
     const el = containerRef.current;
@@ -22,22 +23,27 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
     return Math.min(Math.max((x / rect.width) * 100, 2), 98);
   }, []);
 
-  // Mouse
+  const handleFirstInteraction = useCallback(() => {
+    if (!touched) {
+      setTouched(true);
+      trackAboutMePhotoReveal();
+    }
+  }, [touched]);
+
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!touched) setTouched(true);
+    handleFirstInteraction();
     setPosition(getPercent(e.clientX));
-  }, [getPercent, touched]);
+  }, [getPercent, handleFirstInteraction]);
 
   const handleMouseDown = useCallback(() => setDragging(true), []);
   const handleMouseUp   = useCallback(() => setDragging(false), []);
 
-  // Touch
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!touched) setTouched(true);
+    handleFirstInteraction();
     setPosition(getPercent(e.touches[0].clientX));
-  }, [getPercent, touched]);
+  }, [getPercent, handleFirstInteraction]);
 
-  // Animación de hint al montar — oscila una vez para mostrar que es interactivo
+  // Animación hint al montar
   useEffect(() => {
     if (touched) return;
     let frame: number;
@@ -48,7 +54,6 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
       if (!start) start = ts;
       const progress = (ts - start) / duration;
       if (progress < 1) {
-        // oscila de 50 → 35 → 65 → 50
         const angle = progress * Math.PI * 2;
         setPosition(50 + Math.sin(angle) * 15);
         frame = requestAnimationFrame(animate);
@@ -74,9 +79,9 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
       onTouchMove={handleTouchMove}
-      onTouchStart={() => setTouched(true)}
+      onTouchStart={() => handleFirstInteraction()}
     >
-      {/* Imagen base — profile-01.jpg (blanco y negro con texto curvo) */}
+      {/* Imagen base */}
       <img
         src={back}
         alt={alt}
@@ -84,7 +89,7 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
         draggable={false}
       />
 
-      {/* Imagen encima — profile-02.png (con pinturas) — recortada por clip */}
+      {/* Imagen encima — recortada */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -102,7 +107,6 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
         className="absolute top-0 bottom-0 w-[2px] bg-white/70"
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
       >
-        {/* Handle circular */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                      w-8 h-8 rounded-full bg-white shadow-lg
@@ -115,13 +119,12 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
         </div>
       </div>
 
-      {/* Hint texto — desaparece al interactuar */}
+      {/* Hint */}
       {!touched && (
         <div
           className="absolute bottom-6 left-1/2 -translate-x-1/2
                      text-[9px] font-mono tracking-[0.15em] uppercase
-                     px-3 py-1.5 rounded
-                     pointer-events-none transition-opacity duration-500"
+                     px-3 py-1.5 rounded pointer-events-none"
           style={{ background: "rgba(0,195,208,0.85)", color: "#FFFCF6" }}
         >
           drag to reveal

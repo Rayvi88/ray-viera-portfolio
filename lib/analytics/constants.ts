@@ -32,6 +32,12 @@ export const GA_EVENTS = {
   ATLAS_RESULT_CONTACT_CLICK: 'atlas_result_contact_click',
   ATLAS_RESULT_NEXT_LAB_CLICK: 'atlas_result_next_lab_click',
 
-  // CONTACT
+  // Contact
   CONTACT_FORM_SUBMIT: 'contact_form_submit',
+
+  // About Me
+  ABOUT_ME_OPENED: 'about_me_opened',
+  ABOUT_ME_CLOSED: 'about_me_closed',
+  ABOUT_ME_PHOTO_REVEAL: 'about_me_photo_reveal',
+  ABOUT_ME_ICON_HOVERED: 'about_me_icon_hovered',
 } as const
