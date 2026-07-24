@@ -1,4 +1,5 @@
 import { getTranslations, getLocale } from "next-intl/server";
+import AboutMeWrapper from "@/components/AboutMeWrapper";
 
 const icons = [
   <svg key="search" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[#00C3D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>,
@@ -27,6 +28,7 @@ export default async function HowIThink() {
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00C3D0] mb-10 lg:mb-14">
         {t("title")}
       </h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {cards.map((card, i) => (
           <div
@@ -38,6 +40,10 @@ export default async function HowIThink() {
             <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center mt-14">
+        <AboutMeWrapper />
       </div>
     </section>
   );
