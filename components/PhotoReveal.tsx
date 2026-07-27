@@ -127,7 +127,6 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
                      px-3 py-1.5 rounded pointer-events-none"
           style={{ background: "rgba(0,195,208,0.85)", color: "#FFFCF6" }}
         >
-          drag to reveal
         </div>
       )}
     </div>

@@ -41,7 +41,6 @@ export default function AboutMeModal({ onClose }: Props) {
     onClose();
   };
 
-  // cerrar con Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); };
     window.addEventListener("keydown", handler);
@@ -49,7 +48,6 @@ export default function AboutMeModal({ onClose }: Props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // partículas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -131,7 +129,11 @@ export default function AboutMeModal({ onClose }: Props) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(26,26,26,0.45)", backdropFilter: "blur(8px)" }}
+      style={{
+        background: "rgba(26,26,26,0.45)",
+        backdropFilter: "blur(8px)",
+        animation: "backdropIn 400ms ease forwards",
+      }}
       onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
       <div
@@ -192,32 +194,13 @@ export default function AboutMeModal({ onClose }: Props) {
                 return (
                   <div
                     key={icon.label}
-                    className="flex flex-col items-center gap-2 cursor-pointer relative"
+                    className="flex flex-col items-center gap-2 cursor-pointer"
                     onMouseEnter={() => {
                       setHoveredIcon(icon.label);
                       trackAboutMeIconHovered(icon.label);
                     }}
                     onMouseLeave={() => setHoveredIcon(null)}
                   >
-                    {/* Tooltip */}
-                    {isHovered && (
-                      <div
-                        className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap
-                                   text-[9px] font-mono tracking-wide px-2 py-1 rounded z-30"
-                        style={{
-                          background: "#1a1a1a",
-                          color: "#FFFCF6",
-                          animation: "fadeInUp 150ms ease forwards",
-                        }}
-                      >
-                        {icon.desc}
-                        <div
-                          className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 rotate-45"
-                          style={{ background: "#1a1a1a" }}
-                        />
-                      </div>
-                    )}
-
                     {/* Círculo + icono */}
                     <div
                       className="flex items-center justify-center rounded-full border transition-all duration-300"
@@ -251,6 +234,20 @@ export default function AboutMeModal({ onClose }: Props) {
                     >
                       {icon.label}
                     </span>
+
+                    {/* Descripción inline debajo del label */}
+                    <span
+                      className="font-mono text-center leading-tight transition-all duration-300"
+                      style={{
+                        fontSize:  "9px",
+                        color:     "#00C3D0",
+                        opacity:   isHovered ? 1 : 0,
+                        maxHeight: isHovered ? "40px" : "0px",
+                        overflow:  "hidden",
+                      }}
+                    >
+                      {icon.desc}
+                    </span>
                   </div>
                 );
               })}
@@ -268,6 +265,10 @@ export default function AboutMeModal({ onClose }: Props) {
       </div>
 
       <style>{`
+        @keyframes backdropIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
         @keyframes modalIn {
           from { opacity: 0; transform: scale(0.92) translateY(20px); }
           to   { opacity: 1; transform: scale(1) translateY(0); }
