@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { trackHeroCtaClick } from "@/lib/analytics/events";
 import InteractiveHero from "@/components/InteractiveHero";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -87,31 +88,34 @@ export default function Hero() {
               <Link
                 href="/atlas/lab-001"
                 onClick={() => trackHeroCtaClick("atlas_lab_001")}
-                className="text-sm text-[#1a1a1a] font-medium hover:text-[#00C3D0] transition-colors duration-200 flex items-center gap-1.5"
+                className="text-sm text-[#1a1a1a] font-medium hover:text-[#00C3D0] transition-colors duration-200"
               >
                 {t("nexaHookCta")}
-                <span className="text-[#00C3D0]">→</span>
               </Link>
             </div>
 
             {/* CTA BUTTONS */}
 
             <div className="mt-6 lg:mt-8 flex gap-3 lg:gap-4">
-              <Link
-                href="/contact"
-                onClick={() => trackHeroCtaClick("contact")}
-                className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
-              >
-                {t("contactMe")}
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  onClick={() => trackHeroCtaClick("contact")}
+                  className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
+                >
+                  {t("contactMe")}
+                </Link>
+              </MagneticButton>
 
-              <Link
-                href="/selected-works"
-                onClick={() => trackHeroCtaClick("selected_works")}
-                className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
-              >
-                {t("selectedWorks")}
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/selected-works"
+                  onClick={() => trackHeroCtaClick("selected_works")}
+                  className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
+                >
+                  {t("selectedWorks")}
+                </Link>
+              </MagneticButton>
             </div>
           </div>
         </section>

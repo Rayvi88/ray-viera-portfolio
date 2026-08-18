@@ -7,9 +7,20 @@ interface Props {
   front: string;
   back: string;
   alt?: string;
+  /**
+   * Whether to render the divider line + drag handle affordance.
+   * Defaults to true (unchanged behavior for existing usages, e.g. AboutMeModal).
+   * Pass false for a clean reveal with no visible guides/arrows.
+   */
+  showHandle?: boolean;
 }
 
-export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
+export default function PhotoReveal({
+  front,
+  back,
+  alt = "Ray Viera",
+  showHandle = true,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
   const [dragging, setDragging] = useState(false);
@@ -73,7 +84,7 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
     <div
       ref={containerRef}
       className="relative w-full h-full select-none overflow-hidden"
-      style={{ cursor: dragging ? "grabbing" : "col-resize" }}
+      style={{ cursor: showHandle ? (dragging ? "grabbing" : "col-resize") : "default" }}
       onMouseMove={handleMouseMove}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -85,7 +96,7 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
       <img
         src={back}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="absolute inset-0 w-full h-full object-contain object-center"
         draggable={false}
       />
 
@@ -97,30 +108,32 @@ export default function PhotoReveal({ front, back, alt = "Ray Viera" }: Props) {
         <img
           src={front}
           alt={alt}
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-contain object-center"
           draggable={false}
         />
       </div>
 
-      {/* Línea divisoria */}
-      <div
-        className="absolute top-0 bottom-0 w-[2px] bg-white/70"
-        style={{ left: `${position}%`, transform: "translateX(-50%)" }}
-      >
+      {/* Línea divisoria + guía — solo si showHandle está activo */}
+      {showHandle && (
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                     w-8 h-8 rounded-full bg-white shadow-lg
-                     flex items-center justify-center"
+          className="absolute top-0 bottom-0 w-[2px] bg-white/70"
+          style={{ left: `${position}%`, transform: "translateX(-50%)" }}
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M5 8H2M2 8l2-2M2 8l2 2" stroke="#00C3D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M11 8h3M14 8l-2-2M14 8l-2 2" stroke="#00C3D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                       w-8 h-8 rounded-full bg-white shadow-lg
+                       flex items-center justify-center"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M5 8H2M2 8l2-2M2 8l2 2" stroke="#00C3D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M11 8h3M14 8l-2-2M14 8l-2 2" stroke="#00C3D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Hint */}
-      {!touched && (
+      {showHandle && !touched && (
         <div
           className="absolute bottom-6 left-1/2 -translate-x-1/2
                      text-[9px] font-mono tracking-[0.15em] uppercase

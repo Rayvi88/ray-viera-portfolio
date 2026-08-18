@@ -11,13 +11,13 @@
     "headline1": "Designing complex",
     "headline2": "systems so they function with",
     "highlight": "clarity",
-    "subheadline": "When processes fragment, experiences get complicated and teams lose focus, the problem doesn't always need another tool. Sometimes it needs a better-designed system.",
+    "subheadline": "When experiences become complex, the solution isn't always another tool. Sometimes, they simply need better design. I build visual architectures that align user experiences with business goals.",
     "contactMe": "Contact me",
     "selectedWorks": "Selected works",
     "nexaHook": "Does your brand have a system, or just a logo?",
     "nexaHookCta": "Start your Brand Operating System. Lab-001 available now"
   },
-    "interactiveHero": {
+  "interactiveHero": {
     "headlineStart": "Complexity doesn't disappear.",
     "headlineHighlight": "It is organized, connected, designed.",
     "items": {
@@ -46,7 +46,6 @@
   "footer": {
     "copy": "© 2026 Ray Viera. All rights reserved."
   },
-
   "byTheNumbers": {
     "title": "By the Numbers",
     "p1bold": "I care about building things that make sense.",
@@ -66,18 +65,12 @@
   },
   "howIThinkPage": {
     "title": "How I Think",
-    "card1title": "UX Research",
-    "card1desc": "Deep user insights and data-driven research to inform design decisions and validate product direction.",
-    "card2title": "UI Design",
-    "card2desc": "Beautiful and intuitive interfaces that combine aesthetics with usability for exceptional user experiences.",
-    "card3title": "Design Systems",
-    "card3desc": "Design that ensures consistency across the entire product ecosystem.",
-    "card4title": "Product Design",
-    "card4desc": "End-to-end from concept to launch, focused on solving real user problems.",
-    "card5title": "Brand Experience",
-    "card5desc": "Coherent brand identities that connect with the audience and differentiate in the market.",
-    "card6title": "Product Strategy",
-    "card6desc": "To align design with business objectives and create meaningful product roadmaps."
+    "systemsIntro": "Three systems that guide how I work.",
+    "systems": [
+      "Systemic Design",
+      "Systems Architecture",
+      "Modular Systems"
+    ]
   },
   "projects": {
     "label": "Work",
@@ -441,17 +434,17 @@
       "systemShiftCaption": "Same verification volume",
       "perfTitle": "Performance impact",
       "perfValue": "-87.5%",
-"perfMetric": "Average Response Time",
-"perfAfter": "15 min",
-"perfBefore": "(Before: 120 min)",
-"perfDesc": "Standardized flows and templates reduced variability in case handling.",
+      "perfMetric": "Average Response Time",
+      "perfAfter": "15 min",
+      "perfBefore": "(Before: 120 min)",
+      "perfDesc": "Standardized flows and templates reduced variability in case handling.",
       "metrics": [
         {
-      "label": "Average Response Time",
-      "value": "120 - 15",
-      "unit": "mins",
-      "delta": "87.5%"
-      },
+          "label": "Average Response Time",
+          "value": "120 - 15",
+          "unit": "mins",
+          "delta": "87.5%"
+        },
         {
           "label": "Reduction in training",
           "value": "16 - 8",
@@ -1252,6 +1245,44 @@
           "name": "Operation and scale",
           "tag": "LAB-003"
         }
+      }
+    }
+  },
+  "aboutMe": {
+    "openButton": "About me",
+    "tag": "ABOUT ME",
+    "greeting": "Hi, I'm",
+    "closeLabel": "Close",
+    "paragraphs": [
+      {
+        "bold": "Viera, from the verb ver (to see).",
+        "rest": " Observe before you design."
+      },
+      {
+        "bold": "",
+        "rest": "Understanding the problem first is part of transforming complexity into something clear, useful, and actionable."
+      },
+      {
+        "bold": "",
+        "rest": "I design systems, services, and digital experiences at the intersection of design, operations, and technology."
+      }
+    ],
+    "icons": {
+      "see": {
+        "label": "I see.",
+        "desc": "I observe before I design."
+      },
+      "observe": {
+        "label": "I observe.",
+        "desc": "I listen to what is not being said."
+      },
+      "understand": {
+        "label": "I understand.",
+        "desc": "I connect the problem to the solution."
+      },
+      "design": {
+        "label": "I design.",
+        "desc": "I build with intention."
       }
     }
   }

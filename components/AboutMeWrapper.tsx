@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import { trackAboutMeOpened } from "@/lib/analytics/events";
 
 const AboutMeModal = dynamic(() => import("@/components/AboutMeModal"), { ssr: false });
 
 export default function AboutMeWrapper() {
-  const locale = useLocale();
-  const isES   = locale === "es";
+  const t = useTranslations("aboutMe");
   const [open, setOpen] = useState(false);
 
   return (
@@ -23,7 +22,7 @@ export default function AboutMeWrapper() {
         style={{ borderRadius: "2px" }}
       >
         <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-          {isES ? "Acerca de mí" : "About me"}
+          {t("openButton")}
         </span>
         <svg
           width="12" height="12" viewBox="0 0 12 12" fill="none"

@@ -11,37 +11,37 @@
     "headline1": "Diseñando sistemas complejos para que",
     "headline2": "funcionen con",
     "highlight": "claridad",
-    "subheadline": "Cuando los procesos se fragmentan, las experiencias se complican y los equipos pierden foco, el problema no siempre necesita otra herramienta. A veces necesita un sistema mejor diseñado.",
+    "subheadline": "Cuando las experiencias se complican, la solución no siempre es usar otra herramienta. A veces necesita mejor diseño. Construyo arquitecturas visuales que alinean la experiencia de usuarios con los objetivos del negocio.",
     "contactMe": "Contáctame",
     "selectedWorks": "Ver proyectos",
     "nexaHook": "¿Tu marca tiene sistema, o solo tiene logo?",
     "nexaHookCta": "Empieza tu Brand Operating System. Lab-001 ya disponible"
   },
   "interactiveHero": {
-  "headlineStart": "La complejidad no desaparece.",
-  "headlineHighlight": "Se organiza, conecta y diseña.",
-  "items": {
-    "procesos": {
-      "title": "Procesos",
-      "description": "Diseño y optimizo procesos para convertir la complejidad operativa en sistemas más claros, eficientes y escalables."
-    },
-    "uxui": {
-      "title": "UX/UI",
-      "description": "Creo experiencias digitales centradas en las personas, combinando investigación, estructura y diseño de interfaces."
-    },
-    "estrategia": {
-      "title": "Estrategia",
-      "description": "Conecto las necesidades del negocio con las necesidades de las personas para tomar mejores decisiones de diseño y producto."
-    },
-    "colaboracion": {
-      "title": "Colaboración",
-      "description": "Trabajo entre equipos y disciplinas para alinear personas, conocimiento y objetivos alrededor de soluciones concretas."
-    },
-    "innovacion": {
-      "title": "Innovación",
-      "description": "Exploro nuevas formas de resolver problemas complejos mediante tecnología, experimentación y pensamiento sistémico."
+    "headlineStart": "La complejidad no desaparece.",
+    "headlineHighlight": "Se organiza, conecta y diseña.",
+    "items": {
+      "procesos": {
+        "title": "Procesos",
+        "description": "Diseño y optimizo procesos para convertir la complejidad operativa en sistemas más claros, eficientes y escalables."
+      },
+      "uxui": {
+        "title": "UX/UI",
+        "description": "Creo experiencias digitales centradas en las personas, combinando investigación, estructura y diseño de interfaces."
+      },
+      "estrategia": {
+        "title": "Estrategia",
+        "description": "Conecto las necesidades del negocio con las necesidades de las personas para tomar mejores decisiones de diseño y producto."
+      },
+      "colaboracion": {
+        "title": "Colaboración",
+        "description": "Trabajo entre equipos y disciplinas para alinear personas, conocimiento y objetivos alrededor de soluciones concretas."
+      },
+      "innovacion": {
+        "title": "Innovación",
+        "description": "Exploro nuevas formas de resolver problemas complejos mediante tecnología, experimentación y pensamiento sistémico."
+      }
     }
-  }
   },
   "footer": {
     "copy": "© 2026 Ray Viera. Todos los derechos reservados."
@@ -65,18 +65,12 @@
   },
   "howIThinkPage": {
     "title": "Cómo Pienso",
-    "card1title": "UX Research",
-    "card1desc": "Insights profundos de usuarios e investigación basada en datos para informar decisiones de diseño y validar la dirección del producto.",
-    "card2title": "UI Design",
-    "card2desc": "Interfaces hermosas e intuitivas que combinan estética con usabilidad para experiencias de usuario excepcionales.",
-    "card3title": "Design Systems",
-    "card3desc": "Diseño que asegura consistencia en todo el ecosistema del producto.",
-    "card4title": "Product Design",
-    "card4desc": "End-to-end desde el concepto hasta el lanzamiento, enfocado en resolver problemas reales de los usuarios.",
-    "card5title": "Brand Experience",
-    "card5desc": "Identidades de marca coherentes que conectan con la audiencia y diferencian en el mercado.",
-    "card6title": "Product Strategy",
-    "card6desc": "Para alinear el diseño con los objetivos de negocio y crear hojas de ruta de producto significativas."
+    "systemsIntro": "Tres sistemas que guían mi forma de trabajar",
+    "systems": [
+      "Diseño Sistémico",
+      "Arquitectura de Sistemas",
+      "Sistema Modular"
+    ]
   },
   "projects": {
     "label": "Trabajo",
@@ -992,8 +986,7 @@
     "btnSuccess": "¡Mensaje Enviado!",
     "btnError": "Error, intenta de nuevo"
   },
-  
-"atlas": {
+  "atlas": {
     "lab001": {
       "welcome": {
         "title": "Bienvenido al LAB",
@@ -1253,6 +1246,44 @@
           "name": "Operación y escala",
           "tag": "LAB-003"
         }
+      }
+    }
+  },
+  "aboutMe": {
+    "openButton": "Acerca de mí",
+    "tag": "ACERCA DE MÍ",
+    "greeting": "Hola soy",
+    "closeLabel": "Cerrar",
+    "paragraphs": [
+      {
+        "bold": "Viera, del verbo ver.",
+        "rest": " Observar antes de diseñar."
+      },
+      {
+        "bold": "",
+        "rest": "Entender el problema primero, es parte de transformar la complejidad en algo claro, útil y ejecutable."
+      },
+      {
+        "bold": "",
+        "rest": "Diseño sistemas, servicios y experiencias digitales interceptando diseño, operaciones y tecnología."
+      }
+    ],
+    "icons": {
+      "see": {
+        "label": "Veo",
+        "desc": "Observo antes de diseñar"
+      },
+      "observe": {
+        "label": "Observo",
+        "desc": "Escucho lo que no se dice"
+      },
+      "understand": {
+        "label": "Entiendo",
+        "desc": "Conecto el problema con la solución"
+      },
+      "design": {
+        "label": "Diseño",
+        "desc": "Construyo con intención"
       }
     }
   }

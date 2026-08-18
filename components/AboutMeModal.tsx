@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import PhotoReveal from "@/components/PhotoReveal";
 import {
   trackAboutMeClosed,
@@ -13,23 +13,20 @@ const rand = (a: number, b: number) => Math.random() * (b - a) + a;
 
 interface Props { onClose: () => void; }
 
-const ICONS_ES = [
-  { src: "/aboutme-01.svg", label: "Veo",      desc: "Observo antes de diseñar" },
-  { src: "/aboutme-02.svg", label: "Observo",  desc: "Escucho lo que no se dice" },
-  { src: "/aboutme-03.svg", label: "Entiendo", desc: "Conecto el problema con la solución" },
-  { src: "/aboutme-04.svg", label: "Diseño",   desc: "Construyo con intención" },
-];
+interface Paragraph { bold: string; rest: string; }
+interface IconCopy { label: string; desc: string; }
 
-const ICONS_EN = [
-  { src: "/aboutme-01.svg", label: "See",        desc: "I observe before designing" },
-  { src: "/aboutme-02.svg", label: "Observe",    desc: "I listen to what is unsaid" },
-  { src: "/aboutme-03.svg", label: "Understand", desc: "I connect problem to solution" },
-  { src: "/aboutme-04.svg", label: "Design",     desc: "I build with intention" },
-];
+const ICON_SRC: Record<string, string> = {
+  see: "/aboutme-01.svg",
+  observe: "/aboutme-02.svg",
+  understand: "/aboutme-03.svg",
+  design: "/aboutme-04.svg",
+};
+
+const ICON_KEYS = ["see", "observe", "understand", "design"] as const;
 
 export default function AboutMeModal({ onClose }: Props) {
-  const locale = useLocale();
-  const isES   = locale === "es";
+  const t = useTranslations("aboutMe");
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -112,19 +109,14 @@ export default function AboutMeModal({ onClose }: Props) {
     };
   }, []);
 
-  const icons = isES ? ICONS_ES : ICONS_EN;
-
-  const paragraphs = isES ? [
-    { bold: "Viera, del verbo ver.", rest: "" },
-    { bold: "", rest: "Observar antes de diseñar." },
-    { bold: "", rest: "Porque entender el problema primero es parte de transformar la complejidad en algo claro, útil y accionable." },
-    { bold: "", rest: "Diseño sistemas, servicios y experiencias digitales en la intersección entre diseño, operaciones y tecnología." },
-  ] : [
-    { bold: 'Viera, from the Spanish verb "to see."', rest: "" },
-    { bold: "", rest: "Observe before designing." },
-    { bold: "", rest: "Because understanding the problem first is part of transforming complexity into something clear, useful, and actionable." },
-    { bold: "", rest: "I design systems, services, and digital experiences at the intersection of design, operations, and technology." },
-  ];
+  const paragraphs = t.raw("paragraphs") as Paragraph[];
+  const iconsRaw = t.raw("icons") as Record<string, IconCopy>;
+  const icons = ICON_KEYS.map((key) => ({
+    key,
+    src: ICON_SRC[key],
+    label: iconsRaw[key].label,
+    desc: iconsRaw[key].desc,
+  }));
 
   return (
     <div
@@ -155,7 +147,7 @@ export default function AboutMeModal({ onClose }: Props) {
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center text-[#1a1a1a]/40 hover:text-[#00C3D0] transition-colors"
-          aria-label="Cerrar"
+          aria-label={t("closeLabel")}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -168,10 +160,10 @@ export default function AboutMeModal({ onClose }: Props) {
           <div className="flex flex-col justify-between p-8 md:p-10 border-r border-[#E8E4DC]">
             <div>
               <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#00C3D0] mb-4">
-                {isES ? "Sobre mí" : "About me"}
+                {t("tag")}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] leading-tight mb-1">
-                {isES ? "Hola soy" : "Hi, I'm"}
+                {t("greeting")}
               </h2>
               <h2 className="text-3xl md:text-4xl font-bold text-[#00C3D0] leading-tight mb-6">
                 Ray Viera.
@@ -193,7 +185,7 @@ export default function AboutMeModal({ onClose }: Props) {
                 const isHovered = hoveredIcon === icon.label;
                 return (
                   <div
-                    key={icon.label}
+                    key={icon.key}
                     className="flex flex-col items-center gap-2 cursor-pointer"
                     onMouseEnter={() => {
                       setHoveredIcon(icon.label);
