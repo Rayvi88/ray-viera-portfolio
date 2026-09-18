@@ -65,12 +65,126 @@
   },
   "howIThinkPage": {
     "title": "Cómo Pienso",
-    "systemsIntro": "Tres sistemas que guían mi forma de trabajar",
+    "systemsIntro": "Diseño desde el sistema",
     "systems": [
-      "Diseño Sistémico",
-      "Arquitectura de Sistemas",
-      "Sistema Modular"
-    ]
+      "Ecosistemas"
+    ],
+    "ecosystem": {
+      "modalTitle": "Diseño Sistémico",
+      "close": "Cerrar",
+      "heroLabel": "Negocio",
+      "resultCaption": "Cada unidad orbita alrededor del negocio: piezas distintas que solo funcionan como sistema cuando se sostienen entre sí.",
+      "cta": "Ver cómo lo aplico",
+      "editorial": {
+        "title": "Ecosistemas",
+        "claim": "Nada funciona de forma aislada.",
+        "cta": "Experiencia interactiva",
+        "ctaNote": "Disponible en Desktop"
+      },
+      "elements": {
+        "producto": { "label": "Producto" },
+        "usuarios": { "label": "Usuarios" },
+        "procesos": { "label": "Procesos" },
+        "equipo": { "label": "Equipo" },
+        "tecnologia": { "label": "Tecnología" },
+        "datos": { "label": "Datos" },
+        "marca": { "label": "Marca" },
+        "operaciones": { "label": "Operaciones" }
+      },
+      "steps": {
+        "explorar": { "label": "Explorar", "hint": "Las piezas que forman el ecosistema." },
+        "ver": { "label": "Ver", "hint": "Una mirada más cercana al negocio." },
+        "detectar": { "label": "Detectar", "hint": "Relaciones que revelan cómo funciona el sistema." },
+        "entender": { "label": "Entender", "hint": "Lo que hay detrás de cada área." },
+        "organizar": { "label": "Organizar", "hint": "Cómo las piezas se sostienen entre sí." },
+        "resultado": { "label": "Resultado" }
+      },
+      "entender": {
+        "relationshipsLabel": "Relaciones",
+        "findingLabel": "Hallazgo",
+        "impactLabel": "Impacto",
+        "cards": {
+          "usuarios": {
+            "relationships": "Producto · Marca",
+            "finding": "La necesidad del usuario puede perderse entre múltiples puntos de contacto y decisiones internas.",
+            "impact": "Fricción · Abandono · Experiencia inconsistente"
+          },
+          "marca": {
+            "relationships": "Usuarios · Producto · Marketing",
+            "finding": "La marca puede comunicar una promesa que la experiencia real no consigue sostener.",
+            "impact": "Pérdida de confianza · Inconsistencia · Desconexión"
+          },
+          "datos": {
+            "relationships": "Usuarios · Producto · Operaciones · Tecnología",
+            "finding": "La información puede existir, pero estar distribuida entre diferentes fuentes y contextos.",
+            "impact": "Decisiones lentas · Información inconsistente · Baja visibilidad"
+          },
+          "tecnologia": {
+            "relationships": "Producto · Operaciones · Datos",
+            "finding": "Las herramientas pueden crecer de forma independiente y terminar generando fragmentación.",
+            "impact": "Silos · Integraciones innecesarias · Mantenimiento"
+          },
+          "equipo": {
+            "relationships": "Producto · Operaciones · Procesos",
+            "finding": "Los equipos pueden trabajar con objetivos compartidos, pero con responsabilidades y prioridades diferentes.",
+            "impact": "Desalineación · Handoffs · Retrabajo"
+          },
+          "procesos": {
+            "relationships": "Equipos · Operaciones · Tecnología · Datos",
+            "finding": "Los procesos pueden acumular pasos, controles o handoffs que ya no aportan valor.",
+            "impact": "Demoras · Complejidad · Trabajo duplicado"
+          },
+          "operaciones": {
+            "relationships": "Procesos · Equipos · Tecnología · Datos · Producto",
+            "finding": "La operación puede depender de múltiples herramientas y decisiones manuales para mantener el flujo.",
+            "impact": "Errores · Dependencia · Variabilidad"
+          },
+          "producto": {
+            "relationships": "Usuarios · Marca · Tecnología · Operaciones · Datos",
+            "finding": "Las decisiones de producto pueden quedar desconectadas de las capacidades operativas y tecnológicas que las sostienen.",
+            "impact": "Handoffs · Retrabajo · Limitaciones de implementación"
+          }
+        }
+      },
+      "organizar": {
+        "opportunityLabel": "Oportunidad",
+        "focusLabel": "Focus",
+        "cards": {
+          "usuarios": {
+            "opportunity": "Conectar las necesidades del usuario con las decisiones de producto y marca.",
+            "focus": "Identificar puntos de fricción · Alinear necesidades con decisiones · Reducir inconsistencias entre puntos de contacto"
+          },
+          "marca": {
+            "opportunity": "Alinear la promesa de marca con la experiencia que realmente puede sostener el sistema.",
+            "focus": "Clarificar la promesa · Alinear comunicación y producto · Reducir inconsistencias"
+          },
+          "datos": {
+            "opportunity": "Convertir información distribuida en una fuente útil para la toma de decisiones.",
+            "focus": "Identificar fuentes críticas · Reducir duplicidad · Conectar información con decisiones"
+          },
+          "tecnologia": {
+            "opportunity": "Simplificar el ecosistema tecnológico alrededor de las necesidades reales del sistema.",
+            "focus": "Identificar redundancias · Clarificar capacidades · Reducir fragmentación"
+          },
+          "equipo": {
+            "opportunity": "Alinear responsabilidades y decisiones entre los equipos que sostienen el flujo.",
+            "focus": "Clarificar ownership · Reducir handoffs innecesarios · Alinear prioridades"
+          },
+          "procesos": {
+            "opportunity": "Rediseñar el flujo alrededor del valor, eliminando complejidad que ya no aporta.",
+            "focus": "Eliminar pasos innecesarios · Reducir handoffs · Simplificar controles"
+          },
+          "operaciones": {
+            "opportunity": "Diseñar una operación más estable, visible y menos dependiente de decisiones manuales.",
+            "focus": "Reducir variabilidad · Automatizar decisiones repetitivas · Mejorar visibilidad"
+          },
+          "producto": {
+            "opportunity": "Alinear producto, operación y tecnología desde el diseño de la solución.",
+            "focus": "Conectar decisiones con capacidades reales · Clarificar ownership · Reducir retrabajo"
+          }
+        }
+      }
+    }
   },
   "projects": {
     "label": "Trabajo",
@@ -965,26 +1079,14 @@
     }
   },
   "contact": {
-    "title": "Empecemos una conversación",
-    "subtitle": "Experto en UX/UI especializado en claridad visual para sistemas complejos. Abierto a colaboraciones estratégicas y retos de diseño de alto impacto.",
-    "firstNameLabel": "Nombre",
-    "lastNameLabel": "Apellido",
-    "emailLabel": "Correo electrónico",
-    "phoneLabel": "Teléfono (opcional)",
-    "phonePlaceholder": "+0 000 0000 000",
-    "subjectLabel": "¿Selecciona un tema?",
-    "subjects": [
-      "Diseño UX para Decisiones Críticas",
-      "Interfaces y Dashboards con Datos Complejos",
-      "Simplificación de Procesos y Flujos",
-      "Estrategia UX y Rediseño de Sistemas"
-    ],
-    "messageLabel": "Mensaje",
-    "messagePlaceholder": "Escribe tu mensaje..",
-    "btnSend": "Enviar Mensaje",
-    "btnSending": "Enviando...",
-    "btnSuccess": "¡Mensaje Enviado!",
-    "btnError": "Error, intenta de nuevo"
+    "eyebrow": "CONTACTO",
+    "headline": "¿Tienes un sistema que necesita ser entendido, diseñado o mejorado?",
+    "subheadline": "Diseño servicios y procesos digitales conectando experiencia, negocio y operación.",
+    "directLabel": "Hablemos directamente",
+    "copyLabel": "Copiar correo",
+    "copiedLabel": "Correo copiado",
+    "openLabel": "Abrir correo",
+    "linkedinLabel": "LinkedIn"
   },
   "atlas": {
     "lab001": {
@@ -1194,7 +1296,6 @@
         "radarTitle": "TU PERFIL OPERATIVO",
         "bannerTitle": "PRÓXIMO PASO RECOMENDADO",
         "bannerText": "Tu mayor oportunidad está en \"{dim1}\" y \"{dim2}\". Fortalecer estas áreas tendrá el mayor impacto en tu escalabilidad.",
-        "ctaNextLab": "Continuar con LAB-002 →",
         "ctaContact": "Esto tiene arreglo, hablemos",
         "downloadPdf": "Descargar resultado (PDF)",
         "restart": "Rehacer diagnóstico",

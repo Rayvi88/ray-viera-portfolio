@@ -1,5 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import PhotoReveal from "@/components/PhotoReveal";
+import HowIThinkInteractive from "@/components/how-i-think/HowIThinkInteractive";
 
 interface Paragraph { bold: string; rest: string; }
 interface IconCopy { label: string; desc: string; }
@@ -80,35 +81,25 @@ export default async function HowIThink() {
                   <span className="text-[10px] sm:text-xs text-gray-500 leading-snug max-w-[120px]">
                     {icon.desc}
                   </span>
-            </div>
+                </div>
 
-      {/* Arrow — desktop only */}
-      {i < icons.length - 1 && (
-        <span className="text-[#00C3D0]/50 text-lg flex-shrink-0 hidden lg:inline">
-          →
-        </span>
-      )}
-    </div>
-  ))}
-</div>
+                {/* Arrow — desktop only */}
+                {i < icons.length - 1 && (
+                  <span className="text-[#00C3D0]/50 text-lg flex-shrink-0 hidden lg:inline">
+                    →
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
 
-          {/* ── Tres sistemas ── */}
+          {/* ── Sistema ── */}
           <p className="text-xs sm:text-sm text-[#1a1a1a]/60 mb-3">
             {t("systemsIntro")}
           </p>
-          <div className="flex flex-wrap gap-3">
-            {systems.map((label, i) => (
-              <span
-                key={i}
-                className="px-4 py-2 text-[10px] sm:text-xs font-mono tracking-[0.1em] uppercase rounded-full bg-[#1a1a1a] text-[#FFFCF6] transition-colors duration-300 hover:bg-[#00C3D0] cursor-default"
-              >
-                {label}
-              </span>
-            ))}
-          </div>
+          <HowIThinkInteractive systems={systems} />
         </div>
 
-        {/* ── Columna derecha — Photo Reveal, sin guías ── */}
         {/* ── Columna derecha — Photo Reveal, sin guías ── */}
         <div className="relative w-full h-[495px] sm:h-[530px] lg:h-[72vh] max-h-[570px] rounded-2xl overflow-hidden">
           <PhotoReveal

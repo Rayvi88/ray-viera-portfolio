@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { trackHeroCtaClick } from "@/lib/analytics/events";
 import InteractiveHero from "@/components/InteractiveHero";
 import MagneticButton from "@/components/MagneticButton";
+import { ECOSYSTEM_PILL_CLASS } from "@/components/interaction/patterns";
+import { FOCUS_RING, FOCUS_RING_CIRCLE, ICON_DOT_HIT, TRANSITION_STATE } from "@/components/interaction/tokens";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -88,7 +90,7 @@ export default function Hero() {
               <Link
                 href="/atlas/lab-001"
                 onClick={() => trackHeroCtaClick("atlas_lab_001")}
-                className="text-sm text-[#1a1a1a] font-medium hover:text-[#00C3D0] transition-colors duration-200"
+                  className={`text-sm text-[#1a1a1a] font-medium hover:text-[#00C3D0] transition-colors duration-200 ${FOCUS_RING}`}
               >
                 {t("nexaHookCta")}
               </Link>
@@ -101,7 +103,7 @@ export default function Hero() {
                 <Link
                   href="/contact"
                   onClick={() => trackHeroCtaClick("contact")}
-                  className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
+                  className={ECOSYSTEM_PILL_CLASS}
                 >
                   {t("contactMe")}
                 </Link>
@@ -111,7 +113,7 @@ export default function Hero() {
                 <Link
                   href="/selected-works"
                   onClick={() => trackHeroCtaClick("selected_works")}
-                  className="border border-black rounded-full px-5 sm:px-6 py-2 text-sm sm:text-base hover:bg-[#00C3D0] hover:text-white hover:border-[#00C3D0] transition"
+                  className={ECOSYSTEM_PILL_CLASS}
                 >
                   {t("selectedWorks")}
                 </Link>
@@ -141,7 +143,7 @@ export default function Hero() {
             stopAutoplay();
           }}
           aria-label="Mostrar Hero principal"
-          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+          className={`w-3 h-3 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT} ${
             activeSlide === 0
               ? "bg-[#00C3D0] scale-125"
               : "bg-gray-300 hover:bg-gray-400"
@@ -155,7 +157,7 @@ export default function Hero() {
             stopAutoplay();
           }}
           aria-label="Mostrar Hero interactivo"
-          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+          className={`w-3 h-3 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT} ${
             activeSlide === 1
               ? "bg-[#00C3D0] scale-125"
               : "bg-gray-300 hover:bg-gray-400"

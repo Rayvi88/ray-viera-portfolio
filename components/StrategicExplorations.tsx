@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import IconControl from "@/components/interaction/IconControl";
+import { FOCUS_RING_CIRCLE, ICON_DOT_HIT, TRANSITION_STATE } from "@/components/interaction/tokens";
 
 
 export default function StrategicExplorations() {
@@ -136,22 +138,14 @@ export default function StrategicExplorations() {
         {/* Carousel */}
         <div className="relative">
           {/* Prev arrow */}
-          <button
+          <IconControl
+            label="Previous"
             onClick={() => goTo(current - 1)}
-            aria-label="Previous"
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-200 ${
-              current === 0
-                ? "opacity-20 pointer-events-none"
-                : "hover:border-[#00C3D0] hover:text-[#00C3D0]"
-            }`}
-            style={{
-              borderColor: "#E8E4DC",
-              background: "#FFFCF6",
-              color: "#1a1a1a",
-            }}
+            disabled={current === 0}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10"
           >
             ←
-          </button>
+          </IconControl>
 
           {/* Track outer */}
           <div className="overflow-hidden w-full">
@@ -246,22 +240,14 @@ export default function StrategicExplorations() {
           </div>
 
           {/* Next arrow */}
-          <button
+          <IconControl
+            label="Next"
             onClick={() => goTo(current + 1)}
-            aria-label="Next"
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-200 ${
-              current === totalSlides - 1
-                ? "opacity-20 pointer-events-none"
-                : "hover:border-[#00C3D0] hover:text-[#00C3D0]"
-            }`}
-            style={{
-              borderColor: "#E8E4DC",
-              background: "#FFFCF6",
-              color: "#1a1a1a",
-            }}
+            disabled={current === totalSlides - 1}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10"
           >
             →
-          </button>
+          </IconControl>
         </div>
 
         {/* Dots */}
@@ -271,7 +257,7 @@ export default function StrategicExplorations() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Slide ${i + 1}`}
-              className="w-1.5 h-1.5 rounded-full transition-all duration-200"
+              className={`w-1.5 h-1.5 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT}`}
               style={{
                 background: i === current ? "#00C3D0" : "#C8C4BC",
                 transform: i === current ? "scale(1.4)" : "scale(1)",

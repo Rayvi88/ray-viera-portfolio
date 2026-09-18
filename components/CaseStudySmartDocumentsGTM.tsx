@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
+import TextNav from "@/components/interaction/TextNav";
+import IconControl from "@/components/interaction/IconControl";
 
 function OverviewTab() {
   const t = useTranslations("caseStudyGTM");
@@ -237,9 +239,9 @@ function ProductNarrativeTab() {
               </p>
             </div>
           </div>
-          <button className="w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-bold py-3 rounded-lg">
+          <div aria-hidden="true" className="w-full bg-blue-600 text-white text-sm font-bold py-3 rounded-lg text-center">
             {t("narrative.ctaButton")}
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -324,29 +326,29 @@ export default function CaseStudySmartDocumentsGTM() {
   return (
     <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-8 lg:py-16 bg-[#FFFCF6]">
       <div className="flex-1 flex items-stretch gap-3 lg:gap-6">
-        <button onClick={prev} className="hidden sm:flex self-center shrink-0 w-10 h-10 items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300">
+        <IconControl label="Previous" onClick={prev} className="hidden sm:flex self-center shrink-0">
           &#8592;
-        </button>
+        </IconControl>
         <div className="flex-1 transition-all duration-500 ease-in-out">
           {renderTab()}
         </div>
-        <button onClick={next} className="hidden sm:flex self-center shrink-0 w-10 h-10 items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300">
+        <IconControl label="Next" onClick={next} className="hidden sm:flex self-center shrink-0">
           &#8594;
-        </button>
+        </IconControl>
       </div>
       <div className="mt-8 lg:mt-12 border-t border-[#E8E4DC] pt-4 lg:pt-6">
         <div className="flex items-center gap-4 lg:gap-6 overflow-x-auto pb-1 scrollbar-none">
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
-              <button onClick={() => handleTabChange(i)} className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${i === activeTab ? "text-[#00C3D0] font-bold" : "text-gray-500 hover:text-[#00C3D0]"}`}>
+              <TextNav onClick={() => handleTabChange(i)} active={i === activeTab} muted className="whitespace-nowrap min-h-[44px] inline-flex items-center">
                 {tab}
-              </button>
+              </TextNav>
               {i < tabs.length - 1 && <span className="text-gray-300 text-xs">|</span>}
             </div>
           ))}
           <div className="flex sm:hidden items-center gap-2 ml-auto shrink-0">
-            <button onClick={prev} className="w-8 h-8 flex items-center justify-center border border-[#E8E4DC] rounded-full text-gray-500">&#8592;</button>
-            <button onClick={next} className="w-8 h-8 flex items-center justify-center border border-[#E8E4DC] rounded-full text-gray-500">&#8594;</button>
+            <IconControl label="Previous" onClick={prev}>&#8592;</IconControl>
+            <IconControl label="Next" onClick={next}>&#8594;</IconControl>
           </div>
         </div>
       </div>

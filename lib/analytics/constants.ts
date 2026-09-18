@@ -30,10 +30,9 @@ export const GA_EVENTS = {
   ATLAS_RESULT_VIEWED_RETURNING: 'atlas_result_viewed_returning',
   ATLAS_RESULT_PDF_DOWNLOAD: 'atlas_result_pdf_download',
   ATLAS_RESULT_CONTACT_CLICK: 'atlas_result_contact_click',
-  ATLAS_RESULT_NEXT_LAB_CLICK: 'atlas_result_next_lab_click',
 
   // Contact
-  CONTACT_FORM_SUBMIT: 'contact_form_submit',
+  CONTACT_EMAIL_COPY: 'contact_email_copy',
 
   // About Me
   ABOUT_ME_OPENED: 'about_me_opened',

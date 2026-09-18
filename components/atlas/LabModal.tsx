@@ -4,6 +4,10 @@ import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import TextNav from "@/components/interaction/TextNav";
+import IconControl from "@/components/interaction/IconControl";
+import SolidCTA from "@/components/interaction/SolidCTA";
+import { FOCUS_RING, TRANSITION_MICRO } from "@/components/interaction/tokens";
 import {
   CHECKPOINT_GROUPS,
   LAB001_DIMENSIONS,
@@ -19,7 +23,6 @@ import {
   trackAtlasLabStarted,
   trackAtlasQuestionAnswered,
   trackAtlasResultContactClick,
-  trackAtlasResultNextLabClick,
   trackAtlasResultPdfDownload,
   trackAtlasResultViewedReturning,
 } from "@/lib/analytics/events";
@@ -379,14 +382,14 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* shell-level close — one instance, applies to every view */}
-            <button
-              type="button"
+            <IconControl
+              label={t("close")}
               onClick={resetAndClose}
-              aria-label={t("close")}
-              className="absolute right-4 top-4 z-20 text-[#1b1c1c] transition-colors hover:text-[#00c3d0] md:right-6 md:top-6"
+              framed={false}
+              className="absolute right-4 top-4 z-20 md:right-6 md:top-6"
             >
               <CloseIcon />
-            </button>
+            </IconControl>
 
             <AnimatePresence mode="wait">
               {view === "welcome" ? (
@@ -463,7 +466,7 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
                           trackAtlasLabStarted(LAB_ID);
                           setView("question");
                         }}
-                        className="flex w-full items-center justify-center gap-3 bg-black py-4 text-base uppercase tracking-[1.6px] text-white transition-colors hover:bg-[#00c3d0]"
+                        className={`flex w-full items-center justify-center gap-3 bg-transparent border-[1.5px] border-black px-8 py-4 text-sm uppercase tracking-[1.6px] text-black transition-colors duration-200 hover:bg-[#00c3d0] hover:text-white ${FOCUS_RING}`}
                       >
                         {t("cta")}
                         <ArrowIcon />
@@ -541,9 +544,9 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
                     </nav>
 
                     <div className="mt-auto flex flex-col gap-3 border-t border-[#e4e0dc] pt-6 text-[12px] text-[#8e8e93]">
-                      <button type="button" className="text-left uppercase tracking-[0.3px] hover:text-[#00c3d0]">
+                      <p className="uppercase tracking-[0.3px]">
                         {s("viewFullDiagnostic")}
-                      </button>
+                      </p>
                       <div className="flex items-center gap-2">
                         <ShieldIcon />
                         <span className="uppercase tracking-[0.3px]">{s("confidentiality")}</span>
@@ -616,7 +619,7 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
                                     key={opt.id}
                                     type="button"
                                     onClick={() => handleSelectOption(opt.id)}
-                                    className={`group flex min-h-0 flex-row items-center gap-4 border p-4 text-left transition-all duration-300 ease-out md:min-h-[340px] md:flex-col md:items-center md:justify-center md:gap-4 md:p-8 md:text-center md:hover:-translate-y-1 ${
+                                    className={`group flex min-h-0 flex-row items-center gap-4 border p-4 text-left ${FOCUS_RING} transition-all duration-300 ease-out md:min-h-[340px] md:flex-col md:items-center md:justify-center md:gap-4 md:p-8 md:text-center md:hover:-translate-y-1 ${
                                       isSelected ? "border-[#00c3d0]" : "border-[#cfc4c5] hover:border-[#00c3d0]"
                                     }`}
                                   >
@@ -672,14 +675,15 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
                         </AnimatePresence>
 
                         <div className="mx-auto flex w-full max-w-[860px] flex-col gap-4 border-t border-[#e4e0dc] pt-6 md:grid md:grid-cols-3 md:items-center md:gap-0">
-                          <button
-                            type="button"
+                          <TextNav
                             onClick={handleReviewInfo}
-                            className="flex items-center gap-2 justify-self-start text-[13px] uppercase tracking-[0.5px] text-[#4c4546] hover:text-[#00c3d0]"
+                            micro
+                            muted
+                            className="flex items-center gap-2 justify-self-start min-h-[44px]"
                           >
                             <BackArrowIcon />
                             {s("reviewInfo")}
-                          </button>
+                          </TextNav>
 
                           <div className="flex justify-center gap-1.5 md:justify-self-center">
                             {LAB001_DIMENSIONS.map((_, i) => (
@@ -693,15 +697,14 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
                           </div>
 
                           {currentQuestion.isCheckpoint && (
-                            <button
-                              type="button"
+                            <SolidCTA
                               onClick={handleContinueCheckpoint}
                               disabled={!selectedOptionId}
-                              className="flex w-full items-center justify-center gap-3 bg-black px-8 py-4 text-sm uppercase tracking-[1.6px] text-white transition-colors hover:bg-[#00c3d0] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-black md:w-auto md:justify-self-end"
+                              className="w-full md:w-auto md:justify-self-end"
                             >
                               {cp("continue")}
                               <ArrowIcon />
-                            </button>
+                            </SolidCTA>
                           )}
                         </div>
                       </>
@@ -858,32 +861,24 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
                               </p>
                             </div>
                           </div>
-                          <div className="flex shrink-0 flex-col gap-2 sm:items-end">
-                            <button
-                              type="button"
-                              onClick={() => trackAtlasResultNextLabClick(LAB_ID)}
-                              className="flex items-center justify-center gap-2 bg-black px-6 py-3 text-[13px] uppercase tracking-[1px] text-white transition-colors hover:bg-[#00c3d0]"
-                            >
-                              {r("ctaNextLab")}
-                            </button>
-                          </div>
                         </div>
 
                         <div className="flex flex-col items-center gap-3 pt-8">
                           <Link
                             href="/contact"
                             onClick={() => trackAtlasResultContactClick(LAB_ID)}
-                            className="flex items-center gap-2 border border-[#1b1c1c] px-6 py-3 text-[13px] uppercase tracking-[1px] text-[#1b1c1c] transition-colors hover:border-[#00c3d0] hover:text-[#00c3d0]"
+                            className={`flex items-center gap-2 border border-[#1a1a1a] px-6 py-3 min-h-[44px] text-[13px] uppercase tracking-[1px] text-[#1a1a1a] ${TRANSITION_MICRO} hover:border-[#00c3d0] hover:text-[#00c3d0] ${FOCUS_RING}`}
                           >
                             {r("ctaContact")}
                           </Link>
-                          <button
-                            type="button"
+                          <TextNav
                             onClick={handleDownloadPdf}
-                            className="text-[11px] uppercase tracking-[0.5px] text-[#8e8e93] underline hover:text-[#00c3d0]"
+                            micro
+                            muted
+                            className="underline min-h-[44px] inline-flex items-center"
                           >
                             {r("downloadPdf")}
-                          </button>
+                          </TextNav>
                         </div>
                       </motion.div>
                     ) : null}

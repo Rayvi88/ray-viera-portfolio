@@ -4,6 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
+import TextNav from "@/components/interaction/TextNav";
+import IconControl from "@/components/interaction/IconControl";
+import { FOCUS_RING, FOCUS_RING_CIRCLE, ICON_DOT_HIT, TRANSITION_STATE } from "@/components/interaction/tokens";
 
 function OverviewTab() {
   const t = useTranslations("caseStudySmartDocuments");
@@ -141,8 +144,17 @@ function ProductTab() {
       {/* Columna derecha — carrusel sin borde, más grande */}
       <div className="flex flex-col gap-3">
         <div
-          className="relative h-[480px] sm:h-[560px] lg:h-[640px] rounded-xl overflow-hidden cursor-pointer"
+          className={`relative h-[480px] sm:h-[560px] lg:h-[640px] rounded-xl overflow-hidden cursor-pointer ${FOCUS_RING}`}
           onClick={next}
+          role="button"
+          tabIndex={0}
+          aria-label="Next slide"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              next();
+            }
+          }}
         >
           <img
             src={slides[current]}
@@ -155,7 +167,8 @@ function ProductTab() {
             <button
               key={i}
               onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              aria-label={`Slide ${i + 1}`}
+              className={`h-2 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT} ${
                 i === current ? "bg-[#00C3D0] w-6" : "bg-[#E8E4DC] w-2"
               }`}
             />
@@ -231,8 +244,17 @@ function InterfaceSolutionTab() {
         <p className="text-sm text-gray-500 mt-1">{t("interfaceSolution.subtitle")}</p>
       </div>
       <div
-        className="flex-1 rounded-xl overflow-hidden cursor-pointer grid grid-cols-1 lg:grid-cols-[2fr_3fr] min-h-0"
+        className={`flex-1 rounded-xl overflow-hidden cursor-pointer grid grid-cols-1 lg:grid-cols-[2fr_3fr] min-h-0 ${FOCUS_RING}`}
         onClick={next}
+        role="button"
+        tabIndex={0}
+        aria-label="Next slide"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            next();
+          }
+        }}
       >
         <div className="flex flex-col justify-end gap-4 p-4 lg:p-8">
           <h3 className="text-base sm:text-lg font-bold text-gray-800">{slides[current].title}</h3>
@@ -336,40 +358,34 @@ export default function CaseStudySmartDocuments() {
   return (
     <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-8 lg:py-16 bg-[#FFFCF6]">
       <div className="flex-1 flex items-stretch gap-3 lg:gap-6">
-        <button
-          onClick={prev}
-          className="hidden sm:flex self-center shrink-0 w-10 h-10 items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300"
-        >
+        <IconControl label="Previous" onClick={prev} className="hidden sm:flex self-center shrink-0">
           &#8592;
-        </button>
+        </IconControl>
         <div className="flex-1 transition-all duration-500 ease-in-out">
           {renderTab()}
         </div>
-        <button
-          onClick={next}
-          className="hidden sm:flex self-center shrink-0 w-10 h-10 items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300"
-        >
+        <IconControl label="Next" onClick={next} className="hidden sm:flex self-center shrink-0">
           &#8594;
-        </button>
+        </IconControl>
       </div>
       <div className="mt-8 lg:mt-12 border-t border-[#E8E4DC] pt-4 lg:pt-6">
         <div className="flex items-center gap-4 lg:gap-6 overflow-x-auto pb-1 scrollbar-none">
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
-              <button
+              <TextNav
                 onClick={() => handleTabChange(i)}
-                className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${
-                  i === activeTab ? "text-[#00C3D0] font-bold" : "text-gray-500 hover:text-[#00C3D0]"
-                }`}
+                active={i === activeTab}
+                muted
+                className="whitespace-nowrap min-h-[44px] inline-flex items-center"
               >
                 {tab}
-              </button>
+              </TextNav>
               {i < tabs.length - 1 && <span className="text-gray-300 text-xs">|</span>}
             </div>
           ))}
           <div className="flex sm:hidden items-center gap-2 ml-auto shrink-0">
-            <button onClick={prev} className="w-8 h-8 flex items-center justify-center border border-[#E8E4DC] rounded-full text-gray-500">&#8592;</button>
-            <button onClick={next} className="w-8 h-8 flex items-center justify-center border border-[#E8E4DC] rounded-full text-gray-500">&#8594;</button>
+            <IconControl label="Previous" onClick={prev}>&#8592;</IconControl>
+            <IconControl label="Next" onClick={next}>&#8594;</IconControl>
           </div>
         </div>
       </div>

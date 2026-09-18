@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import PhotoReveal from "@/components/PhotoReveal";
+import IconControl from "@/components/interaction/IconControl";
+import { FOCUS_RING } from "@/components/interaction/tokens";
 import {
   trackAboutMeClosed,
   trackAboutMeIconHovered,
@@ -144,15 +146,16 @@ export default function AboutMeModal({ onClose }: Props) {
         />
 
         {/* Botón cerrar */}
-        <button
+        <IconControl
+          label={t("closeLabel")}
           onClick={handleClose}
-          className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center text-[#1a1a1a]/40 hover:text-[#00C3D0] transition-colors"
-          aria-label={t("closeLabel")}
+          framed={false}
+          className="absolute top-4 right-4 z-20"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
-        </button>
+        </IconControl>
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0 min-h-[520px]">
 
@@ -186,12 +189,18 @@ export default function AboutMeModal({ onClose }: Props) {
                 return (
                   <div
                     key={icon.key}
-                    className="flex flex-col items-center gap-2 cursor-pointer"
+                    tabIndex={0}
+                    className={`flex flex-col items-center gap-2 cursor-pointer rounded-lg ${FOCUS_RING}`}
                     onMouseEnter={() => {
                       setHoveredIcon(icon.label);
                       trackAboutMeIconHovered(icon.label);
                     }}
                     onMouseLeave={() => setHoveredIcon(null)}
+                    onFocus={() => {
+                      setHoveredIcon(icon.label);
+                      trackAboutMeIconHovered(icon.label);
+                    }}
+                    onBlur={() => setHoveredIcon(null)}
                   >
                     {/* Círculo + icono */}
                     <div

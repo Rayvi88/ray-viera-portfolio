@@ -1,362 +1,177 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
   trackLinkedInClick,
   trackEmailClick,
-  trackContactFormSubmit,
+  trackContactEmailCopy,
 } from "@/lib/analytics/events";
+import { ECOSYSTEM_PILL_CLASS } from "@/components/interaction/patterns";
 
-interface Particle {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  opacity: number;
-  speedX: number;
-  speedY: number;
+const EMAIL = "raymvier@gmail.com";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ray-viera/";
+const COPIED_FEEDBACK_MS = 2000;
+
+async function copyToClipboard(text: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    // Fallback para contextos sin Clipboard API (HTTP, iOS antiguos).
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    } catch {
+      return false;
+    }
+  }
 }
 
-function ContactParticles() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const animFrameRef = useRef<number>(0);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    particlesRef.current = Array.from({ length: 45 }, (_, i) => ({
-      id: i,
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 2.2 + 0.5,
-      opacity: Math.random() * 0.55 + 0.15,
-      speedX: (Math.random() - 0.5) * 0.28,
-      speedY: (Math.random() - 0.5) * 0.28,
-    }));
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const pts = particlesRef.current;
-
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const dx = pts[i].x - pts[j].x;
-          const dy = pts[i].y - pts[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 85) {
-            ctx.beginPath();
-            ctx.strokeStyle = "rgba(0,195,208," + (0.15 * (1 - dist / 85)) + ")";
-            ctx.lineWidth = 0.7;
-            ctx.moveTo(pts[i].x, pts[i].y);
-            ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      pts.forEach((p) => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0,195,208," + p.opacity + ")";
-        ctx.fill();
-        p.x += p.speedX;
-        p.y += p.speedY;
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-      });
-
-      animFrameRef.current = requestAnimationFrame(draw);
-    };
-
-    draw();
-    return () => {
-      cancelAnimationFrame(animFrameRef.current);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
+function CopyIcon() {
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
-      style={{ pointerEvents: "none" }}
-    />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2" />
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+    </svg>
   );
 }
 
-function SubjectOption({
-  label,
-  checked,
-  onChange,
-}: {
-  label: string;
-  checked: boolean;
-  onChange: () => void;
-}) {
+function CheckIcon() {
   return (
-    <label className="flex items-start gap-2 cursor-pointer" onClick={onChange}>
-      <div
-        className="mt-0.5 w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200"
-        style={{
-          borderColor: checked ? "#00C3D0" : "#C8C4BC",
-          backgroundColor: checked ? "#00C3D0" : "transparent",
-        }}
-      >
-        {checked && (
-          <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-            <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        )}
-      </div>
-      <span
-        className="text-sm leading-tight transition-colors duration-200"
-        style={{ color: checked ? "#1a1a1a" : "#6B7280" }}
-      >
-        {label}
-      </span>
-    </label>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
   );
 }
 
-function UnderlineInput({
-  label,
-  placeholder,
-  type = "text",
-  value,
-  onChange,
-}: {
-  label: string;
-  placeholder?: string;
-  type?: string;
-  value: string;
-  onChange: (v: string) => void;
-}) {
-  const [focused, setFocused] = useState(false);
+function MailIcon() {
   return (
-    <div className="flex flex-col gap-1">
-      <label className="text-xs" style={{ color: "#9CA3AF" }}>{label}</label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        className="bg-transparent outline-none text-sm pb-1.5"
-        style={{
-          color: "#1a1a1a",
-          borderBottom: "1.5px solid " + (focused ? "#00C3D0" : "#E8E4DC"),
-          transition: "border-color 0.2s",
-        }}
-      />
-    </div>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
   );
 }
 
-const MAX_CHARS = 250;
-
-function MessageArea({
-  label,
-  placeholder,
-  value,
-  onChange,
-}: {
-  label: string;
-  placeholder: string;
-  value: string;
-  onChange: (v: string) => void;
-}) {
-  const [focused, setFocused] = useState(false);
-  const remaining = MAX_CHARS - value.length;
-  const isNearLimit = remaining <= 40;
-  const isAtLimit = remaining <= 0;
-
+function LinkedInIcon() {
   return (
-    <div className="flex flex-col gap-1">
-      <div className="flex justify-between items-center">
-        <label className="text-xs" style={{ color: "#9CA3AF" }}>{label}</label>
-        <span
-          className="text-xs transition-colors duration-200"
-          style={{ color: isAtLimit ? "#EF4444" : isNearLimit ? "#F59E0B" : "#C4BDB5" }}
-        >
-          {remaining}/{MAX_CHARS}
-        </span>
-      </div>
-      <textarea
-        placeholder={placeholder}
-        value={value}
-        maxLength={MAX_CHARS}
-        onChange={(e) => onChange(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        rows={4}
-        className="bg-transparent outline-none text-sm resize-none pb-1.5 w-full"
-        style={{
-          color: "#1a1a1a",
-          borderBottom: "1.5px solid " + (focused ? "#00C3D0" : "#E8E4DC"),
-          transition: "border-color 0.2s",
-        }}
-      />
-    </div>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
   );
 }
 
 export default function ContactMe() {
   const t = useTranslations("contact");
-  const subjects = t.raw("subjects") as string[];
+  const [copied, setCopied] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [subject, setSubject] = useState("");
-  type Status = "idle" | "loading" | "success" | "error";
-  const [status, setStatus] = useState<Status>("idle");
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
-  const handleSend = async () => {
-    if (!firstName || !email || !message) return;
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email, phone, subject, message }),
-      });
-      if (res.ok) {
-        trackContactFormSubmit(); // ← evento formulario enviado
-        setStatus("success");
-        setFirstName(""); setLastName(""); setEmail("");
-        setPhone(""); setMessage(""); setSubject("");
-        setTimeout(() => setStatus("idle"), 4000);
-      } else {
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 4000);
-      }
-    } catch {
-      setStatus("error");
-      setTimeout(() => setStatus("idle"), 4000);
-    }
+  const handleCopy = async () => {
+    const ok = await copyToClipboard(EMAIL);
+    if (!ok) return;
+    trackContactEmailCopy();
+    setCopied(true);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setCopied(false), COPIED_FEEDBACK_MS);
   };
 
-  const btnLabel =
-    status === "loading" ? t("btnSending") :
-    status === "success" ? t("btnSuccess") :
-    status === "error" ? t("btnError") :
-    t("btnSend");
-
-  const btnColor = status === "success" ? "#00C3D0" : status === "error" ? "#EF4444" : "#1a1a1a";
-
   return (
-    <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-6 lg:py-8" style={{ backgroundColor: "#FFFCF6" }}>
-      <div
-        className="w-full max-w-5xl rounded-2xl overflow-hidden flex flex-col lg:grid lg:grid-cols-5"
-        style={{ border: "1.5px solid #E8E4DC" }}
-      >
-        {/* LEFT */}
-        <div className="lg:col-span-2 relative flex flex-col justify-between p-6 sm:p-8 overflow-hidden" style={{ minHeight: "220px" }}>
-          <ContactParticles />
-          <div className="relative z-10 flex flex-col justify-between h-full gap-6 lg:gap-0">
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-bold leading-tight mb-3 sm:mb-4" style={{ color: "#00C3D0" }}>
-                {t("title").split(" a ").map((part, i, arr) =>
-                  i < arr.length - 1 ? <span key={i}>{part} a <br /></span> : <span key={i}>{part}</span>
-                )}
-              </h1>
-              <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>
-                {t("subtitle")}
-              </p>
-            </div>
-            <div className="flex flex-row lg:flex-col gap-4">
-              {/* LinkedIn — con tracking */}
-
-              <a
-                href="https://www.linkedin.com/in/ray-viera/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 w-fit group"
-                onClick={trackLinkedInClick}
-              >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-opacity duration-200 group-hover:opacity-80" style={{ backgroundColor: "#00C3D0" }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                    <rect x="2" y="9" width="4" height="12" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                </div>
-              </a>
-
-              {/* Email — convertido a <a> con tracking */}
-              <a
-                href="mailto:raymvier@gmail.com"
-                className="flex items-center gap-3 group"
-                onClick={trackEmailClick}
-              >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-opacity duration-200 group-hover:opacity-80" style={{ backgroundColor: "#00C3D0" }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                </div>
-                <span className="text-sm transition-colors duration-200 group-hover:text-[#00C3D0]" style={{ color: "#374151" }}>raymvier@gmail.com</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT */}
-        <div
-          className="lg:col-span-3 p-6 sm:p-8 flex flex-col justify-between gap-6"
-          style={{ backgroundColor: "#FFFCF6", borderTop: "1.5px solid #E8E4DC" }}
+    <div
+      className="flex-1 flex items-center justify-center px-6 sm:px-8 py-16 sm:py-20 lg:py-28"
+      style={{ backgroundColor: "#FFFCF6" }}
+    >
+      <div className="w-full max-w-[760px] flex flex-col items-center text-center">
+        <p
+          className="text-[11px] sm:text-xs font-semibold uppercase"
+          style={{ color: "#00C3D0", letterSpacing: "0.2em" }}
         >
-          <div className="flex flex-col gap-4 sm:gap-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <UnderlineInput label={t("firstNameLabel")} value={firstName} onChange={setFirstName} />
-              <UnderlineInput label={t("lastNameLabel")} value={lastName} onChange={setLastName} />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <UnderlineInput label={t("emailLabel")} type="email" value={email} onChange={setEmail} />
-              <UnderlineInput label={t("phoneLabel")} placeholder={t("phonePlaceholder")} type="tel" value={phone} onChange={setPhone} />
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-sm font-semibold" style={{ color: "#374151" }}>{t("subjectLabel")}</span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-                {subjects.map((s) => (
-                  <SubjectOption key={s} label={s} checked={subject === s} onChange={() => setSubject(s)} />
-                ))}
-              </div>
-            </div>
-            <MessageArea
-              label={t("messageLabel")}
-              placeholder={t("messagePlaceholder")}
-              value={message}
-              onChange={setMessage}
-            />
-          </div>
-          <div className="flex justify-end mt-2">
-            <button
-              onClick={handleSend}
-              disabled={status === "loading"}
-              className="w-full sm:w-auto px-8 py-3 text-sm font-semibold rounded-lg transition-all duration-200 hover:opacity-90 active:scale-95 disabled:cursor-not-allowed"
-              style={{ backgroundColor: btnColor, color: "#ffffff", minWidth: "170px" }}
-            >
-              {btnLabel}
-            </button>
-          </div>
+          {t("eyebrow")}
+        </p>
+
+        <h1
+          className="mt-4 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-tight"
+          style={{ color: "#1a1a1a" }}
+        >
+          {t("headline")}
+        </h1>
+
+        <p
+          className="mt-4 text-sm sm:text-base leading-relaxed"
+          style={{ color: "#6B7280" }}
+        >
+          {t("subheadline")}
+        </p>
+
+        <p
+          className="mt-10 sm:mt-12 text-lg sm:text-xl font-semibold"
+          style={{ color: "#1a1a1a" }}
+        >
+          {t("directLabel")}
+        </p>
+        <p
+          className="mt-2 text-lg sm:text-xl break-all"
+          style={{ color: "#374151" }}
+        >
+          {EMAIL}
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto">
+          <button
+            type="button"
+            onClick={handleCopy}
+            className={`${ECOSYSTEM_PILL_CLASS} active:scale-[0.98]`}
+          >
+            {copied ? <CheckIcon /> : <CopyIcon />}
+            {t("copyLabel")}
+          </button>
+
+          <a
+            href={`mailto:${EMAIL}`}
+            onClick={trackEmailClick}
+            className={ECOSYSTEM_PILL_CLASS}
+          >
+            <MailIcon />
+            {t("openLabel")}
+          </a>
+
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            onClick={trackLinkedInClick}
+            className={ECOSYSTEM_PILL_CLASS}
+          >
+            <LinkedInIcon />
+            {t("linkedinLabel")}
+          </a>
         </div>
+
+        <div className="mt-4 min-h-[24px]" aria-live="polite">
+          {copied && (
+            <p role="status" className="text-sm font-medium" style={{ color: "#00C3D0" }}>
+              {t("copiedLabel")}
+            </p>
+          )}
         </div>
-        </div>
+      </div>
+    </div>
   );
 }

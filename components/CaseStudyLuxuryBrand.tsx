@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
+import TextNav from "@/components/interaction/TextNav";
+import IconControl from "@/components/interaction/IconControl";
 
 export default function CaseStudyLuxuryBrand() {
   const t = useTranslations("caseStudyLuxuryBrand");
@@ -36,7 +38,7 @@ export default function CaseStudyLuxuryBrand() {
     <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-8 lg:py-12 bg-[#FFFCF6]">
 
       <div className="flex-1 flex items-stretch gap-3 lg:gap-6">
-        <button onClick={prev} className="hidden sm:flex self-center shrink-0 w-10 h-10 items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-200" aria-label="Previous">←</button>
+        <IconControl label="Previous" onClick={prev} className="hidden sm:flex self-center shrink-0">←</IconControl>
 
         <div className="flex-1 min-w-0 flex flex-col justify-center">
 
@@ -243,7 +245,7 @@ export default function CaseStudyLuxuryBrand() {
 
         </div>
 
-        <button onClick={next} className="hidden sm:flex self-center shrink-0 w-10 h-10 items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-200" aria-label="Next">→</button>
+        <IconControl label="Next" onClick={next} className="hidden sm:flex self-center shrink-0">→</IconControl>
       </div>
 
       {/* Tab nav */}
@@ -251,15 +253,15 @@ export default function CaseStudyLuxuryBrand() {
         <div className="flex items-center gap-4 lg:gap-6 overflow-x-auto pb-1">
           {tabs.map((tab, i) => (
             <div key={i} className="flex items-center gap-4 lg:gap-6 shrink-0">
-              <button onClick={() => handleTabChange(i)} className={`text-sm outline-none focus:outline-none transition-colors duration-300 whitespace-nowrap ${i === activeTab ? "text-[#00C3D0] font-bold" : "text-[#888] hover:text-[#00C3D0]"}`}>
+              <TextNav onClick={() => handleTabChange(i)} active={i === activeTab} muted className="whitespace-nowrap min-h-[44px] inline-flex items-center">
                 {tab}
-              </button>
+              </TextNav>
               {i < tabs.length - 1 && <span className="text-[#ccc] text-xs">|</span>}
             </div>
           ))}
           <div className="flex sm:hidden items-center gap-2 ml-auto shrink-0">
-            <button onClick={prev} className="w-8 h-8 flex items-center justify-center border border-[#E8E4DC] rounded-full text-[#888]">←</button>
-            <button onClick={next} className="w-8 h-8 flex items-center justify-center border border-[#E8E4DC] rounded-full text-[#888]">→</button>
+            <IconControl label="Previous" onClick={prev}>←</IconControl>
+            <IconControl label="Next" onClick={next}>→</IconControl>
           </div>
         </div>
       </div>

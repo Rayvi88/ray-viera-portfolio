@@ -65,12 +65,126 @@
   },
   "howIThinkPage": {
     "title": "How I Think",
-    "systemsIntro": "Three systems that guide how I work.",
+    "systemsIntro": "I design from the system",
     "systems": [
-      "Systemic Design",
-      "Systems Architecture",
-      "Modular Systems"
-    ]
+      "Ecosystems"
+    ],
+    "ecosystem": {
+      "modalTitle": "Systemic Design",
+      "close": "Close",
+      "heroLabel": "Business",
+      "resultCaption": "Each unit orbits around the business: distinct pieces that only work as a system when they hold each other up.",
+      "cta": "See How I Apply This",
+      "editorial": {
+        "title": "Ecosystems",
+        "claim": "Nothing works in isolation.",
+        "cta": "Interactive experience",
+        "ctaNote": "Available on Desktop"
+      },
+      "elements": {
+        "producto": { "label": "Product" },
+        "usuarios": { "label": "Users" },
+        "procesos": { "label": "Processes" },
+        "equipo": { "label": "Team" },
+        "tecnologia": { "label": "Technology" },
+        "datos": { "label": "Data" },
+        "marca": { "label": "Brand" },
+        "operaciones": { "label": "Operations" }
+      },
+      "steps": {
+        "explorar": { "label": "Explore", "hint": "The pieces that form the ecosystem." },
+        "ver": { "label": "See", "hint": "A closer look at the business." },
+        "detectar": { "label": "Detect", "hint": "Relationships that reveal how the system works." },
+        "entender": { "label": "Understand", "hint": "What lies behind each area." },
+        "organizar": { "label": "Organize", "hint": "How the pieces hold each other up." },
+        "resultado": { "label": "Result" }
+      },
+      "entender": {
+        "relationshipsLabel": "Relationships",
+        "findingLabel": "Finding",
+        "impactLabel": "Impact",
+        "cards": {
+          "usuarios": {
+            "relationships": "Product · Brand",
+            "finding": "User needs can get lost across multiple touchpoints and internal decisions.",
+            "impact": "Friction · Abandonment · Inconsistent experience"
+          },
+          "marca": {
+            "relationships": "Users · Product · Marketing",
+            "finding": "A brand can communicate a promise that the real experience fails to deliver.",
+            "impact": "Loss of trust · Inconsistency · Disconnect"
+          },
+          "datos": {
+            "relationships": "Users · Product · Operations · Technology",
+            "finding": "Information may exist, but remain distributed across different sources and contexts.",
+            "impact": "Slow decisions · Inconsistent information · Low visibility"
+          },
+          "tecnologia": {
+            "relationships": "Product · Operations · Data",
+            "finding": "Tools can grow independently and eventually create fragmentation.",
+            "impact": "Silos · Unnecessary integrations · Maintenance"
+          },
+          "equipo": {
+            "relationships": "Product · Operations · Processes",
+            "finding": "Teams can work toward shared goals while having different responsibilities and priorities.",
+            "impact": "Misalignment · Handoffs · Rework"
+          },
+          "procesos": {
+            "relationships": "Teams · Operations · Technology · Data",
+            "finding": "Processes can accumulate steps, controls, or handoffs that no longer add value.",
+            "impact": "Delays · Complexity · Duplicate work"
+          },
+          "operaciones": {
+            "relationships": "Processes · Teams · Technology · Data · Product",
+            "finding": "Operations can depend on multiple tools and manual decisions to keep the workflow moving.",
+            "impact": "Errors · Dependency · Variability"
+          },
+          "producto": {
+            "relationships": "Users · Brand · Technology · Operations · Data",
+            "finding": "Product decisions can become disconnected from the operational and technological capabilities that support them.",
+            "impact": "Handoffs · Rework · Implementation constraints"
+          }
+        }
+      },
+      "organizar": {
+        "opportunityLabel": "Opportunity",
+        "focusLabel": "Focus",
+        "cards": {
+          "usuarios": {
+            "opportunity": "Connect user needs with product and brand decisions.",
+            "focus": "Identify friction points · Align needs with decisions · Reduce inconsistencies across touchpoints"
+          },
+          "marca": {
+            "opportunity": "Align the brand promise with the experience the system can actually sustain.",
+            "focus": "Clarify the promise · Align communication and product · Reduce inconsistencies"
+          },
+          "datos": {
+            "opportunity": "Turn distributed information into a useful source for decision-making.",
+            "focus": "Identify critical sources · Reduce duplication · Connect information to decisions"
+          },
+          "tecnologia": {
+            "opportunity": "Simplify the technology ecosystem around the system's actual needs.",
+            "focus": "Identify redundancies · Clarify capabilities · Reduce fragmentation"
+          },
+          "equipo": {
+            "opportunity": "Align responsibilities and decisions across the teams that sustain the workflow.",
+            "focus": "Clarify ownership · Reduce unnecessary handoffs · Align priorities"
+          },
+          "procesos": {
+            "opportunity": "Redesign the workflow around value by removing complexity that no longer adds value.",
+            "focus": "Remove unnecessary steps · Reduce handoffs · Simplify controls"
+          },
+          "operaciones": {
+            "opportunity": "Design a more stable, visible operation that relies less on manual decisions.",
+            "focus": "Reduce variability · Automate repetitive decisions · Improve visibility"
+          },
+          "producto": {
+            "opportunity": "Align product, operations, and technology from the design of the solution.",
+            "focus": "Connect decisions with real capabilities · Clarify ownership · Reduce rework"
+          }
+        }
+      }
+    }
   },
   "projects": {
     "label": "Work",
@@ -964,26 +1078,14 @@
     }
   },
   "contact": {
-    "title": "Let's start a conversation",
-    "subtitle": "UX/UI Expert specialized in visual clarity for complex systems. Open to strategic collaborations and high-impact design challenges.",
-    "firstNameLabel": "First Name",
-    "lastNameLabel": "Last Name",
-    "emailLabel": "Email",
-    "phoneLabel": "Phone Number (optional)",
-    "phonePlaceholder": "+0 000 0000 000",
-    "subjectLabel": "Select Subject?",
-    "subjects": [
-      "Decision Critical UX Design",
-      "Data Heavy Interface & Dashboard Design",
-      "Process & Workflow Simplification",
-      "UX Strategy & System Redesign"
-    ],
-    "messageLabel": "Message",
-    "messagePlaceholder": "Write your message...",
-    "btnSend": "Send Message",
-    "btnSending": "Sending...",
-    "btnSuccess": "Message Sent!",
-    "btnError": "Error, try again"
+    "eyebrow": "CONTACT",
+    "headline": "Do you have a system that needs to be understood, designed, or improved?",
+    "subheadline": "I design digital services and processes by connecting experience, business, and operations.",
+    "directLabel": "Let's talk directly",
+    "copyLabel": "Copy email",
+    "copiedLabel": "Email copied",
+    "openLabel": "Open email",
+    "linkedinLabel": "LinkedIn"
   },
   "atlas": {
     "lab001": {
@@ -1193,7 +1295,6 @@
         "radarTitle": "YOUR OPERATIONAL PROFILE",
         "bannerTitle": "RECOMMENDED NEXT STEP",
         "bannerText": "Your biggest opportunity is in \"{dim1}\" and \"{dim2}\". Strengthening these areas will have the biggest impact on your scalability.",
-        "ctaNextLab": "Continue with LAB-002 →",
         "ctaContact": "This has a fix, let's talk",
         "downloadPdf": "Download result (PDF)",
         "restart": "Retake diagnostic",

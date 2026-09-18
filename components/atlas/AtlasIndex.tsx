@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { ECOSYSTEM_PILL_CLASS } from "@/components/interaction/patterns";
 import { computeLab001Result } from "@/components/atlas/lab001-data";
 
 type Lab001Status = "loading" | "not-started" | "in-progress" | "completed";
@@ -87,7 +88,7 @@ export default function AtlasIndex() {
           </p>
           <Link
             href="/atlas/lab-001"
-            className="mt-auto flex items-center justify-center bg-[#1b1c1c] px-4 py-2.5 text-[11px] uppercase tracking-[0.5px] text-white transition-colors hover:bg-[#00c3d0]"
+            className={`${ECOSYSTEM_PILL_CLASS} mt-auto w-full`}
           >
             {status === "completed"
               ? t("viewResult")
@@ -98,7 +99,7 @@ export default function AtlasIndex() {
         </div>
 
         {/* LAB-002 — coming soon, no email capture, just label + contact */}
-        <div className="flex flex-col border border-[#cfc4c5] bg-[#f8f6f2] p-5 opacity-90">
+        <div className="flex flex-col border border-[#cfc4c5] bg-white p-5 opacity-90">
           <span className="mb-3 text-[11px] font-semibold uppercase tracking-[0.5px] text-[#8e8e93]">
             {t("labs.lab002.tag")}
           </span>
@@ -106,14 +107,14 @@ export default function AtlasIndex() {
           <p className="mb-4 text-[12px] text-[#8e8e93]">{t("building", { lab: "Lab-002" })}</p>
           <Link
             href="/contact"
-            className="mt-auto flex items-center justify-center border border-[#1b1c1c] px-4 py-2.5 text-[11px] uppercase tracking-[0.5px] text-[#1b1c1c] transition-colors hover:border-[#00c3d0] hover:text-[#00c3d0]"
+            className={`${ECOSYSTEM_PILL_CLASS} mt-auto w-full`}
           >
             {t("talk")}
           </Link>
         </div>
 
         {/* LAB-003 — coming soon */}
-        <div className="flex flex-col border border-[#cfc4c5] bg-[#f8f6f2] p-5 opacity-90">
+        <div className="flex flex-col border border-[#cfc4c5] bg-white p-5 opacity-90">
           <span className="mb-3 text-[11px] font-semibold uppercase tracking-[0.5px] text-[#8e8e93]">
             {t("labs.lab003.tag")}
           </span>
@@ -121,7 +122,7 @@ export default function AtlasIndex() {
           <p className="mb-4 text-[12px] text-[#8e8e93]">{t("comingSoon")}</p>
           <Link
             href="/contact"
-            className="mt-auto flex items-center justify-center border border-[#1b1c1c] px-4 py-2.5 text-[11px] uppercase tracking-[0.5px] text-[#1b1c1c] transition-colors hover:border-[#00c3d0] hover:text-[#00c3d0]"
+            className={`${ECOSYSTEM_PILL_CLASS} mt-auto w-full`}
           >
             {t("talk")}
           </Link>

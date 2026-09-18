@@ -97,12 +97,9 @@ export const trackAtlasResultPdfDownload = (labId: string) =>
 export const trackAtlasResultContactClick = (labId: string) =>
   trackEvent(GA_EVENTS.ATLAS_RESULT_CONTACT_CLICK, { lab_id: labId })
 
-export const trackAtlasResultNextLabClick = (labId: string) =>
-  trackEvent(GA_EVENTS.ATLAS_RESULT_NEXT_LAB_CLICK, { lab_id: labId })
-
 // — Contact —
-export const trackContactFormSubmit = () =>
-  trackEvent(GA_EVENTS.CONTACT_FORM_SUBMIT)
+export const trackContactEmailCopy = () =>
+  trackEvent(GA_EVENTS.CONTACT_EMAIL_COPY)
 
 // — About Me —
 export const trackAboutMeOpened = () =>

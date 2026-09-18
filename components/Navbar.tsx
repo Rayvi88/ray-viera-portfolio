@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "./LocaleSwitcher";
+import TextNav from "./interaction/TextNav";
+import { FOCUS_RING } from "./interaction/tokens";
 import { trackNavLinkClick } from "@/lib/analytics/events";
 
 export default function Navbar() {
@@ -25,7 +27,7 @@ export default function Navbar() {
       {/* Logo */}
       <Link
         href="/"
-        className="text-lg font-bold tracking-widest hover:text-[#00C3D0] transition"
+        className={`text-lg font-bold tracking-widest hover:text-[#00C3D0] transition ${FOCUS_RING}`}
         onClick={() => {
           setOpen(false);
           trackNavLinkClick("home");
@@ -40,17 +42,14 @@ export default function Navbar() {
           const isActive = pathname === item.href || pathname === `/es${item.href}`;
           return (
             <li key={item.href}>
-              <Link
+              <TextNav
                 href={item.href}
+                active={isActive}
                 onClick={() => trackNavLinkClick(item.href)}
-                className={`cursor-pointer transition font-medium ${
-                  isActive
-                    ? "text-[#00C3D0] font-bold border-b-2 border-[#00C3D0] pb-0.5"
-                    : "hover:text-[#00C3D0] hover:font-bold"
-                }`}
+                className={isActive ? "border-b-2 border-[#00C3D0] pb-0.5" : ""}
               >
                 {item.label}
-              </Link>
+              </TextNav>
             </li>
           );
         })}
@@ -63,20 +62,21 @@ export default function Navbar() {
       <div className="flex sm:hidden items-center gap-3">
         <LocaleSwitcher />
         <button
-          className="flex flex-col justify-center gap-1.5 w-8 h-8 z-50"
+          className={`group flex flex-col justify-center gap-1.5 size-11 px-1.5 z-50 ${FOCUS_RING} rounded-full`}
           onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
           aria-label="Toggle menu"
         >
           <span
-            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center"
+            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center group-hover:bg-[#00C3D0]"
             style={{ transform: open ? "translateY(8px) rotate(45deg)" : "none" }}
           />
           <span
-            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300"
+            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 group-hover:bg-[#00C3D0]"
             style={{ opacity: open ? 0 : 1 }}
           />
           <span
-            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center"
+            className="block h-0.5 bg-[#1a1a1a] transition-all duration-300 origin-center group-hover:bg-[#00C3D0]"
             style={{ transform: open ? "translateY(-8px) rotate(-45deg)" : "none" }}
           />
         </button>
@@ -91,21 +91,18 @@ export default function Navbar() {
           {links.map((item) => {
             const isActive = pathname === item.href || pathname === `/es${item.href}`;
             return (
-              <Link
+              <TextNav
                 key={item.href}
                 href={item.href}
+                active={isActive}
                 onClick={() => {
                   setOpen(false);
                   trackNavLinkClick(item.href);
                 }}
-                className={`px-6 py-3 text-sm font-medium transition ${
-                  isActive
-                    ? "text-[#00C3D0] font-bold"
-                    : "text-[#1a1a1a] hover:text-[#00C3D0]"
-                }`}
+                className="px-6 py-3 w-full text-left min-h-[44px] flex items-center"
               >
                 {item.label}
-              </Link>
+              </TextNav>
             );
           })}
         </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Particles from "@tsparticles/react";
 import Image from "next/image";
 import { trackProjectCardClick } from "@/lib/analytics/events";
+import { FOCUS_RING } from "@/components/interaction/tokens";
 import { initParticles } from "@/lib/particles/initParticles";
 
 interface Project {
@@ -51,7 +52,7 @@ export default function ParticleCard({
       href={project.href}
       onClick={() => trackProjectCardClick(project.id)}
       className={`
-        group block rounded-none transition-all duration-700 ease-out
+        group block rounded-none transition-all duration-700 ease-out ${FOCUS_RING}
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
         ${className}
       `}

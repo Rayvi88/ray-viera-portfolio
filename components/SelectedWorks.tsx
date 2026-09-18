@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import ParticleCard from "./ParticleCard";
+import IconControl from "@/components/interaction/IconControl";
 
 export default function SelectedWorks() {
   const t = useTranslations("selectedWorks");
@@ -62,12 +63,9 @@ export default function SelectedWorks() {
       </h2>
 
       <div className="relative flex items-center gap-3 lg:gap-6">
-        <button
-          onClick={prev}
-          className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300 text-sm self-stretch my-auto"
-        >
+        <IconControl label="Previous" onClick={prev} className="shrink-0 my-auto text-sm">
           &#8592;
-        </button>
+        </IconControl>
 
         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 min-w-0">
           {projects.map((project, i) => (
@@ -81,12 +79,9 @@ export default function SelectedWorks() {
           ))}
         </div>
 
-        <button
-          onClick={next}
-          className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#E8E4DC] rounded-full hover:border-[#00C3D0] hover:text-[#00C3D0] transition-all duration-300 text-sm self-stretch my-auto"
-        >
+        <IconControl label="Next" onClick={next} className="shrink-0 my-auto text-sm">
           &#8594;
-        </button>
+        </IconControl>
       </div>
     </section>
   );

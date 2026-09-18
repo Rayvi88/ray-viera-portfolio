@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import SolidCTA from "@/components/interaction/SolidCTA";
 
 interface NexaLabsEssayProps {
   onStartLab?: () => void;
@@ -51,13 +52,9 @@ export default function NexaLabsEssay({ onStartLab }: NexaLabsEssayProps) {
         })}
       </div>
 
-      <button
-        type="button"
-        onClick={onStartLab}
-        className="mt-10 flex items-center gap-3 bg-black px-6 py-4 text-sm uppercase tracking-[1.6px] text-white transition-colors hover:bg-[#00C3D0]"
-      >
+      <SolidCTA type="button" onClick={onStartLab} className="mt-10">
         {t("cta")}
-      </button>
+      </SolidCTA>
     </article>
   );
 }
