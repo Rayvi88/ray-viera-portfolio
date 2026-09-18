@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { trackCaseStudyEntry } from "@/lib/analytics/events";
 
 export default function SelectedWorksPage() {
   const t = useTranslations("selectedWorks");
@@ -11,6 +12,7 @@ export default function SelectedWorksPage() {
   const cards = [
     {
       key: "fintech",
+      caseStudyId: "fintech",
       href: "/case-study/fintech",
       image: "/fintech-c.png",
       imageBn: "/fintech-bn.png",
@@ -22,6 +24,7 @@ export default function SelectedWorksPage() {
     },
     {
       key: "social",
+      caseStudyId: "social-media-strategy",
       href: "/case-study/social-media-strategy",
       image: "/media-c.png",
       imageBn: "/media-bn.png",
@@ -76,7 +79,12 @@ export default function SelectedWorksPage() {
         {/* Cards — 2 col on md, 1 col on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {cards.map((card, i) => (
-            <Link key={card.key} href={card.href} className="group block">
+            <Link
+              key={card.key}
+              href={card.href}
+              onClick={() => trackCaseStudyEntry(card.caseStudyId, "selected_works")}
+              className="group block"
+            >
               <div
                 className={`border rounded-sm overflow-hidden transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl ${
                   visible

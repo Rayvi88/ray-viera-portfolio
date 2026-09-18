@@ -7,7 +7,6 @@ import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "./LocaleSwitcher";
 import TextNav from "./interaction/TextNav";
 import { FOCUS_RING } from "./interaction/tokens";
-import { trackNavLinkClick } from "@/lib/analytics/events";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -30,7 +29,6 @@ export default function Navbar() {
         className={`text-lg font-bold tracking-widest hover:text-[#00C3D0] transition ${FOCUS_RING}`}
         onClick={() => {
           setOpen(false);
-          trackNavLinkClick("home");
         }}
       >
         {t("logo")}
@@ -45,7 +43,6 @@ export default function Navbar() {
               <TextNav
                 href={item.href}
                 active={isActive}
-                onClick={() => trackNavLinkClick(item.href)}
                 className={isActive ? "border-b-2 border-[#00C3D0] pb-0.5" : ""}
               >
                 {item.label}
@@ -97,7 +94,6 @@ export default function Navbar() {
                 active={isActive}
                 onClick={() => {
                   setOpen(false);
-                  trackNavLinkClick(item.href);
                 }}
                 className="px-6 py-3 w-full text-left min-h-[44px] flex items-center"
               >

@@ -5,7 +5,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import IconControl from "@/components/interaction/IconControl";
-import { FOCUS_RING_CIRCLE, ICON_DOT_HIT, TRANSITION_STATE } from "@/components/interaction/tokens";
+import { trackCaseStudyEntry } from "@/lib/analytics/events";
+import { FOCUS_RING_CIRCLE, TRANSITION_STATE } from "@/components/interaction/tokens";
 
 
 export default function StrategicExplorations() {
@@ -14,6 +15,7 @@ export default function StrategicExplorations() {
   const cards = [
     {
       key: "operationalUx",
+      caseStudyId: "operational-ux",
       href: "/case-study/operational-ux",
       image: "/operational-ux-c.png",
       imageBn: "/operational-ux-bn.png",
@@ -25,6 +27,7 @@ export default function StrategicExplorations() {
     },
     {
       key: "gtm",
+      caseStudyId: "smart-documents-gtm",
       href: "/case-study/smart-documents-gtm",
       image: "/gotomarket-c.png",
       imageBn: "/gotomarket-bn.png",
@@ -36,6 +39,7 @@ export default function StrategicExplorations() {
     },
     {
       key: "smart",
+      caseStudyId: "smart-documents",
       href: "/case-study/smart-documents",
       image: "/smart-c.png",
       imageBn: "/smart-bn.png",
@@ -47,6 +51,7 @@ export default function StrategicExplorations() {
     },
     {
       key: "luxuryBrand",
+      caseStudyId: "luxury-brand",
       href: "/case-study/luxury-brand",
       image: "/luxury-brand-c.png",
       imageBn: "/luxury-brand-bn.png",
@@ -164,6 +169,7 @@ export default function StrategicExplorations() {
                     <Link
                       key={card.key}
                       href={card.href}
+                      onClick={() => trackCaseStudyEntry(card.caseStudyId, "strategic_explorations")}
                       className="group block flex-1 min-w-0"
                     >
                       <div
@@ -257,7 +263,7 @@ export default function StrategicExplorations() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`w-1.5 h-1.5 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT}`}
+              className={`w-1.5 h-1.5 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE}`}
               style={{
                 background: i === current ? "#00C3D0" : "#C8C4BC",
                 transform: i === current ? "scale(1.4)" : "scale(1)",

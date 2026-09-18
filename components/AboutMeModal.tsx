@@ -5,10 +5,6 @@ import { useTranslations } from "next-intl";
 import PhotoReveal from "@/components/PhotoReveal";
 import IconControl from "@/components/interaction/IconControl";
 import { FOCUS_RING } from "@/components/interaction/tokens";
-import {
-  trackAboutMeClosed,
-  trackAboutMeIconHovered,
-} from "@/lib/analytics/events";
 
 interface Dot { x: number; y: number; vx: number; vy: number; r: number; o: number; od: number; }
 const rand = (a: number, b: number) => Math.random() * (b - a) + a;
@@ -36,7 +32,6 @@ export default function AboutMeModal({ onClose }: Props) {
   const rafRef    = useRef<number>(0);
 
   const handleClose = () => {
-    trackAboutMeClosed();
     onClose();
   };
 
@@ -193,12 +188,10 @@ export default function AboutMeModal({ onClose }: Props) {
                     className={`flex flex-col items-center gap-2 cursor-pointer rounded-lg ${FOCUS_RING}`}
                     onMouseEnter={() => {
                       setHoveredIcon(icon.label);
-                      trackAboutMeIconHovered(icon.label);
                     }}
                     onMouseLeave={() => setHoveredIcon(null)}
                     onFocus={() => {
                       setHoveredIcon(icon.label);
-                      trackAboutMeIconHovered(icon.label);
                     }}
                     onBlur={() => setHoveredIcon(null)}
                   >

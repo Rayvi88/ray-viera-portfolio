@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
-import { trackAboutMePhotoReveal } from "@/lib/analytics/events";
 
 interface Props {
   front: string;
@@ -37,7 +36,6 @@ export default function PhotoReveal({
   const handleFirstInteraction = useCallback(() => {
     if (!touched) {
       setTouched(true);
-      trackAboutMePhotoReveal();
     }
   }, [touched]);
 

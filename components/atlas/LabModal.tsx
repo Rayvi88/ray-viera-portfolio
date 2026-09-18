@@ -17,14 +17,11 @@ import {
 } from "./lab001-data";
 import { generateLab001ResultPdf } from "./generateLab001Pdf";
 import {
-  trackAtlasCheckpointReached,
   trackAtlasLabCompleted,
-  trackAtlasLabOpened,
   trackAtlasLabStarted,
   trackAtlasQuestionAnswered,
   trackAtlasResultContactClick,
   trackAtlasResultPdfDownload,
-  trackAtlasResultViewedReturning,
 } from "@/lib/analytics/events";
 
 const LAB_ID = "lab-001";
@@ -214,11 +211,11 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
 
   const result = view === "result" ? computeLab001Result(answers) : null;
 
-  // on open, track the open event and check if this browser already has saved
-  // LAB-001 progress — complete (jump to result) or partial (resume at that question)
+  // on open, check if this browser already has saved LAB-001 progress —
+  // complete (jump to result) or partial (resume at that question).
+  // No tracking here: modal opens include automatic resumes.
   useEffect(() => {
     if (!isOpen) return;
-    trackAtlasLabOpened(LAB_ID);
     try {
       const raw = window.localStorage.getItem(LAB001_STORAGE_KEY);
       if (!raw) return;
@@ -231,7 +228,6 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
 
       if (computeLab001Result(saved.answers)) {
         setView("result");
-        trackAtlasResultViewedReturning(LAB_ID);
       } else {
         setQuestionIndex(Math.min(saved.questionIndex ?? 0, LAB001_QUESTIONS.length - 1));
         setView("question");
@@ -285,20 +281,7 @@ export default function LabModal({ isOpen, onClose, labTag }: LabModalProps) {
     const newAnswers = { ...answers, [questionIndex]: optionId };
     setAnswers(newAnswers);
 
-    const tier = currentQuestion.options.find((o) => o.id === optionId)?.tier ?? 0;
-    trackAtlasQuestionAnswered(LAB_ID, currentQuestion.dimension, questionIndex + 1, tier);
-
-    if (currentQuestion.isCheckpoint && currentQuestion.checkpointGroup) {
-      const indices = CHECKPOINT_GROUPS[currentQuestion.checkpointGroup];
-      const tiers = indices.map(
-        (i) => LAB001_QUESTIONS[i]?.options.find((o) => o.id === newAnswers[i])?.tier
-      );
-      if (!tiers.some((t) => t === undefined)) {
-        const avg = (tiers as number[]).reduce((sum, t2) => sum + t2, 0) / tiers.length;
-        const tierBand = avg < 2 ? "low" : avg < 3 ? "mid" : "high";
-        trackAtlasCheckpointReached(LAB_ID, currentQuestion.checkpointGroup, tierBand);
-      }
-    }
+    trackAtlasQuestionAnswered(LAB_ID, currentQuestion.dimension);
 
     if (!currentQuestion.isCheckpoint) {
       setIsTransitioning(true);

@@ -2,11 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import {
-  trackLinkedInClick,
-  trackEmailClick,
-  trackContactEmailCopy,
-} from "@/lib/analytics/events";
+import { trackContactIntent } from "@/lib/analytics/events";
 import { ECOSYSTEM_PILL_CLASS } from "@/components/interaction/patterns";
 
 const EMAIL = "raymvier@gmail.com";
@@ -86,7 +82,7 @@ export default function ContactMe() {
   const handleCopy = async () => {
     const ok = await copyToClipboard(EMAIL);
     if (!ok) return;
-    trackContactEmailCopy();
+    trackContactIntent("email_copy");
     setCopied(true);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => setCopied(false), COPIED_FEEDBACK_MS);
@@ -144,7 +140,7 @@ export default function ContactMe() {
 
           <a
             href={`mailto:${EMAIL}`}
-            onClick={trackEmailClick}
+            onClick={() => trackContactIntent("email_open")}
             className={ECOSYSTEM_PILL_CLASS}
           >
             <MailIcon />
@@ -156,7 +152,7 @@ export default function ContactMe() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            onClick={trackLinkedInClick}
+            onClick={() => trackContactIntent("linkedin_open")}
             className={ECOSYSTEM_PILL_CLASS}
           >
             <LinkedInIcon />

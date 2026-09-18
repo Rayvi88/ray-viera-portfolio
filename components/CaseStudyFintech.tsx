@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
+import { trackCaseStudyProgress } from "@/lib/analytics/events";
 import TextNav from "@/components/interaction/TextNav";
 import IconControl from "@/components/interaction/IconControl";
 
@@ -284,11 +284,23 @@ export default function CaseStudyFintech() {
 
  const [activeTab, setActiveTab] = useState(0);
 
+  const visitedTabs = useRef<Set<number>>(new Set([0]));
+  const firedMilestones = useRef<Set<string>>(new Set());
+
   const handleTabChange = (index: number) => {
     setActiveTab(index);
-    trackCaseStudyTabChange("fintech", tabs[index]);
-    if (index === tabs.length - 1) {
-      trackCaseStudyCompleted("fintech");
+    visitedTabs.current.add(index);
+    const total = tabs.length;
+    const seen = visitedTabs.current.size;
+    if (seen >= total && !firedMilestones.current.has("full")) {
+      firedMilestones.current.add("full");
+      trackCaseStudyProgress("fintech", "full");
+    } else if (
+      seen >= Math.ceil(total / 2) &&
+      !firedMilestones.current.has("half")
+    ) {
+      firedMilestones.current.add("half");
+      trackCaseStudyProgress("fintech", "half");
     }
   };
 

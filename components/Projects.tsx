@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { trackProjectCardClick } from "@/lib/analytics/events";
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -57,7 +56,6 @@ export default function Projects() {
               key={card.key}
               href={card.href}
               className="group block"
-              onClick={() => trackProjectCardClick(card.key)}
             >
               <div
                 className="border rounded-sm overflow-hidden transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl"

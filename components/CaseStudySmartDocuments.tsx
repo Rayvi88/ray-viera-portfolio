@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { trackCaseStudyTabChange, trackCaseStudyCompleted } from "@/lib/analytics/events";
+import { trackCaseStudyProgress } from "@/lib/analytics/events";
 import TextNav from "@/components/interaction/TextNav";
 import IconControl from "@/components/interaction/IconControl";
-import { FOCUS_RING, FOCUS_RING_CIRCLE, ICON_DOT_HIT, TRANSITION_STATE } from "@/components/interaction/tokens";
+import { FOCUS_RING, FOCUS_RING_CIRCLE, TRANSITION_STATE } from "@/components/interaction/tokens";
 
 function OverviewTab() {
   const t = useTranslations("caseStudySmartDocuments");
@@ -168,7 +168,7 @@ function ProductTab() {
               key={i}
               onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
               aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT} ${
+              className={`h-2 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${
                 i === current ? "bg-[#00C3D0] w-6" : "bg-[#E8E4DC] w-2"
               }`}
             />
@@ -332,11 +332,23 @@ export default function CaseStudySmartDocuments() {
 
   const [activeTab, setActiveTab] = useState(0);
 
+  const visitedTabs = useRef<Set<number>>(new Set([0]));
+  const firedMilestones = useRef<Set<string>>(new Set());
+
   const handleTabChange = (index: number) => {
     setActiveTab(index);
-    trackCaseStudyTabChange("smart-documents", tabs[index]);
-    if (index === tabs.length - 1) {
-      trackCaseStudyCompleted("smart-documents");
+    visitedTabs.current.add(index);
+    const total = tabs.length;
+    const seen = visitedTabs.current.size;
+    if (seen >= total && !firedMilestones.current.has("full")) {
+      firedMilestones.current.add("full");
+      trackCaseStudyProgress("smart-documents", "full");
+    } else if (
+      seen >= Math.ceil(total / 2) &&
+      !firedMilestones.current.has("half")
+    ) {
+      firedMilestones.current.add("half");
+      trackCaseStudyProgress("smart-documents", "half");
     }
   };
 

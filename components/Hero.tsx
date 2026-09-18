@@ -7,7 +7,7 @@ import { trackHeroCtaClick } from "@/lib/analytics/events";
 import InteractiveHero from "@/components/InteractiveHero";
 import MagneticButton from "@/components/MagneticButton";
 import { ECOSYSTEM_PILL_CLASS } from "@/components/interaction/patterns";
-import { FOCUS_RING, FOCUS_RING_CIRCLE, ICON_DOT_HIT, TRANSITION_STATE } from "@/components/interaction/tokens";
+import { FOCUS_RING, FOCUS_RING_CIRCLE, TRANSITION_STATE } from "@/components/interaction/tokens";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -143,7 +143,7 @@ export default function Hero() {
             stopAutoplay();
           }}
           aria-label="Mostrar Hero principal"
-          className={`w-3 h-3 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT} ${
+          className={`w-3 h-3 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${
             activeSlide === 0
               ? "bg-[#00C3D0] scale-125"
               : "bg-gray-300 hover:bg-gray-400"
@@ -157,7 +157,7 @@ export default function Hero() {
             stopAutoplay();
           }}
           aria-label="Mostrar Hero interactivo"
-          className={`w-3 h-3 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${ICON_DOT_HIT} ${
+          className={`w-3 h-3 rounded-full ${TRANSITION_STATE} ${FOCUS_RING_CIRCLE} ${
             activeSlide === 1
               ? "bg-[#00C3D0] scale-125"
               : "bg-gray-300 hover:bg-gray-400"

@@ -1,42 +1,27 @@
 // lib/analytics/constants.ts
+// Taxonomía mínima GA4 — NEXA (10 eventos).
+// Reglas: valores estables en inglés técnico o slugs de ruta, nunca texto
+// de UI traducido. Idioma (ES/EN) vía page_location, nunca como parámetro.
 export const GA_EVENTS = {
-  // Contacto
-  CONTACT_EMAIL_CLICK: 'contact_email_click',
-  CONTACT_LINKEDIN_CLICK: 'contact_linkedin_click',
-  CONTACT_GITHUB_CLICK: 'contact_github_click',
-
-  // Proyectos
-  PROJECT_CARD_CLICK: 'project_card_click',
-  CASE_STUDY_TAB_CHANGE: 'case_study_tab_change',
-  CASE_STUDY_COMPLETED: 'case_study_completed',
-
-  // Home
+  // E1 — Entrada/intención desde home
   HERO_CTA_CLICK: 'hero_cta_click',
-  HERO_SCROLL: 'hero_scroll',
 
-  // Navegación
-  NAV_LINK_CLICK: 'nav_link_click',
+  // E2 — Interacción idioma
   LOCALE_SWITCH: 'locale_switch',
 
-  // NEXA LAB
-  NEXALAB_INTERACTION: 'nexalab_interaction',
+  // E3 — Entrada a case study
+  CASE_STUDY_ENTRY: 'case_study_entry',
 
-  // Atlas — LAB-001 y siguientes
-  ATLAS_LAB_OPENED: 'atlas_lab_opened',
-  ATLAS_LAB_STARTED: 'atlas_lab_started',
-  ATLAS_QUESTION_ANSWERED: 'atlas_question_answered',
-  ATLAS_CHECKPOINT_REACHED: 'atlas_checkpoint_reached',
-  ATLAS_LAB_COMPLETED: 'atlas_lab_completed',
-  ATLAS_RESULT_VIEWED_RETURNING: 'atlas_result_viewed_returning',
-  ATLAS_RESULT_PDF_DOWNLOAD: 'atlas_result_pdf_download',
-  ATLAS_RESULT_CONTACT_CLICK: 'atlas_result_contact_click',
+  // E4 — Progreso en case study
+  CASE_STUDY_PROGRESS: 'case_study_progress',
 
-  // Contact
-  CONTACT_EMAIL_COPY: 'contact_email_copy',
+  // E5 — Conversión contacto
+  CONTACT_INTENT: 'contact_intent',
 
-  // About Me
-  ABOUT_ME_OPENED: 'about_me_opened',
-  ABOUT_ME_CLOSED: 'about_me_closed',
-  ABOUT_ME_PHOTO_REVEAL: 'about_me_photo_reveal',
-  ABOUT_ME_ICON_HOVERED: 'about_me_icon_hovered',
+  // Atlas LAB-001
+  ATLAS_LAB_STARTED: 'atlas_lab_started', // E6 — entrada al funnel
+  ATLAS_QUESTION_ANSWERED: 'atlas_question_answered', // E7 — interacción
+  ATLAS_LAB_COMPLETED: 'atlas_lab_completed', // E8 — fin de funnel
+  ATLAS_RESULT_PDF_DOWNLOAD: 'atlas_result_pdf_download', // E9 — conversión
+  ATLAS_RESULT_CONTACT_CLICK: 'atlas_result_contact_click', // E10 — conversión puente
 } as const
