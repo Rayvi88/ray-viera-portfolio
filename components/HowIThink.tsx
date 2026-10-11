@@ -1,6 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
-import PhotoReveal from "@/components/PhotoReveal";
 import HowIThinkInteractive from "@/components/how-i-think/HowIThinkInteractive";
+import SystemicDesignExperience from "@/components/how-i-think/systemic-design/SystemicDesignExperience";
 
 interface Paragraph { bold: string; rest: string; }
 interface IconCopy { label: string; desc: string; }
@@ -28,87 +28,28 @@ export default async function HowIThink() {
     desc: iconsRaw[key].desc,
   }));
 
-  const systems = t.raw("systems") as string[];
-
   return (
-    <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-12 lg:py-20 bg-[#FFFCF6]">
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00C3D0] mb-10 lg:mb-14">
-        {t("title")}
-      </h1>
+    <section className="flex-1 flex flex-col px-4 sm:px-10 lg:px-20 py-6 lg:py-8 bg-[#FFFCF6] md:justify-center">
+      {/* ── Cabecera — título + acceso secundario About me. En desktop en
+          una sola fila; en móvil apilados. Margen inferior ajustado para
+          que la composición quepa en el viewport en desktop. ── */}
+      <div className="flex flex-col gap-4 mb-6 lg:mb-8 md:flex-row md:items-center md:justify-between">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00C3D0]">
+          {t("title")}
+        </h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-10 items-stretch">
-        {/* ── Columna izquierda — texto ── */}
-        <div className="flex flex-col">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] leading-tight mb-1">
-            {tAbout("greeting")}
-          </h2>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#00C3D0] leading-tight mb-6">
-            Ray Viera.
-          </h2>
-
-          <div className="w-8 h-[2px] bg-[#00C3D0] mb-6" />
-
-          <div className="space-y-3 mb-10">
-            {paragraphs.map((p, i) => (
-              <p key={i} className="text-sm sm:text-base text-[#1a1a1a]/70 leading-relaxed">
-                {p.bold && <span className="font-semibold text-[#1a1a1a]/90">{p.bold} </span>}
-                {p.rest}
-              </p>
-            ))}
-          </div>
-
-          {/* ── Flujo de 4 pasos ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10 w-full">
-            {icons.map((icon, i) => (
-              <div key={icon.key} className="flex items-center gap-2 min-w-0">
-                <div className="group flex flex-col items-center justify-center text-center gap-2.5 px-3 sm:px-4 py-4 sm:py-5 rounded-2xl border border-[#E8E4DC] bg-white/50 w-full h-full min-w-0 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#00C3D0]/50 hover:bg-white hover:shadow-md">
-
-                  {/* Icon */}
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full flex-shrink-0 flex items-center justify-center bg-[#00C3D0]/10 transition-transform duration-300 ease-out group-hover:scale-105">
-                    <img
-                      src={icon.src}
-                      alt={icon.label}
-                      className="w-6 h-6 sm:w-7 sm:h-7"
-                    />
-                  </div>
-
-                  {/* Label */}
-                  <span className="text-xs sm:text-sm font-bold text-[#1a1a1a] leading-tight">
-                    {icon.label}
-                  </span>
-
-                  {/* Description */}
-                  <span className="text-[10px] sm:text-xs text-gray-500 leading-snug max-w-[120px]">
-                    {icon.desc}
-                  </span>
-                </div>
-
-                {/* Arrow — desktop only */}
-                {i < icons.length - 1 && (
-                  <span className="text-[#00C3D0]/50 text-lg flex-shrink-0 hidden lg:inline">
-                    →
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* ── Sistema ── */}
-          <p className="text-xs sm:text-sm text-[#1a1a1a]/60 mb-3">
-            {t("systemsIntro")}
-          </p>
-          <HowIThinkInteractive systems={systems} />
-        </div>
-
-        {/* ── Columna derecha — Photo Reveal, sin guías ── */}
-        <div className="relative w-full h-[495px] sm:h-[530px] lg:h-[72vh] max-h-[570px] rounded-2xl overflow-hidden">
-          <PhotoReveal
-            front="/profile-01.jpg"
-            back="/profile-02.png"
-            showHandle={false}
-          />
-        </div>
+        <HowIThinkInteractive
+          aboutLabel={tAbout("openButton")}
+          greeting={tAbout("greeting")}
+          paragraphs={paragraphs}
+          icons={icons}
+        />
       </div>
+
+      {/* ── Contenido principal — Ecosistemas integrada directamente en el
+          flujo de la página, sin overlay, diálogo ni tarjeta contenedora.
+          Sidebar, canvas y navegación forman parte del home. ── */}
+      <SystemicDesignExperience />
     </section>
   );
 }
